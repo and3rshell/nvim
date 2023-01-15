@@ -30,6 +30,7 @@ return packer.startup(function(use)
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
 
+    -- colors and icons
     use { "catppuccin/nvim", as = "catppuccin" }
     use("lunarvim/darkplus.nvim")
     use("shaunsingh/nord.nvim")
@@ -39,16 +40,21 @@ return packer.startup(function(use)
     -- use("tamago324/lir.nvim")
     -- use("tamago324/lir-git-status.nvim")
 
+    -- treesitter and related
     use("nvim-treesitter/nvim-treesitter", {run = ':TSUpdate'})
     use("andymass/vim-matchup")
     use("numToStr/Comment.nvim")
     use("JoosepAlviste/nvim-ts-context-commentstring")
     use("tpope/vim-surround")
 
+    -- lsp
     use("neovim/nvim-lspconfig")
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
+    use("onsails/lspkind.nvim")
+    use("ray-x/lsp_signature.nvim")
 
+    -- cmp
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")
@@ -57,12 +63,11 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lsp")
     use('hrsh7th/cmp-nvim-lua')
 
+    -- snippets
     use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
 
-    use("ray-x/lsp_signature.nvim")
-    use("hrsh7th/cmp-cmdline")
-
+    -- bufferline and related
     use("akinsho/bufferline.nvim")
     use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     use("moll/vim-bbye")
