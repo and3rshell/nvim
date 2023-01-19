@@ -6,6 +6,9 @@ vim.keymap.set("n", "ZL", ":BufferLineMoveNext<CR>")
 vim.keymap.set("n", "ZH", ":BufferLineMovePrev<CR>")
 vim.keymap.set("n", "<C-b>", ":BufferLinePick<CR>")
 vim.keymap.set("n", "ZX", ":Bdelete!<CR>")
+vim.cmd[[
+    nnoremap <expr><silent> <leader>, &showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>"
+]]
 
 bufferline.setup {
     options = {
@@ -14,7 +17,7 @@ bufferline.setup {
         offsets = { { filetype = "NvimTree", text = "", padding = 1, separator = false } },
         separator = false,
         separator_style = { "", "" },
-        always_show_bufferline = true,
+        always_show_bufferline = false,
         -- enforce_regular_tabs = true,
         indicator = { style = 'none' },
         show_buffer_icons = true,
