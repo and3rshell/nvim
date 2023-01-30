@@ -37,8 +37,8 @@ return packer.startup(function(use)
     use("kyazdani42/nvim-web-devicons")
     use("nvim-tree/nvim-tree.lua")
     -- use("nvim-tree/nvim-web-devicons")
-    -- use("tamago324/lir.nvim")
-    -- use("tamago324/lir-git-status.nvim")
+    use("tamago324/lir.nvim")
+    use("tamago324/lir-git-status.nvim")
 
     -- treesitter and related
     use("nvim-treesitter/nvim-treesitter", {run = ':TSUpdate'})
