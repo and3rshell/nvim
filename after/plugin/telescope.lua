@@ -13,7 +13,7 @@ vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>", { noremap = true, si
 vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ft", ":Telescope filetypes<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>g', function()
+vim.keymap.set('n', '<leader>G', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
