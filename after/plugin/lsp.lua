@@ -31,11 +31,6 @@ local function lsp_settings()
         })
     end
 
-    -- sign({name = 'DiagnosticSignError', text = '✘'})
-    -- sign({name = 'DiagnosticSignWarn', text = '▲'})
-    -- sign({name = 'DiagnosticSignHint', text = '⚑'})
-    -- sign({name = 'DiagnosticSignInfo', text = ''})
-
     sign({name = 'DiagnosticSignError', text = 'E'})
     sign({name = 'DiagnosticSignWarn', text = 'W'})
     sign({name = 'DiagnosticSignHint', text = 'H'})
@@ -99,7 +94,10 @@ end
 lsp_settings()
 
 require('mason').setup({})
-require('mason-lspconfig').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = { },
+    automatic_installation = true,
+})
 
 require('mason-lspconfig').setup_handlers({
     function(server_name)
@@ -108,35 +106,4 @@ require('mason-lspconfig').setup_handlers({
             capabilities = require('cmp_nvim_lsp').default_capabilities(),
         })
     end
-})
-
--- lsp.configure('intelephense', {
---     init_options = {
---         globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
---     }
--- })
-
-local lspconfig = require("lspconfig")
-lspconfig.sumneko_lua.setup({
-    settings = {
-        Lua = {
-            completion = {
-                keywordSnippet = "Disable",
-            },
-            diagnostics = {
-                globals = {"vim", "use"},
-                disable = {"lowercase-global"}
-            },
-            runtime = {
-                version = "LuaJIT",
-                path = vim.split(package.path, ";"),
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                },
-            },
-        },
-    },
 })

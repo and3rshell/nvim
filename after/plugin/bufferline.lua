@@ -18,7 +18,7 @@ bufferline.setup {
         separator = false,
         separator_style = { "", "" },
         always_show_bufferline = false,
-        -- enforce_regular_tabs = true,
+        enforce_regular_tabs = true,
         indicator = { style = 'none' },
         show_buffer_icons = true,
         show_buffer_close_icons = false,
