@@ -43,7 +43,7 @@ vim.opt.numberwidth = 4 -- default is 4
 vim.opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.guifont = "monospace:h11" -- the font used in graphical neovim applications
 vim.opt.smartindent = true
-vim.opt.showtabline = 0 -- the value of this option specifies when the line with tab page labels will be displayed
+-- vim.opt.showtabline = 0 -- the value of this option specifies when the line with tab page labels will be displayed
 vim.opt.pumheight = 10 -- maximum number of items to show in the popup menu
 -- vim.opt.conceallevel = 1 -- ex. make `` visible in markdown files, doesnt work in vimwiki?
 vim.cmd("set modifiable")

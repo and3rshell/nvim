@@ -3,7 +3,7 @@ local actions = require "telescope.actions"
 local builtin = require('telescope.builtin')
 
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "M", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fs", ":Telescope search_history<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fm", ":Telescope man_pages<CR>", { noremap = true, silent = true })

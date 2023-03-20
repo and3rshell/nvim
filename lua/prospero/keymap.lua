@@ -61,6 +61,6 @@ vim.keymap.set("n", "<leader>=", "ggVG=")
 vim.keymap.set("n", "<leader><leader>fh", ":set filetype=html<CR>")
 vim.keymap.set("n", "<leader><leader>fp", ":set filetype=php<CR>")
 
-vim.keymap.set("n", "L", ":bprev<CR>")
-vim.keymap.set("n", "H", ":bnext<CR>")
+vim.keymap.set("n", "L", ":bnext<CR>")
+vim.keymap.set("n", "H", ":bprev<CR>")
 vim.keymap.set("n", "ZX", ":Bdelete!<CR>")
