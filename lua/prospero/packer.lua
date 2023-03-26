@@ -27,15 +27,15 @@ return packer.startup(function(use)
     use("ThePrimeagen/harpoon")
     use("nvim-lualine/lualine.nvim")
     use("vimwiki/vimwiki")
-    use("mbbill/undotree")
-    use("tpope/vim-fugitive")
+    -- use("mbbill/undotree")
+    -- use("tpope/vim-fugitive")
 
     -- colors and icons
-    use { "catppuccin/nvim", as = "catppuccin" }
+    -- use { "catppuccin/nvim", as = "catppuccin" }
     use("lunarvim/darkplus.nvim")
-    use("shaunsingh/nord.nvim")
+    -- use("shaunsingh/nord.nvim")
     use("kyazdani42/nvim-web-devicons")
-    use("nvim-tree/nvim-tree.lua")
+    -- use("nvim-tree/nvim-tree.lua")
     -- use("nvim-tree/nvim-web-devicons")
     use("tamago324/lir.nvim")
     use("tamago324/lir-git-status.nvim")
@@ -68,7 +68,7 @@ return packer.startup(function(use)
     use("rafamadriz/friendly-snippets")
 
     -- bufferline and related
-    use("akinsho/bufferline.nvim")
-    use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
-    use("moll/vim-bbye")
+    -- use("akinsho/bufferline.nvim")
+    -- use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
+    -- use("moll/vim-bbye")
 end)

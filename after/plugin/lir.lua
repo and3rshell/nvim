@@ -33,8 +33,8 @@ lir.setup {
         ['l']      = actions.edit,
         ['<cr>']   = actions.edit,
         ['o']      = actions.edit,
-        ['<c-s>']      = actions.split,
-        ['<c-x>']      = actions.vsplit,
+        ['<c-x>']      = actions.split,
+        ['<c-v>']      = actions.vsplit,
         -- ['x']      = actions.tabedit,
 
         ['h']      = actions.up,

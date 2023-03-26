@@ -107,3 +107,29 @@ require('mason-lspconfig').setup_handlers({
         })
     end
 })
+
+local lspconfig = require('lspconfig')
+
+-- Define the server capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- Set the default storage path for intelephense
+local storage_path = '/home/prospero/.local/share/intelephense'
+
+-- Initialize the server
+lspconfig.intelephense.setup({
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    local buf_command = vim.api.nvim_buf_create_user_command
+    lsp_keymaps(bufnr)
+    buf_command(bufnr, 'LspFormat', function()
+        vim.lsp.buf.format()
+    end, {desc = 'Format buffer with language server'})
+  end,
+  settings = {
+    intelephense = {
+      storagePath = storage_path
+    }
+  }
+})

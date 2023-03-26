@@ -3,7 +3,7 @@ local actions = require "telescope.actions"
 local builtin = require('telescope.builtin')
 
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "M", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fs", ":Telescope search_history<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fm", ":Telescope man_pages<CR>", { noremap = true, silent = true })
@@ -48,8 +48,8 @@ telescope.setup {
         ["<esc>"] = actions.close,
         ["q"] = actions.close,
         ["<CR>"] = actions.select_default,
-        ["<C-v>"] = actions.select_horizontal,
-        ["<C-x>"] = actions.select_vertical,
+        ["<C-x>"] = actions.select_horizontal,
+        ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
