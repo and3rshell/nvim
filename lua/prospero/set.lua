@@ -25,7 +25,7 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 
 vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 30
+vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.opt.isfname:append("@-@")
 

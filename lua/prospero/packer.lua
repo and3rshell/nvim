@@ -42,6 +42,7 @@ return packer.startup(function(use)
 
     -- treesitter and related
     use("nvim-treesitter/nvim-treesitter", {run = ':TSUpdate'})
+    use("nvim-treesitter/nvim-treesitter-context");
     use("andymass/vim-matchup")
     use("numToStr/Comment.nvim")
     use("JoosepAlviste/nvim-ts-context-commentstring")
