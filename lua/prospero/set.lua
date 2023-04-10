@@ -30,7 +30,7 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50 -- faster completion (4000ms default)
-vim.opt.guicursor = "i:block"
+-- vim.opt.guicursor = "i:block"
 vim.opt.cmdheight = 1 -- command line messages statusline
 
 vim.opt.clipboard = "unnamedplus"
