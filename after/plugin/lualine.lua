@@ -21,8 +21,8 @@ local diagnostics = {
 
 local diff = {
     "diff",
-    colored = false,
-    -- symbols = { added = "", modified = "", removed = "" }, -- changes diff symbols
+    colored = true,
+    symbols = { added = "", modified = "", removed = "" }, -- changes diff symbols
     cond = hide_in_width,
 }
 
@@ -43,7 +43,7 @@ lualine.setup {
         }
     },
     sections = {
-        lualine_a = { },
+        lualine_a = {  },
         -- lualine_a = { 'mode' },
         lualine_b = { 'branch' },
         lualine_c = { 'filename' },

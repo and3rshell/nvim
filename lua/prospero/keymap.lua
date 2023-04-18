@@ -3,7 +3,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "ZZ", ":w<CR>")
+vim.keymap.set("n", "<leader>q", "ZQ")
 vim.keymap.set("n", "<C-c>", "ZQ")
+vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.cmd("command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!")
 vim.cmd("nmap ZR :W<CR>")
 
@@ -27,8 +29,6 @@ vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
-vim.keymap.set("n", "<leader>v", ":vnew<CR>")
-vim.keymap.set("n", "<leader>x", ":new<CR>")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "J", "mzJ`z")
@@ -44,23 +44,29 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
-vim.keymap.set("n", "<leader>t", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>>", ":tabmove +<CR>")
 vim.keymap.set("n", "<leader><", ":tabmove -<CR>")
 vim.keymap.set("n", "<leader>c", ":noh<CR>")
 
 vim.cmd [[ nmap <leader>r :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left> ]]
-vim.keymap.set("n", "<leader>zz", "<c-w>_ | <c-w>|")
-vim.keymap.set("n", "<leader>zo", "<c-w>=")
 vim.keymap.set("n", "2o", "o<esc>o")
 vim.keymap.set("n", "2O", "O<esc>O")
 vim.keymap.set("n", "<leader>;", "A;<esc>")
-vim.keymap.set("n", "<leader>sb", "ggO#!/usr/bin/env bash<esc>0jj")
-vim.keymap.set("n", "<leader>sp", "i<?php<esc>o<esc>o<esc>")
 vim.keymap.set("n", "<leader>=", "ggVG=")
-vim.keymap.set("n", "<leader><leader>fh", ":set filetype=html<CR>")
-vim.keymap.set("n", "<leader><leader>fp", ":set filetype=php<CR>")
 
 vim.keymap.set("n", "L", ":bnext<CR>")
 vim.keymap.set("n", "H", ":bprev<CR>")
 vim.keymap.set("n", "ZX", ":Bdelete!<CR>")
+
+vim.keymap.set("n", "<leader><leader>sb", "ggO#!/usr/bin/env bash<esc>0jj")
+vim.keymap.set("n", "<leader><leader>sp", "i<?php<esc>o<esc>o<esc>")
+
+vim.keymap.set("n", "<leader><leader>fh", ":set filetype=html<CR>")
+vim.keymap.set("n", "<leader><leader>fp", ":set filetype=php<CR>")
+
+vim.keymap.set("n", "<leader>v", ":vnew<CR>")
+vim.keymap.set("n", "<leader>x", ":new<CR>")
+
+vim.keymap.set("n", "<leader>zz", "<c-w>_ | <c-w>|")
+vim.keymap.set("n", "<leader>zo", "<c-w>=")

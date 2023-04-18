@@ -68,6 +68,10 @@ return packer.startup(function(use)
     use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
 
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end}
+
     -- bufferline and related
     -- use("akinsho/bufferline.nvim")
     -- use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
