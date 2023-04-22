@@ -1,7 +1,13 @@
 vim.o.background = "dark"
 vim.cmd.colorscheme("darkplus")
 
-vim.g.transparent_background = true
+-- vim.cmd [[
+--     let g:material_theme_style = 'ocean-community'
+--     let g:material_terminal_italics = 1
+--     colorscheme material
+-- ]]
+
+-- vim.g.transparent_background = true
 vim.g.italic_comments = true
 vim.g.italic_keywords = true
 vim.g.italic_functions = true

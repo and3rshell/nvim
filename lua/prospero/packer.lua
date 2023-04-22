@@ -48,9 +48,7 @@ return packer.startup(function(use)
     use("JoosepAlviste/nvim-ts-context-commentstring")
     use("tpope/vim-surround")
 
-    -- lsp
-    use("neovim/nvim-lspconfig")
-    use("williamboman/mason.nvim")
+    -- lsp use("neovim/nvim-lspconfig") use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
     use("onsails/lspkind.nvim")
     use("ray-x/lsp_signature.nvim")
@@ -71,6 +69,8 @@ return packer.startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end}
+
+    use("kaicataldo/material.vim")
 
     -- bufferline and related
     -- use("akinsho/bufferline.nvim")
