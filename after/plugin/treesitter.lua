@@ -1,5 +1,6 @@
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = "all",
+	-- ensure_installed = "all",
+	ensure_installed = { "php", "bash" } ,
 	ignore_install = { }, -- List of parsers to ignore installing
 	auto_install = true,
 
