@@ -11,16 +11,16 @@ local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 ---@diagnostic disable-next-line: missing-parameter
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer, close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
+    PACKER_BOOTSTRAP = fn.system {
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        install_path,
+    }
+    print "Installing packer, close and reopen Neovim..."
+    vim.cmd [[packadd packer.nvim]]
 end
 
 -- local packer = require ("packer")
@@ -28,7 +28,7 @@ end
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  return
+    return
 end
 
 -- packer.init({
@@ -41,15 +41,15 @@ end
 
 -- Have packer use a popup window
 packer.init {
-  -- snapshot = "july-24",
-  snapshot_path = fn.stdpath "config" .. "/snapshots",
-  max_jobs = 50,
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-    prompt_border = "rounded", -- Border style of prompt popups.
-  },
+    -- snapshot = "july-24",
+    snapshot_path = fn.stdpath "config" .. "/snapshots",
+    max_jobs = 50,
+    display = {
+        open_fn = function()
+            return require("packer.util").float { border = "rounded" }
+        end,
+        prompt_border = "rounded", -- Border style of prompt popups.
+    },
 }
 
 return packer.startup(function(use)
@@ -76,7 +76,7 @@ return packer.startup(function(use)
     use("tamago324/lir-git-status.nvim")
 
     -- treesitter and related
-    use("nvim-treesitter/nvim-treesitter", {run = ':TSUpdate'})
+    use("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })
     use("nvim-treesitter/nvim-treesitter-context");
     use("andymass/vim-matchup")
     use("numToStr/Comment.nvim")
@@ -84,7 +84,8 @@ return packer.startup(function(use)
     use("tpope/vim-surround")
 
     -- lsp
-    use("neovim/nvim-lspconfig") use("williamboman/mason.nvim")
+    use("neovim/nvim-lspconfig")
+    use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
     use("onsails/lspkind.nvim")
     use("ray-x/lsp_signature.nvim")
@@ -102,9 +103,12 @@ return packer.startup(function(use)
     use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
 
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
-    end}
+    end }
+
+    use('yaegassy/coc-blade')
+    use('https://github.com/jwalton512/vim-blade')
 
     -- use("kaicataldo/material.vim")
 

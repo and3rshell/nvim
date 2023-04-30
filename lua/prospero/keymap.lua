@@ -73,3 +73,5 @@ vim.keymap.set("n", "<leader>zo", "<c-w>=")
 
 vim.keymap.set("n", "<leader>ld", ":LspStop<cr>")
 vim.keymap.set("n", "<leader>le", ":LspStart<cr>")
+
+vim.keymap.set("n", "<leader>lf", ":LspFormat<cr>")

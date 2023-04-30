@@ -1,6 +1,6 @@
 local function lsp_keymaps(bufnr)
     local map = function(m, lhs, rhs)
-        local opts = {remap = false, silent = true, buffer = bufnr}
+        local opts = { remap = false, silent = true, buffer = bufnr }
         vim.keymap.set(m, lhs, rhs, opts)
     end
 
@@ -31,10 +31,10 @@ local function lsp_settings()
         })
     end
 
-    sign({name = 'DiagnosticSignError', text = 'E'})
-    sign({name = 'DiagnosticSignWarn', text = 'W'})
-    sign({name = 'DiagnosticSignHint', text = 'H'})
-    sign({name = 'DiagnosticSignInfo', text = 'I'})
+    sign({ name = 'DiagnosticSignError', text = 'E' })
+    sign({ name = 'DiagnosticSignWarn', text = 'W' })
+    sign({ name = 'DiagnosticSignHint', text = 'H' })
+    sign({ name = 'DiagnosticSignInfo', text = 'I' })
 
     vim.diagnostic.config({
         virtual_text = false,
@@ -70,15 +70,15 @@ local function lsp_settings()
 
     command('LspWorkspaceAdd', function()
         vim.lsp.buf.add_workspace_folder()
-    end, {desc = 'Add folder to workspace'})
+    end, { desc = 'Add folder to workspace' })
 
     command('LspWorkspaceList', function()
         vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, {desc = 'List workspace folders'})
+    end, { desc = 'List workspace folders' })
 
     command('LspWorkspaceRemove', function()
         vim.lsp.buf.remove_workspace_folder()
-    end, {desc = 'Remove folder from workspace'})
+    end, { desc = 'Remove folder from workspace' })
 end
 
 local function lsp_attach(client, bufnr)
@@ -88,14 +88,26 @@ local function lsp_attach(client, bufnr)
 
     buf_command(bufnr, 'LspFormat', function()
         vim.lsp.buf.format()
-    end, {desc = 'Format buffer with language server'})
+    end, { desc = 'Format buffer with language server' })
 end
 
 lsp_settings()
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { },
+    ensure_installed = {
+        "bashls",
+        "phpactor",
+        "cssls",
+        "cssmodules_ls",
+        "eslint",
+        "html",
+        "jsonls",
+        "lemminx",
+        "lua_ls",
+        "pyright",
+        "vimls"
+    },
     automatic_installation = true,
 })
 
