@@ -96,7 +96,8 @@ lsp_settings()
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        "bashls",
+        "efm",
+        -- "shellcheck",
         "phpactor",
         "cssls",
         "cssmodules_ls",
