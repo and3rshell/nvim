@@ -110,6 +110,9 @@ return packer.startup(function(use)
     use('yaegassy/coc-blade')
     use('https://github.com/jwalton512/vim-blade')
 
+    -- fix error while opening directory in lir
+    use("tpope/vim-vinegar")
+
     -- use("kaicataldo/material.vim")
 
     -- bufferline and related

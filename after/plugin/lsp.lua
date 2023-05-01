@@ -98,7 +98,9 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         "efm",
         -- "shellcheck",
-        "phpactor",
+        -- "phpactor",
+        "intelephense",
+        "tailwindcss",
         "cssls",
         "cssmodules_ls",
         "eslint",

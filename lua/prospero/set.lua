@@ -49,4 +49,4 @@ vim.opt.pumheight = 10 -- maximum number of items to show in the popup menu
 vim.cmd("set modifiable")
 
 vim.opt.shortmess:append("c") -- vim default "filnxtToOF"
-vim.opt.iskeyword:append("-")
+-- vim.opt.iskeyword:append("-")
