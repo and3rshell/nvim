@@ -119,6 +119,8 @@ return packer.startup(function(use)
 
     use("mbbill/undotree")
     use("folke/zen-mode.nvim")
+    use('voldikss/vim-floaterm')
+    use('ptzz/lf.vim')
 
     -- use("kaicataldo/material.vim")
 
