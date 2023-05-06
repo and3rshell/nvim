@@ -113,6 +113,8 @@ return packer.startup(function(use)
     -- fix error while opening directory in lir
     use("tpope/vim-vinegar")
 
+    use("tpope/vim-fugitive")
+
     -- use("kaicataldo/material.vim")
 
     -- bufferline and related
