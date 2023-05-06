@@ -41,8 +41,8 @@ lir.setup {
         ['q']      = actions.quit,
         ['<esc>']  = actions.quit,
 
-        ['md']     = actions.mkdir,
-        ['mf']     = actions.newfile,
+        ['+d']     = actions.mkdir,
+        ['+f']     = actions.newfile,
         ['r']      = actions.rename,
         ['@']      = actions.cd,
         ['Y']      = actions.yank_path,
