@@ -62,8 +62,6 @@ return packer.startup(function(use)
     use("ThePrimeagen/harpoon")
     use("nvim-lualine/lualine.nvim")
     use("vimwiki/vimwiki")
-    -- use("mbbill/undotree")
-    -- use("tpope/vim-fugitive")
 
     -- colors and icons
     -- use { "catppuccin/nvim", as = "catppuccin" }
@@ -118,6 +116,9 @@ return packer.startup(function(use)
         'lewis6991/gitsigns.nvim',
         -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
+
+    use("mbbill/undotree")
+    use("folke/zen-mode.nvim")
 
     -- use("kaicataldo/material.vim")
 
