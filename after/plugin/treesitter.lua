@@ -24,7 +24,8 @@ require'nvim-treesitter.configs'.setup {
         "json5",
         "make",
         "lua",
-        "vim"
+        "vim",
+        "diff"
     } ,
 	ignore_install = { "sql", "markdown", "css", "help" }, -- List of parsers to ignore installing
 	auto_install = true,
