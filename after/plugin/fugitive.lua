@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>gl", ":enew<CR>:Git log<CR><C-w>k:q!<CR>")
 vim.keymap.set("n", "<leader>ga", ":Git add .<CR>")
 
 local opts = {buffer = bufnr, remap = false}
-vim.keymap.set("n", "<leader>gp", function()
+vim.keymap.set("n", "<leader>P", function()
     vim.cmd.Git('push')
 end, opts)
 

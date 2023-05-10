@@ -4,10 +4,11 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "ZZ", ":w<CR>")
 vim.keymap.set("n", "<leader>q", "ZQ")
-vim.keymap.set("n", "<C-c>", "ZQ")
-vim.keymap.set("n", "<leader>s", ":w<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+-- vim.keymap.set("n", "<C-c>", "ZQ")
 vim.cmd("command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!")
 vim.cmd("nmap ZR :W<CR>")
+vim.cmd("nmap <leader>W :W<CR>")
 
 vim.keymap.set("v", "p", '"_dP')
 -- vim.keymap.set("x", "<leader>p", "\"_dP")
