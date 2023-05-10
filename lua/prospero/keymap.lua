@@ -69,8 +69,8 @@ vim.keymap.set("n", "<leader><leader>fp", ":set filetype=php<CR>")
 vim.keymap.set("n", "<leader>v", ":vnew<CR>")
 vim.keymap.set("n", "<leader>x", ":new<CR>")
 
-vim.keymap.set("n", "<leader>zz", "<c-w>_ | <c-w>|")
-vim.keymap.set("n", "<leader>zo", "<c-w>=")
+vim.keymap.set("n", "<leader>K", "<c-w>_ | <c-w>|")
+vim.keymap.set("n", "<leader>J", "<c-w>=")
 
 vim.keymap.set("n", "<leader>ld", ":LspStop<cr>")
 vim.keymap.set("n", "<leader>le", ":LspStart<cr>")
