@@ -3,12 +3,18 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "ZZ", ":w<CR>")
+vim.keymap.set("n", "<leader>Q", "ZQ")
 vim.keymap.set("n", "<leader>q", "ZQ")
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 -- vim.keymap.set("n", "<C-c>", "ZQ")
 vim.cmd("command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!")
 vim.cmd("nmap ZR :W<CR>")
 vim.cmd("nmap <leader>W :W<CR>")
+
+vim.keymap.set("n", "L", ":bnext<CR>")
+vim.keymap.set("n", "H", ":bprev<CR>")
+vim.keymap.set("n", "ZX", ":Bdelete!<CR>")
+-- vim.keymap.set("n", "<leader>q", ":Bdelete!<CR>")
 
 vim.keymap.set("v", "p", '"_dP')
 -- vim.keymap.set("x", "<leader>p", "\"_dP")
@@ -53,12 +59,8 @@ vim.keymap.set("n", "<leader>c", ":noh<CR>")
 vim.cmd [[ nmap <leader>r :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left> ]]
 vim.keymap.set("n", "2o", "o<esc>o")
 vim.keymap.set("n", "2O", "O<esc>O")
-vim.keymap.set("n", "<leader>;", "A;<esc>")
+vim.keymap.set("n", "g;", "A;<esc>")
 vim.keymap.set("n", "<leader>=", "ggVG=")
-
-vim.keymap.set("n", "L", ":bnext<CR>")
-vim.keymap.set("n", "H", ":bprev<CR>")
-vim.keymap.set("n", "ZX", ":Bdelete!<CR>")
 
 vim.keymap.set("n", "<leader><leader>sb", "ggO#!/usr/bin/env bash<esc>0jj")
 vim.keymap.set("n", "<leader><leader>sp", "i<?php<esc>o<esc>o<esc>")

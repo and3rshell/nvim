@@ -31,10 +31,10 @@ local function lsp_settings()
         })
     end
 
-    sign({ name = 'DiagnosticSignError', text = 'E' })
-    sign({ name = 'DiagnosticSignWarn', text = 'W' })
-    sign({ name = 'DiagnosticSignHint', text = 'H' })
-    sign({ name = 'DiagnosticSignInfo', text = 'I' })
+    sign({ name = 'DiagnosticSignError', text = 'X' })
+    sign({ name = 'DiagnosticSignWarn', text = '!' })
+    sign({ name = 'DiagnosticSignHint', text = '+' })
+    sign({ name = 'DiagnosticSignInfo', text = '?' })
 
     vim.diagnostic.config({
         virtual_text = false,

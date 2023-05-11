@@ -127,5 +127,5 @@ return packer.startup(function(use)
     -- bufferline and related
     -- use("akinsho/bufferline.nvim")
     -- use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
-    -- use("moll/vim-bbye")
+    use("moll/vim-bbye")
 end)
