@@ -3,7 +3,6 @@ require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
         "php",
         "phpdoc",
-        "python",
         "vue",
         "bash",
         "html",
@@ -27,8 +26,8 @@ require'nvim-treesitter.configs'.setup {
         "vim",
         "diff"
     } ,
-	ignore_install = { "sql", "markdown", "css", "help" }, -- List of parsers to ignore installing
-	auto_install = true,
+	ignore_install = { "sql", "markdown", "css", "help", "python" }, -- List of parsers to ignore installing
+	auto_install = false,
 
 	highlight = {
 		enable = true, -- false will disable the whole extension
