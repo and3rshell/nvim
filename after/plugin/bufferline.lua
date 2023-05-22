@@ -14,7 +14,14 @@ bufferline.setup {
     options = {
         close_command = "Bdelete! %d",
         right_mouse_command = "Bdelete! %d",
-        offsets = { { filetype = "NvimTree", text = "", padding = 1, separator = false } },
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "",
+                padding = 0,
+                separator = false
+            }
+        },
         separator = false,
         separator_style = { "", "" },
         always_show_bufferline = false,

@@ -68,9 +68,9 @@ return packer.startup(function(use)
     use("lunarvim/darkplus.nvim")
     -- use("shaunsingh/nord.nvim")
     use("kyazdani42/nvim-web-devicons")
-    -- use("nvim-tree/nvim-tree.lua")
+    use("nvim-tree/nvim-tree.lua")
     -- use("nvim-tree/nvim-web-devicons")
-    use("tamago324/lir.nvim")
+    -- use("tamago324/lir.nvim")
     use("tamago324/lir-git-status.nvim")
 
     -- treesitter and related
@@ -125,7 +125,7 @@ return packer.startup(function(use)
     -- use("kaicataldo/material.vim")
 
     -- bufferline and related
-    -- use("akinsho/bufferline.nvim")
-    -- use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
+    use("akinsho/bufferline.nvim")
+    use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     use("moll/vim-bbye")
 end)
