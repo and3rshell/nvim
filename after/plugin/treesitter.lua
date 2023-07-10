@@ -42,7 +42,7 @@ require'nvim-treesitter.configs'.setup {
 
 	indent = {
 		enable = true,
-		disable = { "css", }
+		disable = { "css", "html" }
 	},
 
 	matchup = {
