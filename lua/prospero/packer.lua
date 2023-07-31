@@ -68,9 +68,9 @@ return packer.startup(function(use)
     use("lunarvim/darkplus.nvim")
     -- use("shaunsingh/nord.nvim")
     use("kyazdani42/nvim-web-devicons")
-    use("nvim-tree/nvim-tree.lua")
+    -- use("nvim-tree/nvim-tree.lua")
     -- use("nvim-tree/nvim-web-devicons")
-    -- use("tamago324/lir.nvim")
+    use("tamago324/lir.nvim")
     use("tamago324/lir-git-status.nvim")
 
     -- treesitter and related
@@ -96,6 +96,7 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-cmdline")
     use("hrsh7th/cmp-nvim-lsp")
     use('hrsh7th/cmp-nvim-lua')
+    use('jezda1337/cmp_bootstrap')
 
     -- snippets
     use("L3MON4D3/LuaSnip")

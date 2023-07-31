@@ -110,7 +110,8 @@ require('mason-lspconfig').setup({
         "lemminx",
         "lua_ls",
         "pyright",
-        "vimls"
+        "vimls",
+        "rust_analyzer",
     },
     automatic_installation = true,
 })

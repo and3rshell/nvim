@@ -24,6 +24,7 @@ cmp.setup {
         {name = 'nvim_lua'},
         {name = 'path'},
         {name = 'buffer'},
+        {name = 'bootstrap'},
     },
 
     snippet = {
@@ -56,14 +57,15 @@ cmp.setup {
                 nvim_lsp = "[lsp]",
                 nvim_lua = "[lua]",
                 path = "[path]",
-                luasnip = "[snip]"
+                luasnip = "[snip]",
+                bootstrap = "[bootstrap]",
             }
         }
     },
 
     experimental = {
         native_menu = false,
-        ghost_text = false
+        ghost_text = true
     },
 
     completion = {

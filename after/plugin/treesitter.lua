@@ -5,7 +5,7 @@ require'nvim-treesitter.configs'.setup {
         "phpdoc",
         "vue",
         "bash",
-        "html",
+        -- "html",
         "c",
         "cpp",
         "cmake",
@@ -17,16 +17,16 @@ require'nvim-treesitter.configs'.setup {
         "gitignore",
         "go",
         "http",
-        "javascript",
         "jq",
         "json",
         "json5",
         "make",
         "lua",
         "vim",
-        "diff"
+        "diff",
+        "rust"
     } ,
-	ignore_install = { "sql", "markdown", "css", "help", "python" }, -- List of parsers to ignore installing
+	ignore_install = { "sql", "markdown", "css", "help", "python", "javascript" }, -- List of parsers to ignore installing
 	auto_install = false,
 
 	highlight = {
@@ -47,7 +47,7 @@ require'nvim-treesitter.configs'.setup {
 
 	matchup = {
 		enable = true, -- mandatory, false will disable the whole extension
-		disable = { "" }, -- optional, list of language that will be disabled
+		disable = { "javascript" }, -- optional, list of language that will be disabled
 		-- options
 	},
 }
