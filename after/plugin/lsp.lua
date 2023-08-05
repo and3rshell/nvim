@@ -45,11 +45,11 @@ local function lsp_settings()
         severity_sort = true,
         float = {
             focusable = false,
-            style = 'minimal',
-            border = 'rounded',
+            style = 'default',
+            border = 'double',
             source = 'always',
-            header = '',
-            prefix = '',
+            header = 'Diagnostics:',
+            prefix = '• ',
         },
     })
 

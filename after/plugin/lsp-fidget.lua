@@ -1,5 +1,3 @@
-vim.cmd.highlight("FidgetTitle ctermfg=110 guifg=#6cb6eb")
-
 require"fidget".setup{
     text = {
         spinner = "pipe",         -- animation shown when tasks are ongoing
