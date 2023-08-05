@@ -6,9 +6,7 @@ vim.keymap.set("n", "ZL", ":BufferLineMoveNext<CR>")
 vim.keymap.set("n", "ZH", ":BufferLineMovePrev<CR>")
 vim.keymap.set("n", "<C-m>", ":BufferLinePick<CR>")
 vim.keymap.set("n", "ZX", ":Bdelete!<CR>")
-vim.cmd[[
-    nnoremap <expr><silent> <leader>, &showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>"
-]]
+vim.cmd[[ nnoremap <expr><silent> <leader>, &showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>" ]]
 
 bufferline.setup {
     options = {
@@ -28,8 +26,7 @@ bufferline.setup {
         enforce_regular_tabs = true,
         indicator = { style = 'none' },
         show_buffer_icons = true,
-        show_buffer_close_icons = false,
-        -- show_buffer_default_icon = true,
+        show_buffer_close_icons = true,
         show_tab_indicators = true,
         color_icons = true,
     },

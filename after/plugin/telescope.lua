@@ -2,19 +2,20 @@ local telescope = require("telescope")
 local actions = require "telescope.actions"
 local builtin = require('telescope.builtin')
 
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>",
-    { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>",
-    { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fs", ":Telescope search_history<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fm", ":Telescope man_pages<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fj", ":Telescope jumplist<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fc", ":Telescope commands<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>ft", ":Telescope filetypes<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>")
+vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>")
+vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
+vim.keymap.set("n", "<leader>fs", ":Telescope search_history<CR>")
+vim.keymap.set("n", "<leader>fm", ":Telescope man_pages<CR>")
+vim.keymap.set("n", "<leader>fj", ":Telescope jumplist<CR>")
+vim.keymap.set("n", "<leader>fc", ":Telescope commands<CR>")
+vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>")
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>")
+vim.keymap.set("n", "<leader>ft", ":Telescope filetypes<CR>")
+vim.keymap.set("n", "<leader>fr", ":Telescope lsp_references<CR>")
 vim.keymap.set('n', '<leader>G', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
@@ -24,7 +25,6 @@ telescope.setup {
         path_display = { "smart" },
         file_ignore_patterns = { ".git/", "node_modules" },
         preview = false,
-
         mappings = {
             i = {
                 ["<C-j>"] = actions.move_selection_next,
@@ -43,7 +43,6 @@ telescope.setup {
                 ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
             },
-
             n = {
                 ["<esc>"] = actions.close,
                 ["q"] = actions.close,

@@ -68,8 +68,8 @@ vim.keymap.set("n", "<leader><leader>sp", "i<?php<esc>o<esc>o<esc>")
 vim.keymap.set("n", "<leader><leader>fh", ":set filetype=html<CR>")
 vim.keymap.set("n", "<leader><leader>fp", ":set filetype=php<CR>")
 
-vim.keymap.set("n", "<leader>v", ":vnew<CR>")
-vim.keymap.set("n", "<leader>x", ":new<CR>")
+vim.keymap.set("n", "<leader>v", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>x", ":split<CR>")
 
 vim.keymap.set("n", "<leader>K", "<c-w>_ | <c-w>|")
 vim.keymap.set("n", "<leader>J", "<c-w>=")
@@ -81,3 +81,4 @@ vim.keymap.set("n", "<leader>lf", ":LspFormat<cr>")
 
 vim.keymap.set("n", "<leader>ob", ":!$BROWSER \"%\"<cr>")
 vim.keymap.set("n", "<leader>oc", ":!vscodium \"%\"<cr>")
+vim.keymap.set("n", "do", "ddko")

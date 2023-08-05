@@ -7,9 +7,9 @@ local function lsp_keymaps(bufnr)
     -- LSP actions
     map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
     map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+    map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
     map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
     map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-    map('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
     map('n', 'gR', '<cmd>lua vim.lsp.buf.references()<cr>')
     map('n', '<F1>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
     map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<cr>')
@@ -18,6 +18,7 @@ local function lsp_keymaps(bufnr)
 
     -- Diagnostics
     map('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+    -- map('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
     map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
     map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 end
@@ -31,10 +32,10 @@ local function lsp_settings()
         })
     end
 
-    sign({ name = 'DiagnosticSignError', text = 'X' })
-    sign({ name = 'DiagnosticSignWarn', text = '!' })
-    sign({ name = 'DiagnosticSignHint', text = '+' })
-    sign({ name = 'DiagnosticSignInfo', text = '?' })
+    sign({ name = 'DiagnosticSignError', text = 'e' })
+    sign({ name = 'DiagnosticSignWarn', text = 'w' })
+    sign({ name = 'DiagnosticSignHint', text = 'h' })
+    sign({ name = 'DiagnosticSignInfo', text = 'i' })
 
     vim.diagnostic.config({
         virtual_text = false,
@@ -81,6 +82,8 @@ local function lsp_settings()
     end, { desc = 'Remove folder from workspace' })
 end
 
+lsp_settings()
+
 local function lsp_attach(client, bufnr)
     local buf_command = vim.api.nvim_buf_create_user_command
 
@@ -91,40 +94,60 @@ local function lsp_attach(client, bufnr)
     end, { desc = 'Format buffer with language server' })
 end
 
-lsp_settings()
-
-require('mason').setup({})
-require('mason-lspconfig').setup({
-    ensure_installed = {
-        "efm",
-        "bashls",
-        -- "shellcheck",
-        -- "phpactor",
-        "intelephense",
-        "tailwindcss",
-        "cssls",
-        "cssmodules_ls",
-        "eslint",
-        "html",
-        "jsonls",
-        "lemminx",
-        "lua_ls",
-        "pyright",
-        "vimls",
-        "rust_analyzer",
-    },
-    automatic_installation = true,
+require('mason').setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
 })
 
-require('mason-lspconfig').setup_handlers({
-    function(server_name)
-        require('lspconfig')[server_name].setup({
-            on_attach = lsp_attach,
-            capabilities = require('cmp_nvim_lsp').default_capabilities(),
-        })
-    end
+local lspconfig = require('lspconfig');
+local mason_lspconfig = require('mason-lspconfig')
+
+mason_lspconfig.setup({
+    ensure_installed = {
+        "bashls",
+        -- "shellcheck",
+        "clangd", -- c, c++
+        "cmake",
+        "cssls",
+        "cssmodules_ls",
+        "dockerls",
+        "eslint", -- 
+        "emmet_ls",
+        "gopls", -- go
+        "graphql",
+        "html",
+        "jsonls",
+        "tsserver", -- javascript, typescript
+        "lua_ls",
+        "marksman", -- markdown
+        "intelephense",
+        "pyright",
+        "rust_analyzer",
+        "sqlls",
+        "tailwindcss",
+        "vimls",
+        "vuels", -- vue
+        "lemminx", -- xml
+    },
+    automatic_installation = true,
 })
 
 -- Define the server capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+local handlers = {
+    function(server_name)
+        lspconfig[server_name].setup({
+            on_attach = lsp_attach,
+            capabilities = capabilities,
+        })
+    end,
+}
+
+mason_lspconfig.setup({ handlers = handlers })
