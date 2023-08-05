@@ -105,17 +105,12 @@ return packer.startup(function(use)
 
     -- tabline
     -- use("akinsho/bufferline.nvim")
-    -- use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
+    use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     use("moll/vim-bbye")
     use("jose-elias-alvarez/buftabline.nvim")
 
     use {
         'j-hui/fidget.nvim',
-        tag = 'legacy',
-        config = function()
-            require("fidget").setup {
-                -- options
-            }
-        end,
+        tag = 'legacy'
     }
 end)

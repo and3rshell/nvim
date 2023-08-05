@@ -14,7 +14,7 @@ buftabline.setup{
         readonly = " RO",
     },
     hlgroups = {
-        current = "Tabline",
+        current = "Title",
         normal = "Tabline",
         active = nil,
         spacing = nil,
