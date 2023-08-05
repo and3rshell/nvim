@@ -1,5 +1,8 @@
 local buftabline = require("buftabline")
 
+vim.keymap.set("n", "L", ":BufNext<CR>")
+vim.keymap.set("n", "H", ":BufPrev<CR>")
+
 buftabline.setup{
     tab_format = " [#{n}: #{b}#{f}] ",
     buffer_id_index = false,
