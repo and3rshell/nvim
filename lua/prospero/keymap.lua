@@ -82,3 +82,6 @@ vim.keymap.set("n", "<leader>lf", ":LspFormat<cr>")
 vim.keymap.set("n", "<leader>ob", ":!$BROWSER \"%\"<cr>")
 vim.keymap.set("n", "<leader>oc", ":!vscodium \"%\"<cr>")
 vim.keymap.set("n", "do", "ddko")
+
+vim.keymap.set("n", "<C-b>", "i**<esc>ea**<esc>B")
+vim.keymap.set("n", "da*", "xxwxxB")

@@ -29,12 +29,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "gitcommit", "markdown" },
-    callback = function()
-        vim.opt_local.wrap = true
-    end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--     pattern = { "gitcommit", "markdown" },
+--     callback = function()
+--         vim.opt_local.wrap = true
+--     end,
+-- })
 
 -- Autocomment fix
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
