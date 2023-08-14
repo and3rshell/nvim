@@ -4,7 +4,7 @@ vim.keymap.set("n", "L", ":BufNext<CR>")
 vim.keymap.set("n", "H", ":BufPrev<CR>")
 
 buftabline.setup{
-    tab_format = " [#{n}: #{b}#{f}] ",
+    tab_format = " #{n}:[#{b}#{f}] ",
     buffer_id_index = false,
     icon_colors = true,
     start_hidden = false,
@@ -17,8 +17,8 @@ buftabline.setup{
         readonly = " RO",
     },
     hlgroups = {
-        current = "Title",
-        normal = "Tabline",
+        current = "CursorLineNr",
+        normal = "Whitespace",
         active = nil,
         spacing = nil,
         modified_current = nil,
