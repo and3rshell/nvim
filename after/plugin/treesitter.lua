@@ -24,9 +24,10 @@ require'nvim-treesitter.configs'.setup {
         "lua",
         "vim",
         "diff",
-        "rust"
+        "rust",
+        "javascript"
     } ,
-	ignore_install = { "sql", "markdown", "css", "help", "python", "javascript" }, -- List of parsers to ignore installing
+	ignore_install = { "sql", "markdown", "css", "help", "python"  }, -- List of parsers to ignore installing
 	auto_install = false,
 
 	highlight = {
