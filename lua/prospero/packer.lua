@@ -104,7 +104,7 @@ return packer.startup(function(use)
     use('ptzz/lf.vim') -- used with floaterm
 
     -- tabline
-    -- use("akinsho/bufferline.nvim")
+    use("akinsho/bufferline.nvim")
     use("tiagovla/scope.nvim") -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     use("moll/vim-bbye")
     use("jose-elias-alvarez/buftabline.nvim")
