@@ -16,7 +16,7 @@ end
 --     colorscheme material
 -- ]]
 
--- vim.g.transparent_background = true
+vim.g.transparent_background = true
 vim.g.italic_comments = true
 vim.g.italic_keywords = true
 vim.g.italic_functions = true

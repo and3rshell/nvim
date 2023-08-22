@@ -30,7 +30,6 @@ lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'codedark',
-        -- theme = require('material.lualine'),
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = { "dashboard", "NvimTree", "Outline" }, -- "alpha"
@@ -44,7 +43,7 @@ lualine.setup {
         }
     },
     sections = {
-        lualine_a = {  },
+        lualine_a = { },
         -- lualine_a = { 'mode' },
         lualine_b = { 'branch' },
         lualine_c = { 'filename' },
@@ -55,7 +54,8 @@ lualine.setup {
     inactive_sections = {
         lualine_a = { },
         lualine_b = { },
-        lualine_c = { 'filename' },
+        -- lualine_c = { 'filename' },
+        lualine_c = { },
         lualine_x = { },
         -- lualine_x = { diff, diagnostics, 'encoding', filetype },
         lualine_y = {},
