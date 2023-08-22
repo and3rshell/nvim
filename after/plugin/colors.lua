@@ -1,5 +1,5 @@
 vim.o.background = "dark"
-vim.cmd.colorscheme("darkplus")
+vim.cmd.colorscheme("retrobox")
 
 -- vim.cmd [[
 --     let g:material_theme_style = 'ocean-community'

@@ -71,7 +71,7 @@ return packer.startup(function(use)
     use {
         'j-hui/fidget.nvim',
         tag = 'legacy',
-        commit = "89b633f3bd0b7187f070236b348697de176860e2"
+        -- commit = "89b633f3bd0b7187f070236b348697de176860e2"
     }
 
     -- cmp
