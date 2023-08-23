@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "fugitive" },
     callback = function()
         vim.cmd [[
-            set nobuflisted
+            " set nobuflisted
             nnoremap <silent> <buffer> q :close<CR>
         ]]
     end,

@@ -35,7 +35,6 @@ require'nvim-treesitter.configs'.setup {
         "regex",
         "sql",
         "css",
-        "help",
         "graphql"
     } ,
 	ignore_install = { }, -- List of parsers to ignore installing
