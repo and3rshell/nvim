@@ -13,9 +13,13 @@ snippet ?=
 snippet ?
 	<?php ${0} ?>
 snippet ?f
-	<?php foreach ($${1:vars} as $${2:$var}): ?>
+	<?php foreach ($${1:array} as $${2:$value}): ?>
 		${0:${VISUAL}}
 	<?php endforeach ?>
+snippet ?fk
+	<?php foreach ($${1:array} as $${2:key} => $${3:value}): ?>
+		${0:<!-- html... -->}
+	<?php endforeach; ?>
 snippet ?i
 	<?php if ($${1:var}): ?>
 		${0:${VISUAL}}
@@ -35,7 +39,7 @@ snippet ?iee
 		${0:${VISUAL}}
 	<?php endif; ?>
 snippet n
-	namespace ${1:Foo\Bar\Baz};
+	namespace ${1};
 	
 	${0:${VISUAL}}
 snippet c
@@ -112,3 +116,18 @@ snippet foreach
 	foreach ($${1:variable} as $${2:value}) {
 		${0:${VISUAL}}
 	}
+snippet foreachk
+	foreach ($${1:variable} as $${2:key} => $${3:value}) {
+		${0:${VISUAL}}
+	}
+snippet try
+	try {
+		${1}
+	} catch (${2:Exception} $e) {
+		${0:${VISUAL}}
+	}
+snippet v
+	var_dump(${0});
+snippet vd
+	var_dump(${1});
+	die(${0:});
