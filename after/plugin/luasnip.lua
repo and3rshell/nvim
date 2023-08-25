@@ -36,5 +36,3 @@ vim.keymap.set("i", "<c-l>", function()
         luasnip.change_choice(1)
     end
 end)
-
-vim.keymap.set("n", "<leader><leader>l", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")

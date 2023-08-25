@@ -109,15 +109,23 @@ snippet case
 		${0:${VISUAL}}
 		break;
 snippet for
-	for ($${2:index} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	for ($${1:index} = 0; $$2 < ${2:count}; $$2${3:++}) {
 		${0:${VISUAL}}
 	}
+snippet while
+	while ($${1:var}) {
+		${0:${VISUAL}}
+	}
+snippet do
+	do {
+		${0:${VISUAL}}
+	} while ($${1:var})
 snippet foreach
-	foreach ($${1:variable} as $${2:value}) {
+	foreach ($${1:var} as $${2:value}) {
 		${0:${VISUAL}}
 	}
 snippet foreachk
-	foreach ($${1:variable} as $${2:key} => $${3:value}) {
+	foreach ($${1:var} as $${2:key} => $${3:value}) {
 		${0:${VISUAL}}
 	}
 snippet try
