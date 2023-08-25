@@ -118,7 +118,7 @@ mason_lspconfig.setup({
         "dockerls",
         "eslint", -- 
         "emmet_ls",
-        "gopls", -- go
+        "gopls",
         "graphql",
         "html",
         "jsonls",
@@ -151,3 +151,31 @@ local handlers = {
 }
 
 mason_lspconfig.setup({ handlers = handlers })
+
+lspconfig.emmet_ls.setup({
+    on_attach = lsp_attach,
+    capabilities = capabilities,
+    filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue", "php" }
+})
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.html.setup({
+    capabilities = capabilities,
+    filetypes = { "html", "php" },
+    init_options = {
+        -- configurationSection = { "html", "css", "javascript", "php" },
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true,
+            -- php = true
+        },
+        provideFormatter = true
+    }
+})
+
+lspconfig.intelephense.setup({
+    -- doesnt work
+    -- path = "$HOME/.local/share/intelephense"
+})

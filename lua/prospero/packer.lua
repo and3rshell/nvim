@@ -83,7 +83,7 @@ return packer.startup(function(use)
     use { "hrsh7th/cmp-nvim-lsp", commit = "44b16d11215dce86f253ce0c30949813c0a90765" }
     use { 'hrsh7th/cmp-nvim-lua', commit = "f12408bdb54c39c23e67cab726264c10db33ada8" }
     use { 'jezda1337/nvim-html-css', commit = "47cfa2d3f165954c71fe86591c054b48bdc14e20" } -- bootstrap
-    
+
     -- snippets
     use { "L3MON4D3/LuaSnip", commit = "c4d6298347f7707e9757351b2ee03d0c00da5c20" }
     use { "rafamadriz/friendly-snippets", commit = "377d45475b49e37460a902d6d569d2093d4037d0" }

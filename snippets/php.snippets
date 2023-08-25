@@ -1,0 +1,114 @@
+snippet <
+	<?php
+
+	${0:${VISUAL}}
+snippet dst "declare(strict_types=1)"
+	declare(strict_types=${1:1});
+snippet e
+	echo ${0};
+snippet ?e
+	<?php echo ${0} ?>
+snippet ?=
+	<?= ${0} ?>
+snippet ?
+	<?php ${0} ?>
+snippet ?f
+	<?php foreach ($${1:vars} as $${2:$var}): ?>
+		${0:${VISUAL}}
+	<?php endforeach ?>
+snippet ?i
+	<?php if ($${1:var}): ?>
+		${0:${VISUAL}}
+	<?php endif ?>
+snippet ?ie
+	<?php if (${1}): ?>
+		${2}
+	<?php else: ?>
+		${0:${VISUAL}}
+	<?php endif; ?>
+snippet ?iee
+	<?php if (${1}): ?>
+		${2}
+	<?php else if (${3}): ?>
+		${4}
+	<?php else: ?>
+		${0:${VISUAL}}
+	<?php endif; ?>
+snippet n
+	namespace ${1:Foo\Bar\Baz};
+	
+	${0:${VISUAL}}
+snippet c
+	class ${1:`vim_snippets#Filename()`}
+	{
+		${0:${VISUAL}}
+	}
+snippet ac
+	abstract class ${1:`vim_snippets#Filename()`}
+	{
+		${0:${VISUAL}}
+	}
+snippet i
+	interface ${1:`vim_snippets#Filename()`}
+	{
+		${0:${VISUAL}}
+	}
+snippet t
+	\$this->
+snippet f
+	${1} function ${2}(${3})
+	{
+		${0:${VISUAL}}
+	}
+snippet if
+	if (${1}) {
+		${2}
+	} ${0:${VISUAL}}
+snippet ifn
+	if (!${1}) {
+		${2}
+	} ${0:${VISUAL}}
+snippet ife
+	if (${1}) {
+		${2}
+	} else {
+		${0:${VISUAL}}
+	}
+snippet ifen
+	if (!${1}) {
+		${2}
+	} else {
+		${0:${VISUAL}}
+	}
+snippet elseif
+	else if (${1}) {
+		${0:${VISUAL}}
+	}
+snippet else
+	else {
+		${0:${VISUAL}}
+	}
+snippet ift
+	$${1:foo} = ${2:true} ? ${3:a} : ${0};
+snippet switch
+	switch ($${1:variable}) {
+		case '${2:value}':
+			${3}
+			break;
+		${0}
+		default:
+			${4}
+			break;
+	}
+snippet case
+	case '${1:value}':
+		${0:${VISUAL}}
+		break;
+snippet for
+	for ($${2:index} = 0; $$2 < ${1:count}; $$2${3:++}) {
+		${0:${VISUAL}}
+	}
+snippet foreach
+	foreach ($${1:variable} as $${2:value}) {
+		${0:${VISUAL}}
+	}
