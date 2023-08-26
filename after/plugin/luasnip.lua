@@ -31,6 +31,8 @@ vim.keymap.set({ "i", "s" }, "<c-k>", function()
     end
 end, { silent = true })
 
+-- selecting within a list of options
+-- useful for choice nodes
 vim.keymap.set("i", "<c-l>", function()
     if luasnip.choice_active() then
         luasnip.change_choice(1)
