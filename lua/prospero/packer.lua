@@ -113,4 +113,6 @@ return packer.startup(function(use)
     use { "tiagovla/scope.nvim", commit = "48c88376a9dbed96aaf33268b369c14850836fad" } -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
     use { "jose-elias-alvarez/buftabline.nvim" }
+
+    use { "lukas-reineke/indent-blankline.nvim", commit = "9637670896b68805430e2f72cf5d16be5b97a22a" }
 end)
