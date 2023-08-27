@@ -2,7 +2,7 @@ snippet <
 	<?php
 
 	${0:${VISUAL}}
-snippet dst "declare(strict_types=1)"
+snippet declst
 	declare(strict_types=${1:1});
 snippet e
 	echo ${0};
@@ -20,17 +20,17 @@ snippet ?fk
 	<?php foreach ($${1:array} as $${2:key} => $${3:value}): ?>
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
-snippet ?i
+snippet ?if
 	<?php if ($${1:var}): ?>
 		${0:${VISUAL}}
 	<?php endif ?>
-snippet ?ie
+snippet ?ife
 	<?php if (${1}): ?>
 		${2}
 	<?php else: ?>
 		${0:${VISUAL}}
 	<?php endif; ?>
-snippet ?iee
+snippet ?ifee
 	<?php if (${1}): ?>
 		${2}
 	<?php else if (${3}): ?>
@@ -38,32 +38,36 @@ snippet ?iee
 	<?php else: ?>
 		${0:${VISUAL}}
 	<?php endif; ?>
-snippet n
+snippet name
 	namespace ${1};
 	
 	${0:${VISUAL}}
-snippet c
+snippet cl
 	class ${1:`vim_snippets#Filename()`}
 	{
 		${0:${VISUAL}}
 	}
-snippet ac
+snippet abscl
 	abstract class ${1:`vim_snippets#Filename()`}
 	{
 		${0:${VISUAL}}
 	}
-snippet i
+snippet int
 	interface ${1:`vim_snippets#Filename()`}
 	{
 		${0:${VISUAL}}
 	}
 snippet t
 	\$this->
-snippet f
+snippet fun
 	${1} function ${2}(${3})
 	{
 		${0:${VISUAL}}
 	}
+snippet funa
+	function (${1}) {
+		${2}
+	}${0}
 snippet if
 	if (${1}) {
 		${2}
@@ -120,11 +124,11 @@ snippet do
 	do {
 		${0:${VISUAL}}
 	} while ($${1:var})
-snippet foreach
+snippet fore
 	foreach ($${1:var} as $${2:value}) {
 		${0:${VISUAL}}
 	}
-snippet foreachk
+snippet forek
 	foreach ($${1:var} as $${2:key} => $${3:value}) {
 		${0:${VISUAL}}
 	}
@@ -134,9 +138,9 @@ snippet try
 	} catch (${2:Exception} $e) {
 		${0:${VISUAL}}
 	}
-snippet v
+snippet vard
 	var_dump(${0});
-snippet vd
+snippet vardd
 	var_dump(${1});
 	die(${0:});
 snippet html5
@@ -146,7 +150,7 @@ snippet html5
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>Example</title>
+		<title>${1}</title>
 		<meta name="description" content="put description here">
 		<meta name="author" content="your name">
 	</head>
@@ -154,3 +158,8 @@ snippet html5
 		<h1>Hi</h1>
 	</body>
 	</html>
+snippet match
+	match (${1}) {
+		${2} => ${3},
+		${4} => ${5},
+	};

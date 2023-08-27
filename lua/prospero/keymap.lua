@@ -62,9 +62,6 @@ vim.keymap.set("n", "2O", "O<esc>O")
 vim.keymap.set("n", "g;", "A;<esc>")
 vim.keymap.set("n", "<leader>=", "ggVG=")
 
-vim.keymap.set("n", "<leader><leader>sb", "ggO#!/usr/bin/env bash<esc>0jj")
-vim.keymap.set("n", "<leader><leader>sp", "i<?php<esc>o<esc>o<esc>")
-
 vim.keymap.set("n", "<leader><leader>fh", ":set filetype=html<CR>")
 vim.keymap.set("n", "<leader><leader>fp", ":set filetype=php<CR>")
 
@@ -76,8 +73,8 @@ vim.keymap.set("n", "<leader>J", "<c-w>=")
 
 vim.keymap.set("n", "<leader>ld", ":LspStop<cr>")
 vim.keymap.set("n", "<leader>le", ":LspStart<cr>")
-
 vim.keymap.set("n", "<leader>lf", ":LspFormat<cr>")
+vim.keymap.set("n", "<leader>S", ":SymbolsOutline<cr>")
 
 vim.keymap.set("n", "<leader>ob", ":!$BROWSER \"%\"<cr>")
 vim.keymap.set("n", "<leader>oc", ":!vscodium \"%\"<cr>")
