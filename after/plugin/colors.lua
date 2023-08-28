@@ -44,6 +44,3 @@ vim.cmd.highlight("MsgArea guibg=NONE ctermbg=NONE")
 
 -- vim.api.nvim_set_hl(0, "VimwikiList", { link = "VimwikiHeader1" })
 -- vim.cmd.highlight("VimwikiList guifg=#ff0000 gui=bold")
-
-vim.cmd.highlight("FidgetTitle ctermfg=110 guifg=#6cb6eb")
-vim.cmd.highlight("FidgetTask ctermfg=239 guifg=#ffffff")
