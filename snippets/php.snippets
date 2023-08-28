@@ -1,9 +1,11 @@
-snippet <
+extends html
+
+snippet ?php
 	<?php
 
 	${0:${VISUAL}}
-snippet declst
-	declare(strict_types=${1:1});
+snippet dst
+	declare(strict_types = 1);
 snippet e
 	echo ${0};
 snippet ?e
@@ -60,7 +62,7 @@ snippet int
 snippet t
 	\$this->
 snippet fun
-	${1} function ${2}(${3})
+	${1} function ${2}(${3})${4}
 	{
 		${0:${VISUAL}}
 	}
@@ -71,11 +73,11 @@ snippet funa
 snippet if
 	if (${1}) {
 		${2}
-	} ${0:${VISUAL}}
+	}${0:${VISUAL}}
 snippet ifn
 	if (!${1}) {
 		${2}
-	} ${0:${VISUAL}}
+	}${0:${VISUAL}}
 snippet ife
 	if (${1}) {
 		${2}
@@ -90,8 +92,8 @@ snippet ifen
 	}
 snippet elseif
 	else if (${1}) {
-		${0:${VISUAL}}
-	}
+		${2}
+	}${0}
 snippet else
 	else {
 		${0:${VISUAL}}
@@ -138,26 +140,11 @@ snippet try
 	} catch (${2:Exception} $e) {
 		${0:${VISUAL}}
 	}
-snippet vard
+snippet vd
 	var_dump(${0});
-snippet vardd
+snippet vdd
 	var_dump(${1});
 	die(${0:});
-snippet html5
-	<!doctype html>
-	<html lang="en" dir="ltr">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<title>${1}</title>
-		<meta name="description" content="put description here">
-		<meta name="author" content="your name">
-	</head>
-	<body>
-		<h1>Hi</h1>
-	</body>
-	</html>
 snippet match
 	match (${1}) {
 		${2} => ${3},

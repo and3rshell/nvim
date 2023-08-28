@@ -8,8 +8,32 @@ snippet html5
 		<title>Example</title>
 		<meta name="description" content="put description here">
 		<meta name="author" content="your name">
+
+		<style type = "text/css">
+			body {
+				background-color: #131516;
+				color: #d8d4cf;
+			}
+
+			::selection {
+				background-color: #004daa;
+				color: #e8e6e3;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>Hi</h1>
 	</body>
 	</html>
+snippet form
+	<form action="${1}" method="${2:post}">
+		${0}
+	</form>
+snippet formcl
+	<form class="${1}" action="${2}" method="${3:post}">
+		${0}
+	</form>
+snippet formid
+	<form id="${1}" action="${2}" method="${3:post}">
+		${0}
+	</form>
