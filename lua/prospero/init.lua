@@ -9,4 +9,4 @@ require("prospero.vimwiki")
 -- vim.cmd("autocmd FileType markdown nmap <buffer><silent> <leader><leader>p :call mdip#MarkdownClipboardImage()<CR>")
 
 -- fix error while opening directory in lir
-vim.cmd("let g:loaded_netrwPlugin = 1")
+-- vim.g.loaded_netrwPlugin = 1

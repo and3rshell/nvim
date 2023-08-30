@@ -60,7 +60,7 @@ cmp.setup {
     -- },
     experimental = {
         native_menu = false,
-        ghost_text = false
+        ghost_text = true
     },
     completion = {
         completeopt = 'menu,menuone,noinsert'
