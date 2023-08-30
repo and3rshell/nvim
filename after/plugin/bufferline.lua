@@ -5,7 +5,7 @@ vim.keymap.set("n", "H", ":BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "ZL", ":BufferLineMoveNext<CR>")
 vim.keymap.set("n", "ZH", ":BufferLineMovePrev<CR>")
 vim.keymap.set("n", "<C-m>", ":BufferLinePick<CR>")
-vim.keymap.set("n", "ZX", ":Bdelete!<CR>")
+vim.keymap.set("n", "<leader>d", ":Bdelete!<CR>")
 vim.cmd[[ nnoremap <expr><silent> <leader>, &showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>" ]]
 
 bufferline.setup {

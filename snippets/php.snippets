@@ -49,11 +49,15 @@ snippet cl
 	{
 		${0:${VISUAL}}
 	}
-snippet abscl
+snippet acl
 	abstract class ${1:`vim_snippets#Filename()`}
 	{
 		${0:${VISUAL}}
 	}
+snippet cla
+	new class(${1}) {
+		${2}
+	}${0}
 snippet int
 	interface ${1:`vim_snippets#Filename()`}
 	{
@@ -62,13 +66,18 @@ snippet int
 snippet t
 	\$this->
 snippet fun
-	${1} function ${2}(${3})${4}
+	${1}function ${2}(${3})${4}
 	{
 		${0:${VISUAL}}
 	}
 snippet funa
 	function (${1}) {
 		${2}
+	}${0}
+snippet con
+	${1}function __construct(${2})
+	{
+		${3}
 	}${0}
 snippet if
 	if (${1}) {
@@ -150,3 +159,27 @@ snippet match
 		${2} => ${3},
 		${4} => ${5},
 	};
+snippet const
+	const ${1} = ${2};
+snippet ext
+	extends ${1}
+snippet imp
+	implements ${1}
+snippet $
+	$${1} = ${2};
+snippet $$
+	$${1}->${2};
+snippet pub
+	public $${1};
+snippet pro
+	protected $${1};
+snippet priv
+	private $${1};
+snippet s
+	self::${1};
+snippet p
+	parent::${1
+snippet n
+	new ${1};
+snippet inc
+	include("${1}");
