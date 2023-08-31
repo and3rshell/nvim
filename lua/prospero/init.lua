@@ -8,5 +8,6 @@ require("prospero.vimwiki")
 -- vim.cmd("let g:mdip_imgname = 'pasted-image'")
 -- vim.cmd("autocmd FileType markdown nmap <buffer><silent> <leader><leader>p :call mdip#MarkdownClipboardImage()<CR>")
 
--- fix error while opening directory in lir
--- vim.g.loaded_netrwPlugin = 1
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

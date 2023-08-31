@@ -5,8 +5,8 @@ local clipboard_actions = require'lir.clipboard.actions'
 local git_status = require'lir.git_status'
 
 -- Disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 vim.api.nvim_set_keymap("n", "<leader>e", ":lua require'lir.float'.toggle()<cr>", { noremap = true, silent = true })
 
