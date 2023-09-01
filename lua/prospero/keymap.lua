@@ -81,3 +81,5 @@ vim.keymap.set("n", "<C-b>", "i**<esc>ea**<esc>B")
 vim.keymap.set("n", "da*", "xxwxxB")
 
 vim.keymap.set("n", "cG", "ggcG")
+
+vim.keymap.set("i", "<C-x>", "<esc>A;")

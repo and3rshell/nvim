@@ -73,7 +73,8 @@ return packer.startup(function(use)
         tag = 'legacy',
         -- commit = "89b633f3bd0b7187f070236b348697de176860e2"
     }
-    use { 'simrat39/symbols-outline.nvim', commit = "512791925d57a61c545bc303356e8a8f7869763c"}
+    use { 'simrat39/symbols-outline.nvim', commit = "512791925d57a61c545bc303356e8a8f7869763c" }
+    -- use { "nvim-lua/lsp-status.nvim", commit = "54f48eb5017632d81d0fd40112065f1d062d0629" }
 
     -- cmp
     use { "hrsh7th/nvim-cmp", commit = "51f1e11a89ec701221877532ee1a23557d291dd5" }

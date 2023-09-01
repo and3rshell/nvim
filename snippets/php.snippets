@@ -40,7 +40,7 @@ snippet ?ifee
 	<?php else: ?>
 		${0:${VISUAL}}
 	<?php endif; ?>
-snippet name
+snippet ns
 	namespace ${1};
 	
 	${0:${VISUAL}}
@@ -165,9 +165,9 @@ snippet ext
 	extends ${1}
 snippet imp
 	implements ${1}
-snippet $
+snippet v
 	$${1} = ${2};
-snippet $$
+snippet vv
 	$${1}->${2};
 snippet pub
 	public $${1};
@@ -183,3 +183,10 @@ snippet n
 	new ${1};
 snippet inc
 	include("${1}");
+snippet pr
+	print_r(${1});
+snippet prd
+	print_r(${1});
+	die(${0:});
+snippet q
+	->query(${1})${2}
