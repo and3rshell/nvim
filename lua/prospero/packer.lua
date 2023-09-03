@@ -16,7 +16,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd [[packadd packer.nvim]]
 end
 
--- Use a protected call so we don't error out on first use
+-- Use a protected call so we don't error out on first usepacker
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
     return
@@ -42,7 +42,6 @@ return packer.startup(function(use)
     use { "windwp/nvim-autopairs", commit = "ae5b41ce880a6d850055e262d6dfebd362bb276e" }
     use { "ThePrimeagen/harpoon", commit = "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" }
     use { "nvim-lualine/lualine.nvim", commit = "45e27ca739c7be6c49e5496d14fcf45a303c3a63" }
-    use { "vimwiki/vimwiki", commit = "f0fe154ede6b11e3db9b058b930005a056a3d1c6" }
     use { "mbbill/undotree", commit = "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" }
     use { "folke/zen-mode.nvim", commit = "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" }
 
