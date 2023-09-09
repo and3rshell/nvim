@@ -59,8 +59,8 @@ vim.keymap.set("n", "2O", "O<esc>O")
 vim.keymap.set("n", "g;", "A;<esc>")
 vim.keymap.set("n", "<leader>=", "ggVG=")
 
-vim.keymap.set("n", ",h", ":set filetype=html<CR>")
-vim.keymap.set("n", ",p", ":set filetype=php<CR>")
+vim.keymap.set("n", "<leader><leader>h", ":set filetype=html<CR>")
+vim.keymap.set("n", "<leader><leader>p", ":set filetype=php<CR>")
 
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>x", ":split<CR>")

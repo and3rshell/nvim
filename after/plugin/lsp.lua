@@ -155,7 +155,8 @@ mason_lspconfig.setup({ handlers = handlers })
 lspconfig.emmet_ls.setup({
     on_attach = lsp_attach,
     capabilities = capabilities,
-    filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue", "php" }
+    -- filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue", "php" }
+    filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
 })
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true

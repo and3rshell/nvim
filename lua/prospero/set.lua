@@ -50,3 +50,6 @@ vim.cmd("set modifiable")
 
 vim.opt.shortmess:append("c") -- vim default "filnxtToOF"
 -- vim.opt.iskeyword:append("-")
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

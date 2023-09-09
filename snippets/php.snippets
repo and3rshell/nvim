@@ -181,8 +181,6 @@ snippet p
 	parent::${1
 snippet n
 	new ${1};
-snippet inc
-	include("${1}");
 snippet pr
 	print_r(${1});
 snippet prd
@@ -190,3 +188,15 @@ snippet prd
 	die(${0:});
 snippet q
 	->query(${1})${2}
+snippet req
+	require(${1});
+snippet reqo
+	require_once(${1});
+snippet inc
+	include("${1}");
+snippet inco
+	include_once("${1}");
+snippet dd
+	dd(${1});
+snippet [
+	[${1}];
