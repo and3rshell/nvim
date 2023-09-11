@@ -42,15 +42,13 @@ snippet ?ifee
 	<?php endif; ?>
 snippet ns
 	namespace ${1};
-	
-	${0:${VISUAL}}
 snippet cl
-	class ${1:`vim_snippets#Filename()`}
+	class ${1}
 	{
 		${0:${VISUAL}}
 	}
 snippet acl
-	abstract class ${1:`vim_snippets#Filename()`}
+	abstract class ${1}
 	{
 		${0:${VISUAL}}
 	}
@@ -68,8 +66,8 @@ snippet t
 snippet fun
 	${1}function ${2}(${3})${4}
 	{
-		${0:${VISUAL}}
-	}
+		${5}
+	}${0}
 snippet funa
 	function (${1}) {
 		${2}
@@ -108,7 +106,7 @@ snippet else
 		${0:${VISUAL}}
 	}
 snippet ift
-	$${1:foo} = ${2:true} ? ${3:a} : ${0};
+	$${1} = ${2} ? ${3} : ${0};
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
