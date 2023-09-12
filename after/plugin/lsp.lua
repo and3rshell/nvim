@@ -172,7 +172,8 @@ mason_lspconfig.setup_handlers {
     end,
     ["html"] = function()
         local html_settings = vim.tbl_extend("force", common_settings, {
-            filetypes = { "html", "php" },
+            -- filetypes = { "html", "php" },
+            filetypes = { "html" },
             init_options = {
                 configurationSection = { "html", "css", "javascript" },
                 embeddedLanguages = {
@@ -188,7 +189,61 @@ mason_lspconfig.setup_handlers {
         local intelephense_settings = vim.tbl_extend("force", common_settings, {
             init_options = {
                 globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
-            }
+            },
+            stubs = {
+                "bcmath",
+                "bz2",
+                "Core",
+                "curl",
+                "date",
+                "dom",
+                "fileinfo",
+                "filter",
+                "gd",
+                "gettext",
+                "hash",
+                "iconv",
+                "imap",
+                "intl",
+                "json",
+                "libxml",
+                "mbstring",
+                "mcrypt",
+                "mysql",
+                "mysqli",
+                "password",
+                "pcntl",
+                "pcre",
+                "PDO",
+                "pdo_mysql",
+                "Phar",
+                "readline",
+                "regex",
+                "session",
+                "SimpleXML",
+                "sockets",
+                "sodium",
+                "standard",
+                "superglobals",
+                "tokenizer",
+                "xml",
+                "xdebug",
+                "xmlreader",
+                "xmlwriter",
+                "yaml",
+                "zip",
+                "zlib",
+                "wordpress-stubs",
+                "woocommerce-stubs",
+                "acf-pro-stubs",
+                "wordpress-globals",
+                "wp-cli-stubs",
+                "genesis-stubs",
+                "polylang-stubs"
+            },
+            files = {
+                maxSize = 5000000;
+            };
         })
         lspconfig.intelephense.setup(intelephense_settings)
     end

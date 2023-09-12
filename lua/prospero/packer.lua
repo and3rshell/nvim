@@ -60,8 +60,10 @@ return packer.startup(function(use)
     use { "numToStr/Comment.nvim", commit = "0236521ea582747b58869cb72f70ccfa967d2e89" }
     use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "9bff161dfece6ecf3459e6e46ca42e49f9ed939f" }
     use { "tpope/vim-surround", commit = "3d188ed2113431cf8dac77be61b842acb64433d9" } -- ex. cs"', ds", ysiw]
+    use { "gbprod/php-enhanced-treesitter.nvim", commit = "9032da69daf0cb51b034ad972af1be121690e7c" }
+    use { "derekstride/tree-sitter-sql", commit = "f04e4b1fbf7ec43aba7ef65851acc44c14171bcc" }
 
-    -- lsp
+    -- LSP
     use { "neovim/nvim-lspconfig", commit = "67f151e84daddc86cc65f5d935e592f76b9f4496" }
     use { "williamboman/mason.nvim", commit = "a51c2d063c5377ee9e58c5f9cda7c7436787be72" }
     use { "williamboman/mason-lspconfig.nvim", commit = "7e8208a4d936f93303cc229af865a2cd226c807f" }
@@ -69,13 +71,16 @@ return packer.startup(function(use)
     -- use("ray-x/lsp_signature.nvim")
     use {
         'j-hui/fidget.nvim',
-        tag = 'legacy',
-        -- commit = "89b633f3bd0b7187f070236b348697de176860e2"
+        tag = 'legacy'
     }
     use { 'simrat39/symbols-outline.nvim', commit = "512791925d57a61c545bc303356e8a8f7869763c" }
     -- use { "nvim-lua/lsp-status.nvim", commit = "54f48eb5017632d81d0fd40112065f1d062d0629" }
 
-    -- cmp
+    -- Linting & formatting
+    use { "mfussenegger/nvim-lint", commit = "73682da41b74c9c35f33b1b2dbd0cc02cc59452f" }
+    use { "mhartington/formatter.nvim", commit = "44c89f09dcc220dc2a9b056e93c3a87c86e79804" }
+
+    -- CMP
     use { "hrsh7th/nvim-cmp", commit = "51f1e11a89ec701221877532ee1a23557d291dd5" }
     use { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }
     use { "hrsh7th/cmp-path", commit = "91ff86cd9c29299a64f968ebb45846c485725f23" }
@@ -83,7 +88,8 @@ return packer.startup(function(use)
     use { "hrsh7th/cmp-cmdline", commit = "8ee981b4a91f536f52add291594e89fb6645e451" }
     use { "hrsh7th/cmp-nvim-lsp", commit = "44b16d11215dce86f253ce0c30949813c0a90765" }
     use { 'hrsh7th/cmp-nvim-lua', commit = "f12408bdb54c39c23e67cab726264c10db33ada8" }
-    use { 'jezda1337/nvim-html-css', commit = "47cfa2d3f165954c71fe86591c054b48bdc14e20" } -- bootstrap
+    -- bootstrap
+    use { 'jezda1337/nvim-html-css', commit = "47cfa2d3f165954c71fe86591c054b48bdc14e20" }
 
     -- snippets
     use { "L3MON4D3/LuaSnip", commit = "c4d6298347f7707e9757351b2ee03d0c00da5c20" }
