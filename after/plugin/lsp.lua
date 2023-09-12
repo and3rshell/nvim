@@ -116,7 +116,7 @@ mason_lspconfig.setup({
         "cssls",
         "cssmodules_ls",
         "dockerls",
-        "eslint", -- 
+        "eslint", --
         "emmet_ls",
         "gopls",
         "graphql",
@@ -149,10 +149,10 @@ local common_settings = {
 }
 
 mason_lspconfig.setup_handlers {
-    function (server_name)
+    function(server_name)
         lspconfig[server_name].setup(common_settings)
     end,
-    ["lua_ls"] = function ()
+    ["lua_ls"] = function()
         local lua_ls_settings = vim.tbl_extend("force", common_settings, {
             settings = {
                 Lua = {
@@ -164,13 +164,13 @@ mason_lspconfig.setup_handlers {
         })
         lspconfig.lua_ls.setup(lua_ls_settings)
     end,
-    ["emmet_ls"] = function ()
+    ["emmet_ls"] = function()
         local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
             -- Add any specific settings for emmet_ls if needed
         })
         lspconfig.emmet_ls.setup(emmet_ls_settings)
     end,
-    ["html"] = function ()
+    ["html"] = function()
         local html_settings = vim.tbl_extend("force", common_settings, {
             filetypes = { "html", "php" },
             init_options = {
@@ -184,9 +184,11 @@ mason_lspconfig.setup_handlers {
         })
         lspconfig.html.setup(html_settings)
     end,
-    ["intelephense"] = function ()
+    ["intelephense"] = function()
         local intelephense_settings = vim.tbl_extend("force", common_settings, {
-            path = "$HOME/.local/share/intelephense",
+            init_options = {
+                globalStoragePath = os.getenv('HOME') .. '/.local/share/intelephense'
+            }
         })
         lspconfig.intelephense.setup(intelephense_settings)
     end
