@@ -144,7 +144,7 @@ snippet forek
 snippet try
 	try {
 		${1}
-	} catch (${2:Exception} $e) {
+	} catch (${2:Throwable} $exception) {
 		${0:${VISUAL}}
 	}
 snippet vd
@@ -196,10 +196,17 @@ snippet inco
 	include_once("${1}");
 snippet dd
 	dd(${1});
+snippet ddd
+	dd(${1});
+	die(${0:});
+snippet die
+	die(${0});
+snippet exit
+	exit(${0});
 snippet [
 	[${1}];
 snippet arr
 	array(${1});
 snippet catch
-	catch (${2:Exception} $e) {
+	catch (${2:Exception} $exception) {
 		${0:${VISUAL}}

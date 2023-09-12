@@ -1,3 +1,7 @@
+local lspconfig = require('lspconfig');
+local mason = require('mason')
+local mason_lspconfig = require('mason-lspconfig')
+
 local function lsp_keymaps(bufnr)
     local map = function(m, lhs, rhs)
         local opts = { remap = false, silent = true, buffer = bufnr }
@@ -94,7 +98,7 @@ local function lsp_attach(client, bufnr)
     end, { desc = 'Format buffer with language server' })
 end
 
-require('mason').setup({
+mason.setup({
     ui = {
         icons = {
             package_installed = "✓",
@@ -104,13 +108,9 @@ require('mason').setup({
     }
 })
 
-local lspconfig = require('lspconfig');
-local mason_lspconfig = require('mason-lspconfig')
-
 mason_lspconfig.setup({
     ensure_installed = {
         "bashls",
-        -- "shellcheck",
         "clangd", -- c, c++
         "cmake",
         "cssls",
@@ -131,7 +131,7 @@ mason_lspconfig.setup({
         "sqlls",
         "tailwindcss",
         "vimls",
-        "vuels", -- vue
+        "vuels",
         "lemminx", -- xml
     },
     automatic_installation = true,
@@ -140,43 +140,54 @@ mason_lspconfig.setup({
 -- Define the server capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-local handlers = {
-    function(server_name)
-        lspconfig[server_name].setup({
-            on_attach = lsp_attach,
-            capabilities = capabilities,
-        })
-    end,
-}
-
-mason_lspconfig.setup({ handlers = handlers })
-
-lspconfig.emmet_ls.setup({
-    on_attach = lsp_attach,
-    capabilities = capabilities,
-    -- filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue", "php" }
-    filetypes = { "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
-})
-
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.html.setup({
+-- Define the common on_attach and capabilities settings
+local common_settings = {
+    on_attach = lsp_attach,
     capabilities = capabilities,
-    filetypes = { "html", "php" },
-    init_options = {
-        -- configurationSection = { "html", "css", "javascript", "php" },
-        configurationSection = { "html", "css", "javascript" },
-        embeddedLanguages = {
-            css = true,
-            javascript = true,
-            -- php = true
-        },
-        provideFormatter = true
-    }
-})
+}
 
-lspconfig.intelephense.setup({
-    -- doesnt work
-    -- path = "$HOME/.local/share/intelephense"
-})
+mason_lspconfig.setup_handlers {
+    function (server_name)
+        lspconfig[server_name].setup(common_settings)
+    end,
+    ["lua_ls"] = function ()
+        local lua_ls_settings = vim.tbl_extend("force", common_settings, {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            },
+        })
+        lspconfig.lua_ls.setup(lua_ls_settings)
+    end,
+    ["emmet_ls"] = function ()
+        local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
+            -- Add any specific settings for emmet_ls if needed
+        })
+        lspconfig.emmet_ls.setup(emmet_ls_settings)
+    end,
+    ["html"] = function ()
+        local html_settings = vim.tbl_extend("force", common_settings, {
+            filetypes = { "html", "php" },
+            init_options = {
+                configurationSection = { "html", "css", "javascript" },
+                embeddedLanguages = {
+                    css = true,
+                    javascript = true,
+                },
+                provideFormatter = true,
+            },
+        })
+        lspconfig.html.setup(html_settings)
+    end,
+    ["intelephense"] = function ()
+        local intelephense_settings = vim.tbl_extend("force", common_settings, {
+            path = "$HOME/.local/share/intelephense",
+        })
+        lspconfig.intelephense.setup(intelephense_settings)
+    end
+}
