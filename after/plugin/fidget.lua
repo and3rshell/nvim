@@ -48,8 +48,8 @@ fidget.setup{
     --         ignore = false,         -- Ignore notifications from this source
     --     },
     -- },
-    debug = {
-        logging = true,          -- whether to enable logging, for debugging
-        strict = false,           -- whether to interpret LSP strictly
-    },
+    -- debug = {
+    --     logging = true,          -- whether to enable logging, for debugging
+    --     strict = false,           -- whether to interpret LSP strictly
+    -- },
 }

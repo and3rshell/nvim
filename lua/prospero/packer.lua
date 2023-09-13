@@ -37,7 +37,7 @@ packer.init {
 return packer.startup(function(use)
     use { "wbthomason/packer.nvim", commit = "90f794d01dd5f50404f8ef6e1d22377ba5180787" }
     use { "nvim-lua/plenary.nvim", commit = "267282a9ce242bbb0c5dc31445b6d353bed978bb" }
-    use { "nvim-telescope/telescope.nvim", commit = "2d92125620417fbea82ec30303823e3cd69e90e8" }
+    use { "nvim-telescope/telescope.nvim" }
     use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" }
     use { "windwp/nvim-autopairs", commit = "ae5b41ce880a6d850055e262d6dfebd362bb276e" }
     use { "ThePrimeagen/harpoon", commit = "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" }

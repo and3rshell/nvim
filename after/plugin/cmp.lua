@@ -1,4 +1,4 @@
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- local lspkind = require('lspkind')
 local cmp = require('cmp')
@@ -12,18 +12,18 @@ cmp.setup {
             select = true,
         },
         ['<c-space>'] = cmp.mapping.complete(),
-        ['<C-y>'] = cmp.mapping.confirm({select = false}),
+        ['<C-y>'] = cmp.mapping.confirm({ select = false }),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-c>'] = cmp.mapping(function() cmp.close() end)
     },
     sources = {
-        {name = 'luasnip'},
-        {name = 'nvim_lsp'},
-        {name = 'nvim_lua'},
-        {name = 'path'},
-        {name = 'buffer'},
-        {name = 'bootstrap'},
+        { name = 'luasnip' },
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua' },
+        { name = 'path' },
+        { name = 'buffer' },
+        { name = 'bootstrap' },
     },
     snippet = {
         expand = function(args)
@@ -31,7 +31,7 @@ cmp.setup {
         end,
     },
     formatting = {
-        fields = {'abbr', 'menu', 'kind'},
+        fields = { 'abbr', 'menu', 'kind' },
         format = function(entry, item)
             local short_name = {
                 nvim_lsp = 'LSP',
@@ -66,6 +66,11 @@ cmp.setup {
         completeopt = 'menu,menuone,noinsert'
     },
     window = {
+        completion = {
+            winhighlight = "Normal:NormalFloat,FloatBorder:Pmenu,Search:None",
+            col_offset = -3,
+            side_padding = 0,
+        },
         documentation = vim.tbl_deep_extend(
             'force',
             cmp.config.window.bordered(),

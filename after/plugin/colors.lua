@@ -16,8 +16,9 @@ vim.g.italic_keywords = true
 vim.g.italic_functions = true
 vim.g.italic_variables = true
 
+
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "black" })
 
 vim.cmd.highlight("EndOfBuffer guibg=NONE ctermbg=NONE")
 vim.cmd.highlight("StatusLine guibg=NONE ctermbg=NONE")
