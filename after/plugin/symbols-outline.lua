@@ -1,5 +1,7 @@
 local so = require("symbols-outline")
 
+vim.keymap.set("n", "<leader>S", ":SymbolsOutline<cr>")
+
 local opts = {
     highlight_hovered_item = true,
     show_guides = true,

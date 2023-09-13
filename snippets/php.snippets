@@ -144,9 +144,9 @@ snippet forek
 snippet try
 	try {
 		${1}
-	} catch (${2:Throwable} $exception) {
-		${0:${VISUAL}}
-	}
+	} catch (${2:Throwable} \$exception) {
+		${3}
+	}${0}
 snippet vd
 	var_dump(${0});
 snippet vdd
@@ -203,8 +203,6 @@ snippet die
 	die(${0});
 snippet exit
 	exit(${0});
-snippet [
-	[${1}];
 snippet arr
 	array(${1});
 snippet catch

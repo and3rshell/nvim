@@ -12,7 +12,7 @@ phpcs.args = {
 lint.linters_by_ft = {
     sh = { 'shellcheck' },
     php = { 'phpcs' },
-    js = { 'eslint' },
+    -- js = { 'eslint' },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {

@@ -44,24 +44,20 @@ return packer.startup(function(use)
     use { "nvim-lualine/lualine.nvim", commit = "45e27ca739c7be6c49e5496d14fcf45a303c3a63" }
     use { "mbbill/undotree", commit = "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" }
     use { "folke/zen-mode.nvim", commit = "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" }
-
-    -- colors and icons
-    use { "lunarvim/darkplus.nvim", commit = "7c236649f0617809db05cd30fb10fed7fb01b83b" }
-    use { "kyazdani42/nvim-web-devicons", commit = "cfc8824cc1db316a276b36517f093baccb8e799a" }
-    -- use("nvim-tree/nvim-tree.lua")
-    -- use("nvim-tree/nvim-web-devicons")
-    use { "tamago324/lir.nvim", commit = "969e95bd07ec315b5efc53af69c881278c2b74fa" }
-    use { "tamago324/lir-git-status.nvim", commit = "4d574f6a9e6d7ce3fe6cccb87a601fb72fb0404d" }
-
-    -- treesitter and related
-    use { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate', commit = "8fa7ce35afe88b8294e6ced757aa14ec98414568" }
-    use { "nvim-treesitter/nvim-treesitter-context", commit = "5dd8c2121170f806c3d0689d9e0dd24250e4f342" }
-    -- use("andymass/vim-matchup")
+    use { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' }
+    use { "nvim-treesitter/nvim-treesitter-context" }
+    use { "andymass/vim-matchup", commit = "6dbe108230c7dbbf00555b7d4d9f6a891837ef07" }
     use { "numToStr/Comment.nvim", commit = "0236521ea582747b58869cb72f70ccfa967d2e89" }
     use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "9bff161dfece6ecf3459e6e46ca42e49f9ed939f" }
-    use { "tpope/vim-surround", commit = "3d188ed2113431cf8dac77be61b842acb64433d9" } -- ex. cs"', ds", ysiw]
     use { "gbprod/php-enhanced-treesitter.nvim", commit = "9032da69daf0cb51b034ad972af1be121690e7c" }
     use { "derekstride/tree-sitter-sql", commit = "f04e4b1fbf7ec43aba7ef65851acc44c14171bcc" }
+    use { "tpope/vim-surround", commit = "3d188ed2113431cf8dac77be61b842acb64433d9" }
+    use { "lukas-reineke/indent-blankline.nvim", commit = "9637670896b68805430e2f72cf5d16be5b97a22a" }
+
+    use { "lunarvim/darkplus.nvim", commit = "7c236649f0617809db05cd30fb10fed7fb01b83b" }
+    use { "kyazdani42/nvim-web-devicons", commit = "cfc8824cc1db316a276b36517f093baccb8e799a" }
+    use { "tamago324/lir.nvim", commit = "969e95bd07ec315b5efc53af69c881278c2b74fa" }
+    use { "tamago324/lir-git-status.nvim", commit = "4d574f6a9e6d7ce3fe6cccb87a601fb72fb0404d" }
 
     -- LSP
     use { "neovim/nvim-lspconfig", commit = "67f151e84daddc86cc65f5d935e592f76b9f4496" }
@@ -77,8 +73,8 @@ return packer.startup(function(use)
     -- use { "nvim-lua/lsp-status.nvim", commit = "54f48eb5017632d81d0fd40112065f1d062d0629" }
 
     -- Linting & formatting
-    use { "mfussenegger/nvim-lint", commit = "73682da41b74c9c35f33b1b2dbd0cc02cc59452f" }
-    use { "mhartington/formatter.nvim", commit = "44c89f09dcc220dc2a9b056e93c3a87c86e79804" }
+    use { "mfussenegger/nvim-lint" }
+    -- use { "mhartington/formatter.nvim" }
 
     -- CMP
     use { "hrsh7th/nvim-cmp", commit = "51f1e11a89ec701221877532ee1a23557d291dd5" }
@@ -91,17 +87,17 @@ return packer.startup(function(use)
     -- bootstrap
     use { 'jezda1337/nvim-html-css', commit = "47cfa2d3f165954c71fe86591c054b48bdc14e20" }
 
-    -- snippets
+    -- Snippets
     use { "L3MON4D3/LuaSnip", commit = "c4d6298347f7707e9757351b2ee03d0c00da5c20" }
     use { "rafamadriz/friendly-snippets", commit = "377d45475b49e37460a902d6d569d2093d4037d0" }
 
     use { 'yaegassy/coc-blade', commit = "527b0ca8ca6a2fac7a20896b4a3222ce5689f945" }
     use { 'https://github.com/jwalton512/vim-blade', commit = "9534101808cc320eef003129a40cab04b026a20c" }
 
-    -- fix error while opening directory in lir
+    -- Fix error while opening directory in lir
     use { "tpope/vim-vinegar", commit = "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6" }
 
-    -- git
+    -- Git
     use { "tpope/vim-fugitive", commit = "b3b838d690f315a503ec4af8c634bdff3b200aaf" }
     use {
         'lewis6991/gitsigns.nvim',
@@ -115,11 +111,9 @@ return packer.startup(function(use)
     use { 'voldikss/vim-floaterm', commit = "bcaeabf89a92a924031d471395054d84bd88ce2f" }
     use { 'ptzz/lf.vim', commit = "e77c40a5ff3e900fb2c348939c636667df647bc8" } -- used with floaterm
 
-    -- tabline
+    -- Tabline
     use { "akinsho/bufferline.nvim", commit = "417b303328118b6d836ae330142e88771c48a8a3" }
     use { "tiagovla/scope.nvim", commit = "48c88376a9dbed96aaf33268b369c14850836fad" } -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
     use { "jose-elias-alvarez/buftabline.nvim" }
-
-    use { "lukas-reineke/indent-blankline.nvim", commit = "9637670896b68805430e2f72cf5d16be5b97a22a" }
 end)
