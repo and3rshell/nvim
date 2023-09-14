@@ -114,7 +114,7 @@ mason_lspconfig.setup({
 		"cssls",
 		"cssmodules_ls",
 		"dockerls",
-		"eslint", --
+		-- "eslint", --
 		"emmet_ls",
 		"gopls",
 		"graphql",
