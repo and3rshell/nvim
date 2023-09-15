@@ -21,6 +21,7 @@ vim.keymap.set("v", "p", '"_dP')
 -- vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- vim.keymap.set("n", "<leader>d", "\"_d")
 -- vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>P", "O<esc>P")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -47,8 +48,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 
-vim.keymap.set("n", "gch", "I<!-- <esc>A --!><esc>0")
--- vim.keymap.set("n", "gcH", "0df-xx$xxxxx0")
+vim.keymap.set("n", "gch", "I<!-- <esc>A --><esc>0")
 vim.keymap.set("n", "gcH", "0df $daw0")
 vim.keymap.set("n", "gcp", "I// <esc>0")
 vim.keymap.set("n", "gcP", "0df ")
@@ -83,3 +83,5 @@ vim.keymap.set("i", "<C-x>", "<esc>A;")
 -- Markdown
 vim.keymap.set("n", "<C-b>", "i**<esc>ea**<esc>B")
 vim.keymap.set("n", "da*", "xxwxxB")
+
+vim.keymap.set("n", "<leader>F", "gg=G<C-o>")
