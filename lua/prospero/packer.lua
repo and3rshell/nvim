@@ -1,22 +1,17 @@
 local fn = vim.fn
 
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
----@diagnostic disable-next-line: missing-parameter
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system {
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
-    }
-    print "Installing packer, close and reopen Neovim."
-    vim.cmd [[packadd packer.nvim]]
+local ensure_packer = function()
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
--- Use a protected call so we don't error out on first use
+local packer_bootstrap = ensure_packer()
+
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
     return
@@ -34,7 +29,7 @@ packer.init {
     },
 }
 
-return packer.startup(function(use)
+return require('packer').startup(function(use)
     use { "wbthomason/packer.nvim", commit = "90f794d01dd5f50404f8ef6e1d22377ba5180787" }
     use { "nvim-lua/plenary.nvim", commit = "267282a9ce242bbb0c5dc31445b6d353bed978bb" }
     use { "nvim-telescope/telescope.nvim" }
@@ -60,9 +55,9 @@ return packer.startup(function(use)
     use { "tamago324/lir-git-status.nvim", commit = "4d574f6a9e6d7ce3fe6cccb87a601fb72fb0404d" }
 
     -- LSP
-    use { "neovim/nvim-lspconfig", commit = "67f151e84daddc86cc65f5d935e592f76b9f4496" }
-    use { "williamboman/mason.nvim", commit = "a51c2d063c5377ee9e58c5f9cda7c7436787be72" }
-    use { "williamboman/mason-lspconfig.nvim", commit = "7e8208a4d936f93303cc229af865a2cd226c807f" }
+    use { "neovim/nvim-lspconfig" }
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
     -- use("onsails/lspkind.nvim")
     -- use("ray-x/lsp_signature.nvim")
     use {
@@ -77,19 +72,19 @@ return packer.startup(function(use)
     -- use { "mhartington/formatter.nvim" }
 
     -- CMP
-    use { "hrsh7th/nvim-cmp", commit = "51f1e11a89ec701221877532ee1a23557d291dd5" }
-    use { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }
-    use { "hrsh7th/cmp-path", commit = "91ff86cd9c29299a64f968ebb45846c485725f23" }
-    use { "saadparwaiz1/cmp_luasnip", commit = "18095520391186d634a0045dacaa346291096566" }
-    use { "hrsh7th/cmp-cmdline", commit = "8ee981b4a91f536f52add291594e89fb6645e451" }
-    use { "hrsh7th/cmp-nvim-lsp", commit = "44b16d11215dce86f253ce0c30949813c0a90765" }
-    use { 'hrsh7th/cmp-nvim-lua', commit = "f12408bdb54c39c23e67cab726264c10db33ada8" }
+    use { "hrsh7th/nvim-cmp" }
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-path" }
+    use { "saadparwaiz1/cmp_luasnip" }
+    use { "hrsh7th/cmp-cmdline" }
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { 'hrsh7th/cmp-nvim-lua' }
     -- bootstrap
-    use { 'jezda1337/nvim-html-css', commit = "47cfa2d3f165954c71fe86591c054b48bdc14e20" }
+    use { 'jezda1337/nvim-html-css' }
 
     -- Snippets
-    use { "L3MON4D3/LuaSnip", commit = "c4d6298347f7707e9757351b2ee03d0c00da5c20" }
-    use { "rafamadriz/friendly-snippets", commit = "377d45475b49e37460a902d6d569d2093d4037d0" }
+    use { "L3MON4D3/LuaSnip" }
+    use { "rafamadriz/friendly-snippets" }
 
     use { 'yaegassy/coc-blade', commit = "527b0ca8ca6a2fac7a20896b4a3222ce5689f945" }
     use { 'https://github.com/jwalton512/vim-blade', commit = "9534101808cc320eef003129a40cab04b026a20c" }
@@ -112,8 +107,15 @@ return packer.startup(function(use)
     use { 'ptzz/lf.vim', commit = "e77c40a5ff3e900fb2c348939c636667df647bc8" } -- used with floaterm
 
     -- Tabline
-    use { "akinsho/bufferline.nvim", commit = "417b303328118b6d836ae330142e88771c48a8a3" }
-    use { "tiagovla/scope.nvim", commit = "48c88376a9dbed96aaf33268b369c14850836fad" } -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
-    use { "moll/vim-bbye", commit = "25ef93ac5a87526111f43e5110675032dbcacf56" }
+    use { "akinsho/bufferline.nvim" }
+    -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
+    use { "tiagovla/scope.nvim" }
+    use { "moll/vim-bbye" }
     use { "jose-elias-alvarez/buftabline.nvim" }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
