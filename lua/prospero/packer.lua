@@ -49,10 +49,10 @@ return require('packer').startup(function(use)
     use { "tpope/vim-surround", commit = "3d188ed2113431cf8dac77be61b842acb64433d9" }
     use { "lukas-reineke/indent-blankline.nvim", commit = "9637670896b68805430e2f72cf5d16be5b97a22a" }
 
-    use { "lunarvim/darkplus.nvim", commit = "7c236649f0617809db05cd30fb10fed7fb01b83b" }
-    use { "kyazdani42/nvim-web-devicons", commit = "cfc8824cc1db316a276b36517f093baccb8e799a" }
-    use { "tamago324/lir.nvim", commit = "969e95bd07ec315b5efc53af69c881278c2b74fa" }
-    use { "tamago324/lir-git-status.nvim", commit = "4d574f6a9e6d7ce3fe6cccb87a601fb72fb0404d" }
+    use { "lunarvim/darkplus.nvim" }
+    use { "kyazdani42/nvim-web-devicons" }
+    use { "tamago324/lir.nvim" }
+    use { "tamago324/lir-git-status.nvim" }
 
     -- LSP
     use { "neovim/nvim-lspconfig" }

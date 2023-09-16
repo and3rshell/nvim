@@ -1,21 +1,15 @@
 local telescope = require("telescope")
 local actions = require "telescope.actions"
 local builtin = require('telescope.builtin')
+local putils = require("telescope.previewers.utils")
 
--- vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", { noremap = true, silent = true })
+opts = { silent = true }
 
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>")
-vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>")
-vim.keymap.set("n", "<leader>H", ":Telescope help_tags<CR>")
--- vim.keymap.set("n", "<leader>fs", ":Telescope search_history<CR>")
--- vim.keymap.set("n", "<leader>fm", ":Telescope man_pages<CR>")
--- vim.keymap.set("n", "<leader>fj", ":Telescope jumplist<CR>")
--- vim.keymap.set("n", "<leader>fc", ":Telescope commands<CR>")
--- vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>")
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
-vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>")
--- vim.keymap.set("n", "<leader>ft", ":Telescope filetypes<CR>")
--- vim.keymap.set("n", "<leader>fr", ":Telescope lsp_references<CR>")
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
+vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>", opts)
+vim.keymap.set("n", "<leader>H", ":Telescope help_tags<CR>", opts)
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
 vim.keymap.set('n', '<leader>G', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
@@ -23,8 +17,38 @@ end)
 telescope.setup {
     defaults = {
         path_display = { "smart" },
+        initial_mode = "insert",
         file_ignore_patterns = { ".git/", "node_modules" },
-        preview = true,
+        preview = {
+            -- 1) Do not show previewer for certain files
+            filetype_hook = function(filepath, bufnr, opts)
+                -- you could analogously check opts.ft for filetypes
+                local excluded = vim.tbl_filter(function(ending)
+                    return filepath:match(ending)
+                end, {
+                    ".*%.csv",
+                    ".*%.toml",
+                })
+                if not vim.tbl_isempty(excluded) then
+                    putils.set_preview_message(
+                        bufnr,
+                        opts.winid,
+                        string.format("I don't like %s files!",
+                            excluded[1]:sub(5, -1))
+                    )
+                    return false
+                end
+                return true
+            end,
+            -- 2) Truncate lines to preview window for too large files
+            filesize_hook = function(filepath, bufnr, opts)
+                local path = require("plenary.path"):new(filepath)
+                -- opts exposes winid
+                local height = vim.api.nvim_win_get_height(opts.winid)
+                local lines = vim.split(path:head(height), "[\r]?\n")
+                vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, lines)
+            end,
+        },
         mappings = {
             i = {
                 ["<C-j>"] = actions.move_selection_next,
