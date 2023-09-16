@@ -30,12 +30,12 @@ packer.init {
 }
 
 return require('packer').startup(function(use)
-    use { "wbthomason/packer.nvim", commit = "90f794d01dd5f50404f8ef6e1d22377ba5180787" }
-    use { "nvim-lua/plenary.nvim", commit = "267282a9ce242bbb0c5dc31445b6d353bed978bb" }
+    use { "wbthomason/packer.nvim" }
+    use { "nvim-lua/plenary.nvim" }
     use { "nvim-telescope/telescope.nvim" }
-    use { "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" }
-    use { "windwp/nvim-autopairs", commit = "ae5b41ce880a6d850055e262d6dfebd362bb276e" }
-    use { "ThePrimeagen/harpoon", commit = "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" }
+    use { "nvim-lua/popup.nvim" }
+    use { "windwp/nvim-autopairs" }
+    use { "ThePrimeagen/harpoon" }
     use { "nvim-lualine/lualine.nvim", commit = "45e27ca739c7be6c49e5496d14fcf45a303c3a63" }
     use { "mbbill/undotree", commit = "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" }
     use { "folke/zen-mode.nvim", commit = "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" }
@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
     -- use { "nvim-lua/lsp-status.nvim", commit = "54f48eb5017632d81d0fd40112065f1d062d0629" }
 
     -- Linting & formatting
-    use { "mfussenegger/nvim-lint" }
+    -- use { "mfussenegger/nvim-lint" }
     -- use { "mhartington/formatter.nvim" }
 
     -- CMP
@@ -79,15 +79,15 @@ return require('packer').startup(function(use)
     use { "hrsh7th/cmp-cmdline" }
     use { "hrsh7th/cmp-nvim-lsp" }
     use { 'hrsh7th/cmp-nvim-lua' }
-    -- bootstrap
+    -- Bootstrap
     use { 'jezda1337/nvim-html-css' }
 
     -- Snippets
     use { "L3MON4D3/LuaSnip" }
     use { "rafamadriz/friendly-snippets" }
 
-    use { 'yaegassy/coc-blade', commit = "527b0ca8ca6a2fac7a20896b4a3222ce5689f945" }
-    use { 'https://github.com/jwalton512/vim-blade', commit = "9534101808cc320eef003129a40cab04b026a20c" }
+    use { 'yaegassy/coc-blade' }
+    use { 'jwalton512/vim-blade' }
 
     -- Fix error while opening directory in lir
     use { "tpope/vim-vinegar", commit = "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6" }

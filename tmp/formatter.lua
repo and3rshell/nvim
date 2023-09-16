@@ -1,10 +1,30 @@
+-- local M = {
+--     filetype = {
+--         php = {
+--             require("formatter.filetypes.php").phpcbf
+--         },
+--         ["*"] = {
+--             require("formatter.filetypes.any").remove_trailing_whitespace
+--         }
+--     }
+-- }
+
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+--     command = "FormatWriteLock"
+-- })
+
+-- vim.keymap.set("n", "<leader>F", ":Format<cr>")
+-- vim.keymap.set("n", "<leader><leader>F", ":FormatWrite<cr>")
+
+-- return M
+
 -- Utilities for creating configurations
 local util = require("formatter.util")
 
-vim.keymap.set("n", "<leader>F", ":Format<cr>")
 
 local phpformatter = {
-    exe = os.getenv("HOME") .. "/.local/share/nvim/mason/bin/phpcbf",
+    -- exe = os.getenv("HOME") .. "/.local/share/nvim/mason/bin/phpcbf",
+    exe = "phpcbf",
     tempfile_dir = "/tmp/",
     args = { "--standard=PSR12" },
     stdin = false,
@@ -72,8 +92,8 @@ require("formatter").setup({
 -- 	command = "FormatWrite",
 -- })
 
--- vim.api.nvim_create_autocmd({ "InsertLeave", "FocusLost" }, {
--- 	group = vim.api.nvim_create_augroup("Format", { clear = true }),
--- 	pattern = "*",
--- 	command = "Format",
--- })
+vim.api.nvim_create_autocmd({ "InsertLeave", "FocusLost" }, {
+	group = vim.api.nvim_create_augroup("Format", { clear = true }),
+	pattern = "*",
+	command = "Format",
+})

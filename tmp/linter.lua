@@ -3,7 +3,6 @@ local phpcs = require('lint.linters.phpcs')
 
 phpcs.args = {
     '-q',
-    -- '--standard=PSR12',
     '--standard=PSR12',
     '--exclude=Generic.Commenting.Todo,Squiz.PHP.CommentedOutCode',
     '--report=json',

@@ -1,40 +1,53 @@
--- Run xrdb whenever Xdefaults or Xresources are updated
-vim.cmd [[
-    augroup xrdb
-    autocmd!
-        autocmd BufRead,BufNewFile Xresources,Xdefaults,xresources,xdefaults set filetype=xdefaults
-        autocmd BufWritePost Xresources,Xdefaults,xresources,xdefaults !xrdb %
-    augroup end
-]]
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "Xresources", "Xdefaults", "xresources", "xdefaults" },
+    callback = function()
+        vim.api.nvim_buf_set_option(0, 'filetype', 'xdefaults')
+    end,
+})
 
--- Disables automatic commenting on newline
-vim.cmd [[
-    augroup autocomment
-    autocmd!
-        autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-    augroup end
-]]
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    pattern = { "Xresources", "Xdefaults", "xresources", "xdefaults" },
+    callback = function()
+        vim.cmd [[ !xrdb % ]]
+    end,
+})
 
-vim.cmd [[
-    autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-]]
+-- vim.cmd [[
+--     autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+-- ]]
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "fugitive" },
+    -- pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "fugitive" },
+    pattern = { "qf", "man", "lspinfo", "spectre_panel", "lir" },
     callback = function()
-        vim.cmd [[
-            " set nobuflisted
-            nnoremap <silent> <buffer> q :close<CR>
-        ]]
+        vim.api.nvim_buf_set_option(0, 'buflisted', true)
+        vim.keymap.set("n", "q", ":close<CR>")
+    end,
+})
+
+vim.api.nvim_create_autocmd('BufWinEnter', {
+    pattern = '*',
+    callback = function(event)
+        if vim.bo[event.buf].filetype == 'help' or vim.bo[event.buf].filetype == 'fugitive' then
+            vim.api.nvim_buf_set_option(0, 'buflisted', true)
+            vim.cmd.only()
+        end
     end,
 })
 
 -- vim.api.nvim_create_autocmd({ "FileType" }, {
---     pattern = { "gitcommit", "markdown" },
+--     pattern = { "help", "fugitive" },
 --     callback = function()
---         vim.opt_local.wrap = true
---     end,
+--         vim.cmd("wincmd L")
+--     end
 -- })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "gitcommit", "markdown" },
+    callback = function()
+        vim.opt_local.wrap = true
+    end,
+})
 
 -- Autocomment fix
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
@@ -42,3 +55,10 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
         vim.cmd "set formatoptions-=cro"
     end,
 })
+
+-- vim.cmd [[
+--     augroup autocomment
+--     autocmd!
+--         autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+--     augroup end
+-- ]]

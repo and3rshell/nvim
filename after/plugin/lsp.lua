@@ -114,13 +114,13 @@ mason_lspconfig.setup({
 		"cssls",
 		"cssmodules_ls",
 		"dockerls",
-		-- "eslint", --
+		"eslint",
 		"emmet_ls",
 		"gopls",
 		"graphql",
 		"html",
 		"jsonls",
-		"tsserver", -- javascript, typescript
+		"tsserver",
 		"lua_ls",
 		"marksman", -- markdown
 		"intelephense",
