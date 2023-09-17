@@ -34,8 +34,8 @@ lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'codedark',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = { "dashboard", "NvimTree", "Outline" }, -- "alpha"
         ignore_focus = {},
         always_divide_middle = true,
@@ -47,21 +47,20 @@ lualine.setup {
         }
     },
     sections = {
-        -- lualine_a = { },
-        lualine_a = { 'mode' },
+        lualine_a = {},
+        -- lualine_a = { 'mode' },
         lualine_b = { 'branch' },
         lualine_c = { 'filename' },
         lualine_x = { diff, diagnostics, progress, filetype },
-        lualine_y = { },
-
-        lualine_z = { }
+        lualine_y = {},
+        lualine_z = {}
     },
     inactive_sections = {
-        lualine_a = { },
-        lualine_b = { },
+        lualine_a = {},
+        lualine_b = {},
         -- lualine_c = { 'filename' },
-        lualine_c = { },
-        lualine_x = { },
+        lualine_c = {},
+        lualine_x = {},
         -- lualine_x = { diff, diagnostics, 'encoding', filetype },
         lualine_y = {},
         lualine_z = {}

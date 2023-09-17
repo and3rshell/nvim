@@ -34,8 +34,8 @@ cmp.setup {
         fields = { 'abbr', 'menu', 'kind' },
         format = function(entry, item)
             local short_name = {
-                nvim_lsp = 'LSP',
-                nvim_lua = 'nvim'
+                nvim_lsp = 'lsp',
+                nvim_lua = 'lua'
             }
 
             local menu_name = short_name[entry.source.name] or entry.source.name
@@ -60,7 +60,7 @@ cmp.setup {
     -- },
     experimental = {
         native_menu = false,
-        ghost_text = true
+        ghost_text = false
     },
     completion = {
         completeopt = 'menu,menuone,noinsert'

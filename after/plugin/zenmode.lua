@@ -2,7 +2,7 @@ vim.keymap.set("n", "<leader>Z", function()
     require("zen-mode").setup {
         window = {
             width = 120,
-            options = { }
+            options = {}
         },
     }
     require("zen-mode").toggle()

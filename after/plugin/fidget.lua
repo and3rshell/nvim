@@ -1,4 +1,4 @@
-fidget = require("fidget")
+local fidget = require("fidget")
 
 vim.cmd.highlight("FidgetTitle ctermfg=110 guifg=#6cb6eb")
 vim.cmd.highlight("FidgetTask ctermfg=239 guifg=#ffffff")

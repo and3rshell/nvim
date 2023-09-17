@@ -1,8 +1,8 @@
-local lir = require'lir'
-local actions = require'lir.actions'
+local lir = require 'lir'
+local actions = require 'lir.actions'
 -- local mark_actions = require 'lir.mark.actions'
-local clipboard_actions = require'lir.clipboard.actions'
-local git_status = require'lir.git_status'
+local clipboard_actions = require 'lir.clipboard.actions'
+local git_status = require 'lir.git_status'
 
 -- Disable netrw
 -- vim.g.loaded_netrw = 1
@@ -14,7 +14,7 @@ git_status.setup({
     show_ignored = false
 })
 
-vim.cmd[[
+vim.cmd [[
     highlight link LirGitStatusBracket Comment
     highlight link LirGitStatusIndex Special
     highlight link LirGitStatusWorktree WarningMsg
@@ -30,32 +30,32 @@ lir.setup {
         highlight_dirname = false
     },
     mappings = {
-        ['l']      = actions.edit,
-        ['<cr>']   = actions.edit,
-        ['o']      = actions.edit,
-        ['<c-x>']      = actions.split,
-        ['<c-v>']      = actions.vsplit,
+        ['l']     = actions.edit,
+        ['<cr>']  = actions.edit,
+        ['o']     = actions.edit,
+        ['<c-x>'] = actions.split,
+        ['<c-v>'] = actions.vsplit,
         -- ['x']      = actions.tabedit,
 
-        ['h']      = actions.up,
-        ['q']      = actions.quit,
-        ['<esc>']  = actions.quit,
+        ['h']     = actions.up,
+        ['q']     = actions.quit,
+        ['<esc>'] = actions.quit,
 
-        ['md']     = actions.mkdir, -- wrong permissions
-        ['mf']     = actions.newfile,
-        ['r']      = actions.rename,
-        ['@']      = actions.cd,
-        ['Y']      = actions.yank_path,
-        ['.']      = actions.toggle_show_hidden,
-        ['dd']     = actions.delete,
+        ['md']    = actions.mkdir,  -- wrong permissions
+        ['mf']    = actions.newfile,
+        ['r']     = actions.rename,
+        ['@']     = actions.cd,
+        ['Y']     = actions.yank_path,
+        ['.']     = actions.toggle_show_hidden,
+        ['dd']    = actions.delete,
 
         -- ['J'] = function()
         --   mark_actions.toggle_mark()
         --   vim.cmd('normal! j')
         -- end,
-        ['y'] = clipboard_actions.copy,
-        ['x'] = clipboard_actions.cut,
-        ['p'] = clipboard_actions.paste,
+        ['y']     = clipboard_actions.copy,
+        ['x']     = clipboard_actions.cut,
+        ['p']     = clipboard_actions.paste,
     },
     float = {
         winblend = 0,
@@ -95,11 +95,10 @@ lir.setup {
 }
 
 -- Custom folder icon
-require'nvim-web-devicons'.set_icon({
+require 'nvim-web-devicons'.set_icon({
     lir_folder_icon = {
         icon = "",
         color = "#7ebae4",
         name = "LirFolderNode"
     }
 })
-

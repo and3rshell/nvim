@@ -23,7 +23,9 @@ vim.keymap.set("v", "p", '"_dP')
 -- vim.keymap.set("v", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>P", "O<esc>P")
 
+vim.keymap.set("n", "Q", "gq")
 vim.keymap.set("n", "Q", "<nop>")
+
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
@@ -32,20 +34,22 @@ vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "Q", "gq")
+
+-- vim.keymap.set("n", "<leader>c", ":noh<CR>")
 vim.keymap.set("v", ".", ":normal .<CR>")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("n", "<leader>k", "Vyp")
 vim.keymap.set("n", "<leader>j", "VyP")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv")
 
 vim.keymap.set("n", "gch", "I<!-- <esc>A --><esc>0")
@@ -54,21 +58,21 @@ vim.keymap.set("n", "gcp", "I// <esc>0")
 vim.keymap.set("n", "gcP", "0df ")
 vim.keymap.set("n", "<leader>fh", ":set filetype=html<CR>")
 vim.keymap.set("n", "<leader>fp", ":set filetype=php<CR>")
-vim.keymap.set("n", "<leader>ob", ':!$BROWSER "%"<cr>')
-vim.keymap.set("n", "<leader>oc", ':!vscodium "%"<cr>')
+vim.keymap.set("n", "<leader>B", ':!$BROWSER "%"<cr>')
+vim.keymap.set("n", "<leader>V", ':!vscodium "%"<cr>')
 vim.cmd([[ nmap <leader>r :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left> ]])
 vim.keymap.set("n", "2o", "o<esc>o")
 vim.keymap.set("n", "2O", "O<esc>O")
 vim.keymap.set("n", "g;", "A;<esc>")
--- vim.keymap.set("n", "<leader>=", "ggVG=")
 -- vim.keymap.set("n", "do", "ddko")
 vim.keymap.set("n", "cG", "ggcG")
+vim.keymap.set("i", "<C-x>", "<esc>A;")
+-- vim.keymap.set("n", "<leader>F", "gg=G<C-o>")
 
 -- Tabs
 -- vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>>", ":tabmove +<CR>")
 vim.keymap.set("n", "<leader><", ":tabmove -<CR>")
--- vim.keymap.set("n", "<leader>c", ":noh<CR>")
 
 -- Splits
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>")
@@ -76,11 +80,6 @@ vim.keymap.set("n", "<leader>x", ":split<CR>")
 vim.keymap.set("n", "<leader>K", "<c-w>_ | <c-w>|")
 vim.keymap.set("n", "<leader>J", "<c-w>=")
 
--- Insert mode
-vim.keymap.set("i", "<C-x>", "<esc>A;")
-
 -- Markdown
 vim.keymap.set("n", "<C-b>", "i**<esc>ea**<esc>B")
 vim.keymap.set("n", "da*", "xxwxxB")
-
-vim.keymap.set("n", "<leader>F", "gg=G<C-o>")
