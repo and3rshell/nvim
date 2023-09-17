@@ -23,7 +23,7 @@ cmp.setup {
         { name = 'nvim_lua' },
         { name = 'path' },
         { name = 'buffer' },
-        { name = 'bootstrap' },
+        { name = 'html-css' },
     },
     snippet = {
         expand = function(args)
@@ -37,6 +37,10 @@ cmp.setup {
                 nvim_lsp = 'lsp',
                 nvim_lua = 'lua'
             }
+
+            -- if entry.source.name == "html-css" then
+            --     item.menu = entry.completion_item.menu
+            -- end
 
             local menu_name = short_name[entry.source.name] or entry.source.name
 
