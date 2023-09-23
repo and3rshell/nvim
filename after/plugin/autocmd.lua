@@ -49,16 +49,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
--- Autocomment fix
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
     callback = function()
-        vim.cmd "set formatoptions-=cro"
+        vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
     end,
 })
 
--- vim.cmd [[
---     augroup autocomment
---     autocmd!
---         autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
---     augroup end
--- ]]
+vim.cmd [[
+    augroup vimrc-incsearch-highlight
+      autocmd!
+      autocmd CmdlineEnter /,\? :set hlsearch
+      autocmd CmdlineLeave /,\? :set nohlsearch
+    augroup END
+]]
