@@ -17,7 +17,7 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.opt.isfname:append("@-@")
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.smartcase = true -- override the 'ignorecase' option if the search pattern contains upper case characters
