@@ -33,7 +33,7 @@ local progress = {
 lualine.setup {
     options = {
         icons_enabled = true,
-        theme = 'codedark',
+        theme = '16color',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = { "dashboard", "NvimTree", "Outline" }, -- "alpha"
@@ -47,9 +47,10 @@ lualine.setup {
         }
     },
     sections = {
-        lualine_a = {},
         -- lualine_a = { 'mode' },
-        lualine_b = { 'branch' },
+        -- lualine_b = { 'branch' },
+        lualine_a = { },
+        lualine_b = { },
         lualine_c = { 'filename' },
         lualine_x = { diff, diagnostics, progress, filetype },
         lualine_y = {},
