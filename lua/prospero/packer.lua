@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
     use { "gbprod/php-enhanced-treesitter.nvim" }
     use { "derekstride/tree-sitter-sql" }
     use { "tpope/vim-surround" }
-    use { "lukas-reineke/indent-blankline.nvim" }
+    -- use { "lukas-reineke/indent-blankline.nvim" }
     use { "windwp/nvim-autopairs" }
 
     -- Colors
