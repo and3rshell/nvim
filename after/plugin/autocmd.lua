@@ -28,9 +28,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd('BufWinEnter', {
     pattern = '*',
     callback = function(event)
-        if vim.bo[event.buf].filetype == 'help' or vim.bo[event.buf].filetype == 'fugitive' then
+        -- if vim.bo[event.buf].filetype == 'help' or vim.bo[event.buf].filetype == 'fugitive' then
+        if vim.bo[event.buf].filetype == 'help' then
             vim.api.nvim_buf_set_option(0, 'buflisted', true)
-            vim.cmd.only()
+            vim.cmd("wincmd L")
+            -- vim.cmd.only()
         end
     end,
 })
