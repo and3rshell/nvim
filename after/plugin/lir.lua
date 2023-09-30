@@ -43,9 +43,9 @@ lir.setup {
         -- ['q'] = actions.quit,
         ['<esc>'] = actions.quit,
 
-        ['md'] = actions.mkdir, -- wrong permissions
+        -- ['md'] = actions.mkdir, -- wrong permissions
         -- ['mf'] = actions.newfine,
-        ['mf'] = actions.touch,
+        -- ['mf'] = actions.touch, -- `m` conflicts with harpoon
         ['r'] = actions.rename,
         ['@'] = actions.cd,
         ['Y'] = actions.yank_path,
@@ -69,9 +69,9 @@ lir.setup {
         end,
         ['p'] = clipboard_actions.paste,
 
-        -- ['m'] = function()
-        --   vim.cmd("lua require('harpoon.ui').toggle_quick_menu()")
-        -- end,
+        ['m'] = function()
+          vim.cmd("lua require('harpoon.ui').toggle_quick_menu()")
+        end,
     },
     float = {
         winblend = 0,

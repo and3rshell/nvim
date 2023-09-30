@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- ]]
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "fugitive" },
+    pattern = { "qf", "man", "lspinfo", "spectre_panel", "fugitive" },
     callback = function()
         vim.keymap.set("n", "q", ":close<CR>")
     end,
@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
         if vim.bo[event.buf].filetype == 'help' then
             vim.api.nvim_buf_set_option(0, 'buflisted', true)
             vim.cmd("wincmd L")
-            vim.keymap.set("n", "q", ":close<CR>")
+            -- vim.keymap.set("n", "q", ":close<CR>")
         end
     end,
 })
