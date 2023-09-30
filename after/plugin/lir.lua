@@ -9,10 +9,10 @@ local git_status = require 'lir.git_status'
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
-vim.api.nvim_set_keymap("n", "<leader>e", ":lua require'lir.float'.toggle()<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>e", ":lua require'lir.float'.toggle()<cr>", { noremap = true, silent = true })
 
 git_status.setup({
-    show_ignored = false
+    show_ignored = true
 })
 
 vim.cmd [[
@@ -40,7 +40,7 @@ lir.setup {
         -- ['x'] = actions.tabedit,
 
         ['h'] = actions.up,
-        ['q'] = actions.quit,
+        -- ['q'] = actions.quit,
         ['<esc>'] = actions.quit,
 
         ['md'] = actions.mkdir, -- wrong permissions
@@ -117,4 +117,11 @@ require 'nvim-web-devicons'.set_icon({
         color = "#7ebae4",
         name = "LirFolderNode"
     }
+})
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "lir" },
+    callback = function()
+        vim.keymap.set("n", "q", ":q!<CR>")
+    end,
 })

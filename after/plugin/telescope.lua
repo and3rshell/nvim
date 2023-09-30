@@ -10,9 +10,9 @@ vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mod
 vim.keymap.set("n", "<leader>H", ":Telescope help_tags<CR>", opts)
 vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
-vim.keymap.set('n', '<leader>G', function()
-    builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end)
+-- vim.keymap.set('n', '<leader>G', function()
+--     builtin.grep_string({ search = vim.fn.input("Grep > ") })
+-- end)
 
 telescope.setup {
     defaults = {

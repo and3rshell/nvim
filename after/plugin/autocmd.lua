@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- ]]
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir", "fugitive" },
+    pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "fugitive" },
     callback = function()
         vim.keymap.set("n", "q", ":close<CR>")
     end,
