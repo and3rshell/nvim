@@ -1,6 +1,6 @@
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
--- local lspkind = require('lspkind')
+local lspkind = require('lspkind')
 local cmp = require('cmp')
 
 cmp.setup {
@@ -23,48 +23,49 @@ cmp.setup {
         { name = 'nvim_lua' },
         { name = 'path' },
         { name = 'buffer' },
-        { name = 'html-css' },
+        { name = 'bootstrap' },
     },
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
         end,
     },
+    -- formatting = {
+    --     fields = { 'abbr', 'menu', 'kind' },
+    --     format = function(entry, item)
+    --         local short_name = {
+    --             nvim_lsp = 'lsp',
+    --             nvim_lua = 'lua'
+    --         }
+
+    --         -- if entry.source.name == "html-css" then
+    --         --     item.menu = entry.completion_item.menu
+    --         -- end
+
+    --         local menu_name = short_name[entry.source.name] or entry.source.name
+
+    --         item.menu = string.format('[%s]', menu_name)
+    --         return item
+    --     end,
+    -- },
     formatting = {
         fields = { 'abbr', 'menu', 'kind' },
-        format = function(entry, item)
-            local short_name = {
-                nvim_lsp = 'lsp',
-                nvim_lua = 'lua'
+        format = lspkind.cmp_format {
+            with_text = true,
+            menu = {
+                buffer = "[buf]",
+                nvim_lsp = "[lsp]",
+                nvim_lua = "[lua]",
+                path = "[path]",
+                luasnip = "[snip]",
+                bootstrap = "[bootstrap]",
             }
-
-            -- if entry.source.name == "html-css" then
-            --     item.menu = entry.completion_item.menu
-            -- end
-
-            local menu_name = short_name[entry.source.name] or entry.source.name
-
-            item.menu = string.format('[%s]', menu_name)
-            return item
-        end,
+        }
     },
-    -- formatting = {
-    --     fields = {'abbr', 'menu', 'kind'},
-    --     format = lspkind.cmp_format {
-    --         with_text = true,
-    --         menu = {
-    --             buffer = "[buf]",
-    --             nvim_lsp = "[lsp]",
-    --             nvim_lua = "[lua]",
-    --             path = "[path]",
-    --             luasnip = "[snip]",
-    --             bootstrap = "[bootstrap]",
-    --         }
-    --     }
-    -- },
     experimental = {
-        native_menu = false,
-        ghost_text = false
+        -- ghost_text = {
+        --     hl_group = 'SignColumn'
+        -- },
     },
     completion = {
         completeopt = 'menu,menuone,noinsert'
@@ -72,15 +73,14 @@ cmp.setup {
     window = {
         completion = {
             winhighlight = "Normal:NormalFloat,FloatBorder:Pmenu,Search:None",
-            col_offset = -3,
-            side_padding = 0,
+            -- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
         },
         documentation = vim.tbl_deep_extend(
             'force',
             cmp.config.window.bordered(),
             {
-                max_height = 15,
-                max_width = 60,
+                max_height = 25,
+                max_width = 70,
             }
         )
     },

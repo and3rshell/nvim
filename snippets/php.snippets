@@ -209,8 +209,6 @@ snippet die
 	die(${0});
 snippet exit
 	exit(${0});
-snippet arr
-	array(${1});
 snippet catch
 	catch (${2:Exception} $exception) {
 		${0:${VISUAL}}
@@ -231,3 +229,5 @@ snippet clf
 snippet head
 	header("Location: /${1}");
 	exit();${0}
+snippet arr
+	[${0}];

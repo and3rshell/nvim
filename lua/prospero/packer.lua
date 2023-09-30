@@ -99,8 +99,10 @@ return require('packer').startup(function(use)
     use { "hrsh7th/cmp-cmdline" }
     use { "hrsh7th/cmp-nvim-lsp" }
     use { 'hrsh7th/cmp-nvim-lua' }
+    use { "onsails/lspkind.nvim" }
     -- Bootstrap
-    use { 'jezda1337/nvim-html-css' }
+    -- use { 'jezda1337/nvim-html-css' }
+    use { 'Jezda1337/cmp_bootstrap' }
 
     -- Snippets
     use { "L3MON4D3/LuaSnip" }
