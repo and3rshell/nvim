@@ -1,5 +1,6 @@
 local lir = require 'lir'
 local actions = require 'lir.actions'
+local mark_actions = require 'lir.mark.actions'
 -- local mark_actions = require 'lir.mark.actions'
 local clipboard_actions = require 'lir.clipboard.actions'
 local git_status = require 'lir.git_status'
@@ -27,35 +28,50 @@ lir.setup {
     show_hidden_files = true,
     devicons = {
         enable = true,
-        highlight_dirname = false
+        highlight_dirname = true
     },
     mappings = {
-        ['l']     = actions.edit,
-        ['<cr>']  = actions.edit,
-        ['o']     = actions.edit,
+        ['l'] = actions.edit,
+        ['<cr>'] = actions.edit,
+        -- ['o'] = actions.edit,
         ['<c-x>'] = actions.split,
         ['<c-v>'] = actions.vsplit,
-        -- ['x']      = actions.tabedit,
+        ['<c-r>'] = actions.reload,
+        -- ['x'] = actions.tabedit,
 
-        ['h']     = actions.up,
-        ['q']     = actions.quit,
+        ['h'] = actions.up,
+        ['q'] = actions.quit,
         ['<esc>'] = actions.quit,
 
-        ['md']    = actions.mkdir,  -- wrong permissions
-        ['mf']    = actions.newfile,
-        ['r']     = actions.rename,
-        ['@']     = actions.cd,
-        ['Y']     = actions.yank_path,
-        ['.']     = actions.toggle_show_hidden,
-        ['dd']    = actions.delete,
+        ['md'] = actions.mkdir, -- wrong permissions
+        -- ['mf'] = actions.newfine,
+        ['mf'] = actions.touch,
+        ['r'] = actions.rename,
+        ['@'] = actions.cd,
+        ['Y'] = actions.yank_path,
+        ['.'] = actions.toggle_show_hidden,
+        -- ['dd'] = actions.delete,
+        ['dd'] = actions.wipeout,
 
-        -- ['J'] = function()
-        --   mark_actions.toggle_mark()
-        --   vim.cmd('normal! j')
+        ['<space>'] = function()
+            mark_actions.toggle_mark()
+            vim.cmd('normal! j')
+        end,
+        ['y'] = function()
+            mark_actions.toggle_mark()
+            vim.cmd('normal! j')
+            clipboard_actions.copy()
+        end,
+        ['x'] = function()
+            mark_actions.toggle_mark()
+            vim.cmd('normal! j')
+            clipboard_actions.cut()
+        end,
+        ['p'] = clipboard_actions.paste,
+
+        -- ['m'] = function()
+        --   vim.cmd("lua require('harpoon.ui').toggle_quick_menu()")
         -- end,
-        ['y']     = clipboard_actions.copy,
-        ['x']     = clipboard_actions.cut,
-        ['p']     = clipboard_actions.paste,
     },
     float = {
         winblend = 0,

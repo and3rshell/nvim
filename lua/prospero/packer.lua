@@ -62,6 +62,8 @@ return require('packer').startup(function(use)
 
     -- File manager
     use { "tamago324/lir.nvim" }
+    -- First install neovim-remote `pipx install neovim-remote`
+    -- use { "tamago324/lir-mmv.nvim" }
     use { "tamago324/lir-git-status.nvim" }
     -- Fix error while opening directory in lir
     use { "tpope/vim-vinegar" }
