@@ -48,7 +48,7 @@ local function lsp_settings()
     vim.diagnostic.config({
         virtual_text = false,
         signs = true,
-        update_in_insert = true, -- if false, diagnostics are updated on InsertLeave
+        update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
         underline = true,
         severity_sort = true,
         float = {

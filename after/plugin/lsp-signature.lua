@@ -1,5 +1,7 @@
 local signature = require("lsp_signature")
 
+vim.cmd.highlight("LspSignatureActiveParameter cterm=reverse ctermfg=100 ctermbg=234 guifg=#bdbb22 guibg=NONE")
+
 local cfg = {
     debug = false,                    -- set to true to enable debug logging
     log_path = "debug_log_file_path", -- debug log path
@@ -25,7 +27,7 @@ local cfg = {
     hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
     max_height = 12,                              -- max height of signature floating_window, if content is more than max_height, you can scroll down
     -- to view the hiding contents
-    max_width = 120,                              -- max_width of signature floating_window, line will be wrapped if exceed max_width
+    max_width = 50,                              -- max_width of signature floating_window, line will be wrapped if exceed max_width
     handler_opts = {
         border = "rounded",                       -- double, rounded, single, shadow, none
     },
@@ -45,7 +47,6 @@ local cfg = {
     toggle_key = nil,         -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
 }
 
--- recommanded:
 signature.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
 
 -- You can also do this inside lsp on_attach
