@@ -1,8 +1,6 @@
-local so = require("symbols-outline")
-
 vim.keymap.set("n", "<leader>S", ":SymbolsOutline<cr>")
 
-local opts = {
+require("symbols-outline").setup{
     highlight_hovered_item = true,
     show_guides = true,
     auto_preview = false,
@@ -65,5 +63,3 @@ local opts = {
         Fragment = { icon = "", hl = "@constant" },
     },
 }
-
-so.setup(opts)

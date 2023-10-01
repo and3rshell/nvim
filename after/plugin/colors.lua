@@ -1,6 +1,8 @@
 vim.o.background = "dark"
 vim.cmd.colorscheme("retrobox")
 
+vim.cmd.highlight("FloatBorder ctermfg=236 ctermbg=234 guifg=#cccccc guibg=#000000")
+
 if vim.g.colors_name == "retrobox" then
     vim.cmd.highlight("DiffAdd cterm=reverse ctermfg=142 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
     vim.cmd.highlight("DiffDelete cterm=reverse ctermfg=142 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
@@ -8,6 +10,8 @@ if vim.g.colors_name == "retrobox" then
 
     vim.cmd.highlight("TelescopeSelection ctermfg=234 ctermbg=109 guifg=#ffffff guibg=#3d2004")
     vim.cmd.highlight("TelescopeMatching ctermfg=208 guifg=#ffab66")
+
+    vim.cmd.highlight("DiagnosticError cterm=bold gui=bold guifg=#f33636")
 end
 
 vim.g.transparent_background = true

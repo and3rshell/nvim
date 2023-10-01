@@ -1,7 +1,7 @@
 -- Setup nvim-cmp.
-local npairs = require("nvim-autopairs")
+local autopairs = require("nvim-autopairs")
 
-npairs.setup {
+autopairs.setup {
     -- check_ts = true,
     -- ts_config = {
     --   lua = { "string", "source" },

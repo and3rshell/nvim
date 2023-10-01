@@ -3,13 +3,13 @@ local actions = require "telescope.actions"
 local builtin = require('telescope.builtin')
 local putils = require("telescope.previewers.utils")
 
-opts = { silent = true }
+local keymap_opts = { silent = true }
 
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", opts)
-vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>", opts)
-vim.keymap.set("n", "<leader>H", ":Telescope help_tags<CR>", opts)
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
-vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>b", ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>H", ":Telescope help_tags<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", keymap_opts)
 -- vim.keymap.set('n', '<leader>G', function()
 --     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 -- end)

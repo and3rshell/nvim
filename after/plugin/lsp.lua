@@ -48,40 +48,48 @@ local function lsp_settings()
     vim.diagnostic.config({
         virtual_text = false,
         signs = true,
-        update_in_insert = false,
+        update_in_insert = true, -- if false, diagnostics are updated on InsertLeave
         underline = true,
         severity_sort = true,
         float = {
             focusable = false,
             style = "default",
-            border = "double",
-            source = "always",
-            header = "Diagnostics:",
+            border = "rounded",
+            source = "if_many",
+            header = "Diagnostics",
             prefix = "• ",
         },
     })
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
-    })
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover, {
+            border = "rounded",
+            max_width = 70,
+            max_height = 25
+            -- title = ""
+        }
+    )
 
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "rounded",
-    })
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help, {
+            border = "rounded",
+            -- title = ""
+        }
+    )
 
-    local command = vim.api.nvim_create_user_command
+    -- local command = vim.api.nvim_create_user_command
 
-    command("LspWorkspaceAdd", function()
-        vim.lsp.buf.add_workspace_folder()
-    end, { desc = "Add folder to workspace" })
+    -- command("LspWorkspaceAdd", function()
+    --     vim.lsp.buf.add_workspace_folder()
+    -- end, { desc = "Add folder to workspace" })
 
-    command("LspWorkspaceList", function()
-        vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, { desc = "List workspace folders" })
+    -- command("LspWorkspaceList", function()
+    --     vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    -- end, { desc = "List workspace folders" })
 
-    command("LspWorkspaceRemove", function()
-        vim.lsp.buf.remove_workspace_folder()
-    end, { desc = "Remove folder from workspace" })
+    -- command("LspWorkspaceRemove", function()
+    --     vim.lsp.buf.remove_workspace_folder()
+    -- end, { desc = "Remove folder from workspace" })
 end
 
 lsp_settings()
