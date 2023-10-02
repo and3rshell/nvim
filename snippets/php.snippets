@@ -3,7 +3,7 @@ extends html
 snippet ?php
 	<?php
 
-	declare(strict_types = 1);${0}
+	declare(strict_types = 1);
 snippet dst
 	declare(strict_types = 1);
 snippet e
@@ -58,8 +58,8 @@ snippet acl
 	}
 snippet cla
 	new class(${1}) {
-		${2}
-	}${0}
+		${0}
+	}
 snippet int
 	interface ${1:`vim_snippets#Filename()`}
 	{
@@ -70,25 +70,25 @@ snippet t
 snippet fun
 	${1}function ${2}(${3})${4}
 	{
-		${5}
-	}${0}
+		${0}
+	}
 snippet funa
 	function (${1}) {
-		${2}
-	}${0}
+		${0}
+	}
 snippet con
 	${1}function __construct(${2})
 	{
-		${3}
-	}${0}
+		${0}
+	}
 snippet if
 	if (${1}) {
-		${2}
-	}${0:${VISUAL}}
+		${0}
+	}
 snippet ifn
 	if (!${1}) {
-		${2}
-	}${0:${VISUAL}}
+		${0}
+	}
 snippet ife
 	if (${1}) {
 		${2}
@@ -103,14 +103,14 @@ snippet ifen
 	}
 snippet elseif
 	else if (${1}) {
-		${2}
-	}${0}
+		${0}
+	}
 snippet else
 	else {
 		${0:${VISUAL}}
 	}
 snippet ift
-	$${1} = ${2} ? ${3} : ${0};
+	${1} ? ${2} : ${0};
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
@@ -149,10 +149,10 @@ snippet try
 	try {
 		${1}
 	} catch (${2:\Throwable} \$exception) {
-		${3}
-	}${0}
+		${0}
+	}
 snippet throw
-	throw new ${1}(${2});${0}
+	throw new ${1}(${0});
 snippet vd
 	var_dump(${0});
 snippet vdd
@@ -169,10 +169,6 @@ snippet ext
 	extends ${1}
 snippet imp
 	implements ${1}
-snippet v
-	$${1} = ${2};
-snippet vv
-	$${1}->${2};
 snippet pub
 	public $${1};
 snippet pro
@@ -191,7 +187,7 @@ snippet prd
 	print_r(${1});
 	die(${0:});
 snippet q
-	->query(${1})${2}
+	->query(${1})
 snippet req
 	require(${1});
 snippet reqo
@@ -209,9 +205,6 @@ snippet die
 	die(${0});
 snippet exit
 	exit(${0});
-snippet catch
-	catch (${2:Exception} $exception) {
-		${0:${VISUAL}}
 snippet clf
 	<?php
 
@@ -221,13 +214,18 @@ snippet clf
 
 	class ${2}
 	{
-		public function ${3}(${4}): ${5}
+		public function __construct(${3})
 		{
-			${6}
-		}${0}
+			${4}
+		}
+
+		public function ${5}(${6}): ${7}
+		{
+			${0}
+		}
 	}
 snippet head
 	header("Location: /${1}");
-	exit();${0}
+	exit();
 snippet arr
 	[${0}];
