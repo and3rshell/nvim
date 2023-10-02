@@ -64,8 +64,9 @@ local function lsp_settings()
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
         vim.lsp.handlers.hover, {
             border = "rounded",
-            max_width = 70,
-            max_height = 25
+            max_height = 25,
+            max_width = 100,
+            focusable = true,
             -- title = ""
         }
     )
@@ -73,7 +74,6 @@ local function lsp_settings()
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
         vim.lsp.handlers.signature_help, {
             border = "rounded",
-            -- title = ""
         }
     )
 
@@ -128,7 +128,6 @@ mason_lspconfig.setup({
         "graphql",
         "html",
         "jsonls",
-        "tsserver",
         "lua_ls",
         "marksman", -- markdown
         "intelephense",
@@ -139,6 +138,8 @@ mason_lspconfig.setup({
         "vimls",
         "vuels",
         "lemminx", -- xml
+        "denols",
+        "tsserver"
     },
     automatic_installation = true,
 })
@@ -191,6 +192,11 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.html.setup(html_settings)
     end,
+    -- ["tsserver"] = function()
+    --     local tsserver_settings = vim.tbl_extend("force", common_settings, {
+    --     })
+    --     lspconfig.tsserver.setup(tsserver_settings)
+    -- end,
     ["intelephense"] = function()
         local intelephense_settings = vim.tbl_extend("force", common_settings, {
             init_options = {
