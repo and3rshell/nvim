@@ -12,6 +12,13 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     end,
 })
 
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile"}, {
+--     pattern = { "*.env" },
+--     callback = function()
+--         vim.lsp.stop_client(vim.lsp.get_clients())
+--     end,
+-- })
+
 -- vim.cmd [[
 --     autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 -- ]]

@@ -66,6 +66,11 @@ vim.keymap.set("n", "<leader>pc", ":edit app/Controllers/<C-r><C-w>.php<Left><Le
 vim.keymap.set("n", "<leader>pa", ":edit app/<C-r><C-w>.php<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>")
 vim.keymap.set("n", "<leader>ps", ":edit src/<C-r><C-w>.php<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>")
 
+vim.keymap.set('n', '<leader>i', function()
+    vim.api.nvim_feedkeys('ea', 'n', true)
+    require("cmp").mapping.complete()
+end)
+
 vim.keymap.set("n", "2o", "o<esc>o")
 vim.keymap.set("n", "2O", "O<esc>O")
 vim.keymap.set("n", "g;", "A;<esc>")
