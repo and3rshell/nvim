@@ -180,7 +180,7 @@ mason_lspconfig.setup_handlers({
     ["html"] = function()
         local html_settings = vim.tbl_extend("force", common_settings, {
             -- filetypes = { "html", "php" },
-            filetypes = { "html" },
+            filetypes = { "html", "blade" },
             init_options = {
                 configurationSection = { "html", "css", "javascript" },
                 embeddedLanguages = {
