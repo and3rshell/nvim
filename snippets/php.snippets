@@ -22,7 +22,7 @@ snippet ?f
 	<?php foreach ($${1:array} as $${2:$value}) : ?>
 		${0:${VISUAL}}
 	<?php endforeach ?>
-snippet ?fk
+snippet ?fkv
 	<?php foreach ($${1:array} as $${2:key} => $${3:value}) : ?>
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
@@ -85,10 +85,6 @@ snippet if
 	if (${1}) {
 		${0}
 	}
-snippet ifn
-	if (!${1}) {
-		${0}
-	}
 snippet ife
 	if (${1}) {
 		${2}
@@ -141,7 +137,7 @@ snippet fore
 	foreach ($${1:var} as $${2:value}) {
 		${0:${VISUAL}}
 	}
-snippet forek
+snippet forekv
 	foreach ($${1:var} as $${2:key} => $${3:value}) {
 		${0:${VISUAL}}
 	}
@@ -152,7 +148,7 @@ snippet try
 		${0}
 	}
 snippet throw
-	throw new ${1}(${0});
+	throw new ${2:\Exception}(${0});
 snippet vd
 	var_dump(${0});
 snippet vdd
@@ -170,20 +166,18 @@ snippet ext
 snippet imp
 	implements ${1}
 snippet pub
-	public $${1};
+	public ${1} $${0};
 snippet pro
-	protected $${1};
+	protected ${1} $${0};
 snippet priv
-	private $${1};
-snippet s
+	private ${1} $${0};
+snippet self
 	self::${1};
-snippet p
+snippet par
 	parent::${1
-snippet n
-	new ${1};
-snippet pr
+snippet pri
 	print_r(${1});
-snippet prd
+snippet prid
 	print_r(${1});
 	die(${0:});
 snippet q
@@ -205,7 +199,7 @@ snippet die
 	die(${0});
 snippet exit
 	exit(${0});
-snippet clf
+snippet classfile
 	<?php
 
 	declare(strict_types=1);
@@ -224,8 +218,20 @@ snippet clf
 			${0}
 		}
 	}
-snippet head
+snippet header
 	header("Location: /${1}");
 	exit();
 snippet arr
 	[${0}];
+snippet empty
+	empty(${0})
+snippet isset
+	isset(${0})
+snippet S
+	\$_SERVER["${1}"]
+snippet SES
+	\$_SESSION["${1}"]
+snippet P
+	\$_POST["${1}"]
+snippet G
+	\$_GET["${1}"]
