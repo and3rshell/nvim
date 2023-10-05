@@ -59,6 +59,13 @@ return require('packer').startup(function(use)
     -- Colors
     use { "lunarvim/darkplus.nvim" }
     use { "kyazdani42/nvim-web-devicons" }
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        -- config = function()
+        --     vim.cmd('colorscheme rose-pine')
+        -- end
+    })
 
     -- File manager
     use { "tamago324/lir.nvim" }

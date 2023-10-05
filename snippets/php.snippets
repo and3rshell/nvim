@@ -6,7 +6,7 @@ snippet ?php
 	declare(strict_types = 1);
 snippet dst
 	declare(strict_types = 1);
-snippet e
+snippet echo
 	echo ${0};
 snippet ?e
 	<?php echo ${0} ?>
@@ -190,11 +190,10 @@ snippet inc
 	include("${1}");
 snippet inco
 	include_once("${1}");
+snippet d
+	dump(${1});
 snippet dd
 	dd(${1});
-snippet ddd
-	dd(${1});
-	die(${0:});
 snippet die
 	die(${0});
 snippet exit
@@ -235,3 +234,25 @@ snippet P
 	\$_POST["${1}"]
 snippet G
 	\$_GET["${1}"]
+snippet @f
+	@foreach($${1:array} as $${2:$value})
+		${3}
+	@endforeach
+snippet @fvk
+	@foreach($${1:array} as $${2:key} => $${3:$value})
+		${3}
+	@endforeach
+snippet route
+	route('${1}', [ ${0} ])
+snippet @php
+	@php
+		${0}
+	@endphp
+snippet @if
+	@if(${1})
+		${0}
+	@endif
+snippet @section
+	@section('${1}')
+		${0}
+	@endsection

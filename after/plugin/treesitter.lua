@@ -38,7 +38,13 @@ require("nvim-treesitter.configs").setup {
         "graphql"
     },
     ignore_install = {}, -- List of parsers to ignore installing
-    auto_install = false,
+
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = false,
+
+    -- Automatically install missing parsers when entering buffer
+    -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+    auto_install = true,
 
     highlight = {
         enable = true, -- false will disable the whole extension
@@ -56,7 +62,7 @@ require("nvim-treesitter.configs").setup {
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
     },
 
     autopairs = {
@@ -65,7 +71,7 @@ require("nvim-treesitter.configs").setup {
 
     indent = {
         enable = true,
-        disable = { "html",  }
+        disable = { "html", }
     },
 
     matchup = {
@@ -77,7 +83,7 @@ require("nvim-treesitter.configs").setup {
 }
 
 require 'treesitter-context'.setup {
-    enable = false,            -- Enable this plugin (Can be enabled/disabled later via commands)
+    enable = false,           -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
     min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
     line_numbers = true,
