@@ -78,8 +78,6 @@ vim.keymap.set("n", "g;", "A;<esc>")
 vim.keymap.set("n", "cG", "ggcG")
 vim.keymap.set("n", "yG", "ggVGy<c-o>")
 -- vim.keymap.set("n", "<leader>F", "gg=G<C-o>")
-vim.keymap.set("n", "<leader>sw", ":set wrap<CR>")
-vim.keymap.set("n", "<leader>sW", ":set nowrap<CR>")
 
 -- Tabs
 -- vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
