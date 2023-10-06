@@ -22,7 +22,7 @@ vim.keymap.set("v", "p", '"_dP')
 -- vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- vim.keymap.set("n", "<leader>d", "\"_d")
 -- vim.keymap.set("v", "<leader>d", "\"_d")
-vim.keymap.set("n", "<leader>P", "O<esc>P")
+vim.keymap.set("n", "<leader>P", "P==")
 
 vim.keymap.set("n", "Q", "gq")
 vim.keymap.set("n", "Q", "<nop>")
