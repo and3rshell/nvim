@@ -3,7 +3,7 @@ require('rose-pine').setup({
 })
 
 vim.o.background = "dark"
-vim.cmd.colorscheme("retrobox")
+vim.cmd.colorscheme("habamax")
 
 vim.cmd.highlight("FloatBorder ctermfg=236 ctermbg=234 guifg=#cccccc guibg=#000000")
 vim.cmd.highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE guibg=NONE")
