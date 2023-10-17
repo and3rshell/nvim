@@ -14,7 +14,7 @@ local cfg = {
     -- This setting only take effect in insert mode, it does not affect signature help in normal
     -- mode, 10 by default
 
-    floating_window = true,                -- show hint in a floating window, set to false for virtual text only mode
+    floating_window = false,                -- show hint in a floating window, set to false for virtual text only mode
 
     floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
     -- will set to true when fully tested, set to false will use whichever side has more space
@@ -40,11 +40,11 @@ local cfg = {
 
     padding = "",             -- character to pad on left and right of signature can be ' ', or '|'  etc
 
-    transparency = nil,       -- disabled by default, allow floating win transparent value 1~100
+    transparency = 100,       -- disabled by default, allow floating win transparent value 1~100
     shadow_blend = 36,        -- if you using shadow as border use this set the opacity
     shadow_guibg = "Black",   -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
     timer_interval = 200,     -- default timer check interval set to lower value if you want to reduce latency
-    toggle_key = nil,         -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+    toggle_key = '<C-s>',     -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
 }
 
 signature.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
