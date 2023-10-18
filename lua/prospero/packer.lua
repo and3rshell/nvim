@@ -25,7 +25,7 @@ packer.init {
         open_fn = function()
             return require("packer.util").float { border = "rounded" }
         end,
-        prompt_border = "rounded", -- Border style of prompt popups.
+        prompt_border = "curved", -- Border style of prompt popups.
     },
 }
 
