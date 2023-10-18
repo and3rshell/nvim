@@ -40,9 +40,16 @@ return require('packer').startup(function(use)
     use { "folke/zen-mode.nvim" }
 
     -- Terminal
-    use { 'voldikss/vim-floaterm' }
-    -- Lf for floaterm
-    use { 'ptzz/lf.vim' }
+    use { "akinsho/toggleterm.nvim", tag = '*'}
+
+    -- File manager
+    -- use { "lmburns/lf.nvim" } -- toggleterm lf
+    use { "tamago324/lir.nvim" }
+    -- First install neovim-remote `pipx install neovim-remote`
+    use { "tamago324/lir-mmv.nvim" }
+    use { "tamago324/lir-git-status.nvim" }
+    -- Fix error while opening directory in lir
+    use { "tpope/vim-vinegar" }
 
     -- Treesitter & related
     use { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' }
@@ -66,14 +73,6 @@ return require('packer').startup(function(use)
         --     vim.cmd('colorscheme rose-pine')
         -- end
     })
-
-    -- File manager
-    use { "tamago324/lir.nvim" }
-    -- First install neovim-remote `pipx install neovim-remote`
-    -- use { "tamago324/lir-mmv.nvim" }
-    use { "tamago324/lir-git-status.nvim" }
-    -- Fix error while opening directory in lir
-    use { "tpope/vim-vinegar" }
 
     -- Statusline & tabline
     use { "nvim-lualine/lualine.nvim" }
