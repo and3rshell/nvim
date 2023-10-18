@@ -95,7 +95,9 @@ return require('packer').startup(function(use)
     use { 'j-hui/fidget.nvim', tag = 'legacy' }
     use { 'simrat39/symbols-outline.nvim' }
     -- use { "nvim-lua/lsp-status.nvim" }
-    use { 'yaegassy/coc-blade' }
+    -- use { "yaegassy/coc-blade" }
+    use { "neoclide/coc.nvim", tag = "release" }
+    use { "othree/html5.vim" }
     use { 'jwalton512/vim-blade' }
     -- use { "mfussenegger/nvim-lint" }
     -- use { "mhartington/formatter.nvim" }
