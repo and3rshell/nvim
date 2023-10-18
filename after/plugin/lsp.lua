@@ -138,7 +138,7 @@ mason_lspconfig.setup({
         "vimls",
         "vuels",
         "lemminx", -- xml
-        "denols",
+        -- "denols",
         "tsserver"
     },
     automatic_installation = true,
