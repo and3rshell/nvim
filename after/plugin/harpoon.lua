@@ -2,7 +2,7 @@ local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
 vim.keymap.set("n", "<leader>a", mark.add_file)
-vim.keymap.set("n", "m", ui.toggle_quick_menu)
+vim.keymap.set("n", "M", ui.toggle_quick_menu)
 -- vim.keymap.set("n", "m", "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>")
 
 vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
