@@ -3,7 +3,7 @@ require('rose-pine').setup({
 })
 
 vim.o.background = "dark"
-vim.cmd.colorscheme("retrobox")
+vim.cmd.colorscheme("habamax")
 
 vim.cmd.highlight("FloatBorder ctermfg=236 ctermbg=234 guifg=#cccccc guibg=#000000")
 vim.cmd.highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE guibg=NONE")
@@ -21,6 +21,13 @@ vim.cmd.highlight("TelescopeMatching ctermfg=208 guifg=#ffab66")
 
 vim.cmd.highlight("DiagnosticError cterm=bold gui=bold guifg=#f33636")
 -- end
+
+if vim.g.colors_name == "habamax" then
+    -- vim.cmd.highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#fabd2f guibg=NONE")
+    vim.cmd.highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#007799 guibg=NONE")
+    vim.cmd.highlight("Visual ctermfg=234 ctermbg=109 guifg=#1c1c1c guibg=#5d8c8c")
+    -- vim.cmd.highlight("Visual ctermfg=234 ctermbg=109 guifg=#1c1c1c guibg=#83a598")
+end
 
 vim.g.transparent_background = true
 vim.g.italic_comments = true
