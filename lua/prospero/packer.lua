@@ -99,6 +99,7 @@ return require('packer').startup(function(use)
     use { 'jwalton512/vim-blade' }
     -- use { "mfussenegger/nvim-lint" }
     -- use { "mhartington/formatter.nvim" }
+    use { "stevearc/conform.nvim" }
 
     -- CMP
     use { "hrsh7th/nvim-cmp" }
