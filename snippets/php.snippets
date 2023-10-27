@@ -18,11 +18,11 @@ snippet ??
 	<?php
 	${0}
 	?>
-snippet ?f
+snippet ?foreach
 	<?php foreach ($${1:array} as $${2:$value}) : ?>
 		${0:${VISUAL}}
 	<?php endforeach ?>
-snippet ?fkv
+snippet ?foreach-keyvalue
 	<?php foreach ($${1:array} as $${2:key} => $${3:value}) : ?>
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
@@ -30,13 +30,13 @@ snippet ?if
 	<?php if ($${1:var}) : ?>
 		${0:${VISUAL}}
 	<?php endif ?>
-snippet ?ife
+snippet ?ifelse
 	<?php if (${1}) : ?>
 		${2}
 	<?php else : ?>
 		${0:${VISUAL}}
 	<?php endif; ?>
-snippet ?ifee
+snippet ?ifelseif
 	<?php if (${1}) : ?>
 		${2}
 	<?php else if (${3}) : ?>
@@ -46,17 +46,17 @@ snippet ?ifee
 	<?php endif; ?>
 snippet ns
 	namespace ${1};
-snippet cl
+snippet class
 	class ${1}
 	{
 		${0:${VISUAL}}
 	}
-snippet acl
+snippet class-abs
 	abstract class ${1}
 	{
 		${0:${VISUAL}}
 	}
-snippet cla
+snippet class-anon
 	new class(${1}) {
 		${0}
 	}
@@ -65,18 +65,18 @@ snippet int
 	{
 		${0:${VISUAL}}
 	}
-snippet t
+snippet this
 	\$this->
 snippet fun
 	${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
-snippet funa
+snippet fun-anon
 	function (${1}) {
 		${0}
 	}
-snippet con
+snippet __con
 	${1:public} function __construct(${2})
 	{
 		${0}
@@ -85,14 +85,8 @@ snippet if
 	if (${1}) {
 		${0}
 	}
-snippet ife
+snippet ifelse
 	if (${1}) {
-		${2}
-	} else {
-		${0:${VISUAL}}
-	}
-snippet ifen
-	if (!${1}) {
 		${2}
 	} else {
 		${0:${VISUAL}}
@@ -105,7 +99,7 @@ snippet else
 	else {
 		${0:${VISUAL}}
 	}
-snippet ift
+snippet if-turnary
 	${1} ? ${2} : ${0};
 snippet switch
 	switch ($${1:variable}) {
@@ -133,18 +127,27 @@ snippet do
 	do {
 		${0:${VISUAL}}
 	} while ($${1:var})
-snippet fore
+snippet foreach
 	foreach ($${1:var} as $${2:value}) {
 		${0:${VISUAL}}
 	}
-snippet forekv
+snippet foreach-keyvalue
 	foreach ($${1:var} as $${2:key} => $${3:value}) {
 		${0:${VISUAL}}
 	}
 snippet try
 	try {
+		${0}
+	}
+
+snippet catch
+	catch (${1:\Throwable} \$e) {
+		${0}
+	}
+snippet trycatch
+	try {
 		${1}
-	} catch (${2:\Throwable} \$exception) {
+	} catch (${2:\Throwable} \$e) {
 		${0}
 	}
 snippet throw
@@ -165,32 +168,30 @@ snippet ext
 	extends ${1}
 snippet imp
 	implements ${1}
-snippet pub
+snippet public
 	public ${1} $${0};
-snippet pro
+snippet protected
 	protected ${1} $${0};
-snippet priv
+snippet private
 	private ${1} $${0};
 snippet self
 	self::${1};
-snippet par
+snippet parent
 	parent::${1
-snippet pri
+snippet printr
 	print_r(${1});
-snippet prid
+snippet printrd
 	print_r(${1});
 	die(${0:});
-snippet q
-	->query(${1})
-snippet req
+snippet require
 	require(${1});
-snippet reqo
+snippet require_once
 	require_once(${1});
-snippet inc
+snippet include
 	include("${1}");
-snippet inco
+snippet include_once
 	include_once("${1}");
-snippet d
+snippet dump
 	dump(${1});
 snippet dd
 	dd(${1});
@@ -220,27 +221,25 @@ snippet classfile
 snippet headerloc
 	header("Location: /${1}");
 	exit();
-snippet headerhttp
-	header("HTTP${0}");
 snippet arr
 	[${0}];
 snippet empty
 	empty(${0})
 snippet isset
 	isset(${0})
-snippet S
+snippet SERVER
 	\$_SERVER["${1}"]
-snippet SES
+snippet SESSION
 	\$_SESSION["${1}"]
-snippet P
+snippet POST
 	\$_POST["${1}"]
-snippet G
+snippet GET
 	\$_GET["${1}"]
-snippet @f
+snippet @foreach
 	@foreach($${1:array} as $${2:$value})
 		${3}
 	@endforeach
-snippet @fvk
+snippet @foreach-keyvalue
 	@foreach($${1:array} as $${2:key} => $${3:$value})
 		${3}
 	@endforeach
@@ -270,3 +269,8 @@ snippet /*
   */
 snippet /
 	/** ${0} */
+snippet __call
+	public function __call($name, $arguments)
+	{
+
+	}
