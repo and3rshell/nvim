@@ -38,16 +38,15 @@ lir.setup {
         ['<c-x>'] = actions.split,
         ['<c-v>'] = actions.vsplit,
         ['<c-r>'] = actions.reload,
-        -- ['x'] = actions.tabedit,
 
         ['h'] = actions.up,
-        -- ['q'] = actions.quit,
+        ['q'] = actions.quit,
         ['<esc>'] = actions.quit,
 
         -- `m` conflicts with harpoon
-        -- ['Md'] = actions.mkdir, -- wrong permissions
-        ['Mf'] = actions.newfile,
-        -- ['Mf'] = actions.touch,
+        -- ['=d'] = actions.mkdir, -- wrong permissions
+        ['=f'] = actions.newfile,
+        -- ['=f'] = actions.touch,
         ['r'] = actions.rename,
         ['@'] = actions.cd,
         ['Y'] = actions.yank_path,
@@ -119,11 +118,4 @@ require 'nvim-web-devicons'.set_icon({
         color = "#7ebae4",
         name = "LirFolderNode"
     }
-})
-
-vim.api.nvim_create_autocmd({ "FileType" }, {
-    pattern = { "lir" },
-    callback = function()
-        vim.keymap.set("n", "q", ":q!<CR>")
-    end,
 })
