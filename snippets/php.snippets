@@ -72,6 +72,21 @@ snippet fun
 	{
 		${0}
 	}
+snippet pfun
+	public function ${1}(${2})${3}
+	{
+		${0}
+	}
+snippet privfun
+	private function ${1}(${2})${3}
+	{
+		${0}
+	}
+snippet profun
+	protected function ${1}(${2})${3}
+	{
+		${0}
+	}
 snippet fun-anon
 	function (${1}) {
 		${0}
@@ -204,19 +219,11 @@ snippet classfile
 
 	declare(strict_types=1);
 
-	namespace ${1};
+	namespace ${1:App};
 
-	class ${2}
+	class ${2:ClassName}
 	{
-		public function __construct(${3})
-		{
-			${4}
-		}
-
-		public function ${5}(${6}): ${7}
-		{
-			${0}
-		}
+		${0}
 	}
 snippet headerloc
 	header("Location: /${1}");
@@ -272,5 +279,10 @@ snippet /
 snippet __call
 	public function __call($name, $arguments)
 	{
-
+		${0}
 	}
+snippet __setUp
+	protected function setUp(): void
+    {
+		${0}
+    }
