@@ -21,7 +21,7 @@ local plugins = {
 	{ "mbbill/undotree" },
 	{ "folke/zen-mode.nvim" },
 	{ "mrjones2014/smart-splits.nvim" },
-	-- { "SmiteshP/nvim-navic" }
+	-- { "SmiteshP/nvim-navic" },
 
 	-- Terminal
 	{ "akinsho/toggleterm.nvim" },
@@ -68,6 +68,7 @@ local plugins = {
 
 	-- Git
 	{ "tpope/vim-fugitive" },
+    { "kdheepak/lazygit.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
 
 	-- LSP & linting & formatting
