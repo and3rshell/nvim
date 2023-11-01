@@ -1,3 +1,5 @@
-require("prospero.packer")
+-- require("prospero.plugins")
 require("prospero.keymap")
 require("prospero.set")
+require("prospero.lazy")
+-- require("prospero.packer")

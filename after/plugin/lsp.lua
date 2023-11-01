@@ -1,6 +1,7 @@
 local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
+-- local navic = require("nvim-navic")
 
 vim.keymap.set("n", "<leader>ld", ":LspStop<cr>")
 vim.keymap.set("n", "<leader>le", ":LspStart<cr>")
@@ -98,6 +99,10 @@ local function lsp_attach(client, bufnr)
     local buf_command = vim.api.nvim_buf_create_user_command
 
     lsp_keymaps(bufnr)
+
+    -- if client.server_capabilities.documentSymbolProvider then
+    --     navic.attach(client, bufnr)
+    -- end
 
     buf_command(bufnr, "LspFormat", function()
         vim.lsp.buf.format()

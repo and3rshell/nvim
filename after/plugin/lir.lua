@@ -10,7 +10,7 @@ local git_status = require 'lir.git_status'
 -- vim.g.loaded_netrwPlugin = 1
 
 vim.api.nvim_set_keymap("n", "<leader>e", ":lua require'lir.float'.toggle()<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>E", ":lua require'lir.float'.asd()<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>E", ":lua require'lir.float'.asd()<cr>", { noremap = true, silent = true })
 
 git_status.setup({
     show_ignored = true
