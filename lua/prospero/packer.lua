@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     use { "ThePrimeagen/harpoon" }
     use { "mbbill/undotree" }
     use { "folke/zen-mode.nvim" }
+    use { "mrjones2014/smart-splits.nvim" }
 
     -- Terminal
     use { "akinsho/toggleterm.nvim", tag = '*'}
