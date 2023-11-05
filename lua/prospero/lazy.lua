@@ -34,6 +34,7 @@ local plugins = {
 	{ "tamago324/lir-git-status.nvim" },
 	-- Fix error while opening directory in lir
 	{ "tpope/vim-vinegar" },
+    -- { 'stevearc/oil.nvim' },
 
 	-- Treesitter & related
 	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
