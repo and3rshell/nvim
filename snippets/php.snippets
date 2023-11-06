@@ -22,7 +22,7 @@ snippet ?foreach
 	<?php foreach ($${1:array} as $${2:$value}) : ?>
 		${0:${VISUAL}}
 	<?php endforeach ?>
-snippet ?foreach-keyvalue
+snippet ?foreachkv
 	<?php foreach ($${1:array} as $${2:key} => $${3:value}) : ?>
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
@@ -51,12 +51,12 @@ snippet class
 	{
 		${0:${VISUAL}}
 	}
-snippet class-abs
+snippet classabs
 	abstract class ${1}
 	{
 		${0:${VISUAL}}
 	}
-snippet class-anon
+snippet classan
 	new class(${1}) {
 		${0}
 	}
@@ -65,29 +65,29 @@ snippet int
 	{
 		${0:${VISUAL}}
 	}
-snippet this
+snippet th
 	\$this->
 snippet fun
 	${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
-snippet pfun
-	public function ${1}(${2})${3}
+snippet pubf
+	public ${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
-snippet privfun
-	private function ${1}(${2})${3}
+snippet privf
+	private ${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
-snippet profun
-	protected function ${1}(${2})${3}
+snippet prof
+	protected ${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
-snippet fun-anon
+snippet funan
 	function (${1}) {
 		${0}
 	}
@@ -183,29 +183,29 @@ snippet ext
 	extends ${1}
 snippet imp
 	implements ${1}
-snippet public
+snippet pubp
 	public ${1} $${0};
-snippet protected
+snippet prop
 	protected ${1} $${0};
-snippet private
+snippet privp
 	private ${1} $${0};
 snippet self
 	self::${1};
 snippet parent
-	parent::${1
+	parent::${1}
 snippet printr
 	print_r(${1});
 snippet printrd
 	print_r(${1});
 	die(${0:});
 snippet require
-	require(${1});
+	require ${1};
 snippet require_once
-	require_once(${1});
+	require_once ${1};
 snippet include
-	include("${1}");
+	include "${1}";
 snippet include_once
-	include_once("${1}");
+	include_once "${1}";
 snippet dump
 	dump(${1});
 snippet dd
@@ -214,7 +214,7 @@ snippet die
 	die(${0});
 snippet exit
 	exit(${0});
-snippet classfile
+snippet classf
 	<?php
 
 	declare(strict_types=1);
@@ -225,7 +225,7 @@ snippet classfile
 	{
 		${0}
 	}
-snippet headerloc
+snippet headloc
 	header("Location: /${1}");
 	exit();
 snippet arr
@@ -246,7 +246,7 @@ snippet @foreach
 	@foreach($${1:array} as $${2:$value})
 		${3}
 	@endforeach
-snippet @foreach-keyvalue
+snippet @foreachkv
 	@foreach($${1:array} as $${2:key} => $${3:$value})
 		${3}
 	@endforeach
@@ -265,7 +265,7 @@ snippet @section
 		${0}
 	@endsection
 snippet fn
-	fn(${1}) => ${0}
+	fn (${1}) => ${0}
 snippet /*
 	/**
   * ${1:Description}
@@ -283,6 +283,8 @@ snippet __call
 	}
 snippet __setUp
 	protected function setUp(): void
-    {
+	{
+		parent::setUp();
+
 		${0}
-    }
+	}
