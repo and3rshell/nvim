@@ -165,7 +165,7 @@ snippet trycatch
 	} catch (${2:\Throwable} \$e) {
 		${0}
 	}
-snippet throw
+snippet thr
 	throw new ${2:\Exception}(${0});
 snippet vd
 	var_dump(${0});
@@ -276,6 +276,10 @@ snippet /*
   */
 snippet /
 	/** ${0} */
+snippet test
+	/**
+	* @test 
+	*/
 snippet __call
 	public function __call($name, $arguments)
 	{
@@ -288,3 +292,7 @@ snippet __setUp
 
 		${0}
 	}
+snippet ret
+	return ${0};
+snippet use
+	use ($0)
