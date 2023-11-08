@@ -46,24 +46,14 @@ snippet ?ifelseif
 	<?php endif; ?>
 snippet ns
 	namespace ${1};
-snippet class
+snippet cl
 	class ${1}
 	{
 		${0:${VISUAL}}
 	}
-snippet classabs
-	abstract class ${1}
-	{
-		${0:${VISUAL}}
-	}
-snippet classan
+snippet clan
 	new class(${1}) {
 		${0}
-	}
-snippet int
-	interface ${1:`vim_snippets#Filename()`}
-	{
-		${0:${VISUAL}}
 	}
 snippet th
 	\$this->
@@ -91,7 +81,7 @@ snippet funan
 	function (${1}) {
 		${0}
 	}
-snippet __con
+snippet con
 	${1:public} function __construct(${2})
 	{
 		${0}
@@ -127,6 +117,8 @@ snippet switch
 			break;
 	}
 snippet case
+	case ${0};
+snippet casee
 	case '${1:value}':
 		${0:${VISUAL}}
 		break;
@@ -214,14 +206,14 @@ snippet die
 	die(${0});
 snippet exit
 	exit(${0});
-snippet classf
+snippet clf
 	<?php
 
 	declare(strict_types=1);
 
-	namespace ${1:App};
+	namespace ${1};
 
-	class ${2:ClassName}
+	class ${2}
 	{
 		${0}
 	}
@@ -280,12 +272,12 @@ snippet test
 	/**
 	* @test 
 	*/
-snippet __call
+snippet call
 	public function __call($name, $arguments)
 	{
 		${0}
 	}
-snippet __setUp
+snippet setUp
 	protected function setUp(): void
 	{
 		parent::setUp();
@@ -296,3 +288,38 @@ snippet ret
 	return ${0};
 snippet use
 	use ($0)
+snippet usee
+	use ${0};
+snippet enum
+	<?php
+
+	declare(strict_types=1);
+
+	namespace ${1};
+
+	enum ${2}
+	{
+		${0}
+	}
+snippet clabs
+	<?php
+
+	declare(strict_types=1);
+
+	namespace ${1};
+
+	abstract class ${2}
+	{
+		${0}
+	}
+snippet int
+	<?php
+
+	declare(strict_types=1);
+
+	namespace ${1};
+
+	interface ${2}
+	{
+		${0}
+	}
