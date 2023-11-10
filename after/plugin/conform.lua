@@ -36,6 +36,6 @@ conform.setup({
 --     command = "phpcs"
 -- }
 
--- conform.formatters.phpcbf = {
---     prepend_args = { "--standard=PSR12" },
--- }
+conform.formatters.phpcbf = {
+    prepend_args = { "--standard=PSR12" },
+}
