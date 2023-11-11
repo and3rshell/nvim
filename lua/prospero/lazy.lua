@@ -21,7 +21,9 @@ local plugins = {
 	{ "mbbill/undotree" },
 	{ "folke/zen-mode.nvim" },
 	{ "mrjones2014/smart-splits.nvim" },
-	-- { "SmiteshP/nvim-navic" },
+	{ "SmiteshP/nvim-navic" },
+    { "nvim-pack/nvim-spectre" },
+    { "rcarriga/nvim-notify" },
 
 	-- Terminal
 	{ "akinsho/toggleterm.nvim" },

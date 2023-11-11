@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>S", ":SymbolsOutline<cr>")
+vim.keymap.set("n", "<leader>o", ":SymbolsOutline<cr>")
 
 require("symbols-outline").setup{
     highlight_hovered_item = true,
