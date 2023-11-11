@@ -18,9 +18,9 @@ local function lsp_keymaps(bufnr)
     map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
     map("n", "gr", "<cmd>lua vim.lsp.buf.rename()<cr>")
     map("n", "gR", "<cmd>lua vim.lsp.buf.references()<cr>")
-    -- map("n", "gT", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
-    -- map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
-    -- map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
+    map("n", "gT", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
+    map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+    map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
     map("n", "<F1>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
     map("n", "<F2>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
     map("x", "<F2>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
@@ -99,10 +99,6 @@ local function lsp_attach(client, bufnr)
     local buf_command = vim.api.nvim_buf_create_user_command
 
     lsp_keymaps(bufnr)
-
-    -- if client.server_capabilities.documentSymbolProvider then
-    --     navic.attach(client, bufnr)
-    -- end
 
     buf_command(bufnr, "LspFormat", function()
         vim.lsp.buf.format()
