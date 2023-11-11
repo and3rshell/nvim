@@ -64,6 +64,7 @@ vim.keymap.set("n", "gcP", "0df ")
 vim.keymap.set("n", "<leader>B", ':!$BROWSER "%"<cr>')
 vim.keymap.set("n", "<leader>V", ':!vscodium $(pwd) "%"<CR><CR>')
 -- vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader><leader>sw", ':set wrap<CR>:set linebreak<CR>')
 
 vim.keymap.set("n", "<leader>fh", ":set filetype=html<CR>")
 vim.keymap.set("n", "<leader>fp", ":set filetype=php<CR>")

@@ -68,7 +68,8 @@ local function lsp_settings()
             max_height = 25,
             max_width = 100,
             focusable = true,
-            -- title = ""
+            silent = true
+            -- title = "",
         }
     )
 

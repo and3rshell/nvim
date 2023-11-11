@@ -88,6 +88,7 @@ local plugins = {
 	-- use { "mfussenegger/nvim-lint" }
 	-- use { "mhartington/formatter.nvim" }
 	{ "stevearc/conform.nvim" },
+    { "overleaf/vim-env-syntax" },
 
 	-- CMP
 	{ "hrsh7th/nvim-cmp" },
