@@ -1,4 +1,9 @@
-require("oil").setup({
+local oil = require("oil")
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>")
+vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>")
+
+oil.setup({
 	-- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
 	-- Set to false if you still want to use netrw.
 	default_file_explorer = true,
@@ -6,9 +11,9 @@ require("oil").setup({
 	-- See :help oil-columns
 	columns = {
 		"icon",
-		"permissions",
-		"size",
-		"mtime",
+		-- "permissions",
+		-- "size",
+		-- "mtime",
 	},
 	-- Buffer-local options to use for oil buffers
 	buf_options = {
@@ -52,14 +57,16 @@ require("oil").setup({
 		["<C-t>"] = "actions.select_tab",
 		["<C-p>"] = "actions.preview",
 		["<C-c>"] = "actions.close",
-		["<C-l>"] = "actions.refresh",
-		["H"] = "actions.parent",
-		["L"] = "actions.open_cwd",
+        ["q"] = "actions.close",
+		["r"] = "actions.refresh",
+		["-"] = "actions.parent",
+        ["_"] = "actions.open_cwd",
 		["`"] = "actions.cd",
 		["~"] = "actions.tcd",
 		["gs"] = "actions.change_sort",
 		["gx"] = "actions.open_external",
-		["g."] = "actions.toggle_hidden",
+		["."] = "actions.toggle_hidden",
+		["zh"] = "actions.toggle_hidden",
 	},
 	-- Set to false to disable all of the above keymaps
 	use_default_keymaps = true,
@@ -84,9 +91,9 @@ require("oil").setup({
 	-- Configuration for the floating window in oil.open_float
 	float = {
 		-- Padding around the floating window
-		padding = 2,
-		max_width = 0,
-		max_height = 0,
+		padding = 10,
+		max_width = 150,
+		max_height = 150,
 		border = "rounded",
 		win_options = {
 			winblend = 0,

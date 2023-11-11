@@ -30,13 +30,13 @@ local plugins = {
 
 	-- File manager
 	-- use { "lmburns/lf.nvim" } -- toggleterm lf
-	{ "tamago324/lir.nvim" },
+	-- { "tamago324/lir.nvim" },
 	-- First install neovim-remote `pipx install neovim-remote`
 	-- use { "tamago324/lir-mmv.nvim" }
 	{ "tamago324/lir-git-status.nvim" },
 	-- Fix error while opening directory in lir
 	{ "tpope/vim-vinegar" },
-    -- { 'stevearc/oil.nvim' },
+    { 'stevearc/oil.nvim' },
 
 	-- Treesitter & related
 	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
