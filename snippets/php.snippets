@@ -284,6 +284,13 @@ snippet setUp
 
 		${0}
 	}
+snippet get
+	protected function __get(): void
+	{
+		parent::setUp();
+
+		${0}
+	}
 snippet ret
 	return ${0};
 snippet use

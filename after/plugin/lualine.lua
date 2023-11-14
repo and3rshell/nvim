@@ -1,5 +1,5 @@
 local lualine = require("lualine")
-local navic = require("nvim-navic")
+-- local navic = require("nvim-navic")
 
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
@@ -31,14 +31,14 @@ local progress = {
 	"progress",
 }
 
-local nav = {
-	function()
-		return navic.get_location()
-	end,
-	cond = function()
-		return navic.is_available()
-	end,
-}
+-- local nav = {
+-- 	function()
+-- 		return navic.get_location()
+-- 	end,
+-- 	cond = function()
+-- 		return navic.is_available()
+-- 	end,
+-- }
 
 lualine.setup({
 	options = {
@@ -61,7 +61,7 @@ lualine.setup({
 		-- lualine_b = { 'branch' },
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename", nav },
+		lualine_c = { "filename" },
 		lualine_x = { diff, diagnostics, progress, filetype },
 		lualine_y = {},
 		lualine_z = {},

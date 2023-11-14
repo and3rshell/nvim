@@ -21,7 +21,7 @@ local plugins = {
 	{ "mbbill/undotree" },
 	{ "folke/zen-mode.nvim" },
 	{ "mrjones2014/smart-splits.nvim" },
-	{ "SmiteshP/nvim-navic" },
+	-- { "SmiteshP/nvim-navic" },
     { "nvim-pack/nvim-spectre" },
     { "rcarriga/nvim-notify" },
 
@@ -29,13 +29,8 @@ local plugins = {
 	{ "akinsho/toggleterm.nvim" },
 
 	-- File manager
-	-- use { "lmburns/lf.nvim" } -- toggleterm lf
-	-- { "tamago324/lir.nvim" },
-	-- First install neovim-remote `pipx install neovim-remote`
-	-- use { "tamago324/lir-mmv.nvim" }
-	{ "tamago324/lir-git-status.nvim" },
 	-- Fix error while opening directory in lir
-	{ "tpope/vim-vinegar" },
+	-- { "tpope/vim-vinegar" },
     { 'stevearc/oil.nvim' },
 
 	-- Treesitter & related
@@ -47,7 +42,7 @@ local plugins = {
 	{ "gbprod/php-enhanced-treesitter.nvim" },
 	{ "derekstride/tree-sitter-sql" },
 	{ "tpope/vim-surround" },
-	-- use { "lukas-reineke/indent-blankline.nvim" }
+	{ "lukas-reineke/indent-blankline.nvim" },
 	{ "windwp/nvim-autopairs" },
 
 	-- Colors

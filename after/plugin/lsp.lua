@@ -1,7 +1,6 @@
 local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
--- local navic = require("nvim-navic")
 
 vim.keymap.set("n", "<leader>ld", ":LspStop<cr>")
 vim.keymap.set("n", "<leader>le", ":LspStart<cr>")
