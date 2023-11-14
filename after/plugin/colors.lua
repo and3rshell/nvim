@@ -39,7 +39,7 @@ vim.g.italic_variables = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "black" })
-vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#090909" })
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#040404" })
 vim.api.nvim_set_hl(0, "FloatermBorder", { bg = "none" })
 
 vim.cmd.highlight("EndOfBuffer guibg=NONE ctermbg=NONE")
