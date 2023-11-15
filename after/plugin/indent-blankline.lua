@@ -3,7 +3,7 @@ vim.opt.listchars:append "eol:↴"
 -- vim.opt.listchars:append "space:⋅"
 
 require("ibl").setup {
-    enabled = true,
+    enabled = false,
     debounce = 1000,
     exclude = {
         filetypes = {
@@ -38,7 +38,8 @@ require("ibl").setup {
         show_end = true
     },
     indent = {
-        char = "⋅",
+        char = "",
+        -- char = "⋅",
         -- char = "~",
         -- tab_char = { "a", "b", "c" },
         smart_indent_cap = true
