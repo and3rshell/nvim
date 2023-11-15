@@ -171,7 +171,7 @@ snippet match
 	};
 snippet const
 	const ${1} = ${2};
-snippet ext
+snippet extends
 	extends ${1}
 snippet imp
 	implements ${1}
@@ -319,7 +319,7 @@ snippet clabs
 	{
 		${0}
 	}
-snippet int
+snippet interface
 	<?php
 
 	declare(strict_types=1);
@@ -329,4 +329,14 @@ snippet int
 	interface ${2}
 	{
 		${0}
+	}
+snippet getter
+	public ${1}function get${2}(): ${3}
+	{
+		return \$this->${0};
+	}
+snippet setter
+	public ${1}function set${2}(${3:$value})${4}
+	{
+		\$this->${5} = ${0:$value};
 	}
