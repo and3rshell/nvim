@@ -108,7 +108,7 @@ snippet if-turnary
 	${1} ? ${2} : ${0};
 snippet switch
 	switch ($${1:variable}) {
-		case '${2:value}':
+		case "${2:value}":
 			${3}
 			break;
 		${0}
@@ -119,7 +119,7 @@ snippet switch
 snippet case
 	case ${0};
 snippet casee
-	case '${1:value}':
+	case "${1:value}":
 		${0:${VISUAL}}
 		break;
 snippet for
@@ -234,8 +234,6 @@ snippet POST
 	\$_POST["${1}"]
 snippet GET
 	\$_GET["${1}"]
-snippet route
-	route('${1}', [ ${0} ])
 snippet fn
 	fn (${1}) => ${0}
 snippet /*
@@ -334,3 +332,15 @@ snippet Rfun
 	})${0};
 snippet redirect
 	redirect()->route("${0}")
+snippet route
+	route("${1}"${0})
+snippet routee
+	route("${1}", [
+		${0}
+	])
+snippet view
+	view("${1}"${0})
+snippet vieww
+	view("${1}", [
+		${0}
+	])

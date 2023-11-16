@@ -10,10 +10,6 @@ snippet if
 	@if(${1})
 		${0}
 	@endif
-snippet section
-	@section('${1}')
-		${0}
-	@endsection
 snippet foreach
 	@foreach($${1:array} as $${2:$value})
 		${0}
@@ -34,9 +30,21 @@ snippet forelsekv
 	@empty
 		${0}
 	@endforelse
-snippet v
+snippet .
 	{{ ${0} }}
 snippet route
 	{{ route("${1}") }}
 snippet routee
 	{{ route("${1}", ["${2}" => $${3}]) }}
+snippet dump
+	@dump(${0})
+snippet dd
+	@dd(${0})
+snippet section
+	@section("${1}")
+		${0}
+	@endsection
+snippet extends
+	@extends("${0}")
+snippet yield
+	@yield("${0}")
