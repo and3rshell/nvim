@@ -234,28 +234,8 @@ snippet POST
 	\$_POST["${1}"]
 snippet GET
 	\$_GET["${1}"]
-snippet @foreach
-	@foreach($${1:array} as $${2:$value})
-		${3}
-	@endforeach
-snippet @foreachkv
-	@foreach($${1:array} as $${2:key} => $${3:$value})
-		${3}
-	@endforeach
 snippet route
 	route('${1}', [ ${0} ])
-snippet @php
-	@php
-		${0}
-	@endphp
-snippet @if
-	@if(${1})
-		${0}
-	@endif
-snippet @section
-	@section('${1}')
-		${0}
-	@endsection
 snippet fn
 	fn (${1}) => ${0}
 snippet /*
@@ -272,7 +252,7 @@ snippet test
 	/**
 	* @test 
 	*/
-snippet call
+snippet __call
 	public function __call($name, $arguments)
 	{
 		${0}
@@ -284,14 +264,14 @@ snippet setUp
 
 		${0}
 	}
-snippet get
+snippet __get
 	protected function __get(): void
 	{
 		parent::setUp();
 
 		${0}
 	}
-snippet ret
+snippet return
 	return ${0};
 snippet use
 	use ($0)
@@ -340,3 +320,17 @@ snippet setter
 	{
 		\$this->${5} = ${0:$value};
 	}
+snippet Route
+	Route::${1:get}("/${2}", [${3}::class, "${4}"])${0};
+snippet Rget
+	Route::get("/${1}", [${2}::class, "${3}"])${0};
+snippet Rpost
+	Route::post("/${1}", [${2}::class, "${3}"])${0};
+snippet Rmatch
+	Route::match("/${1}", [${2}::class, "${3}"])${0};
+snippet Rfun
+	Route::${1:get}("/${2}", function (${3})${4} {
+		${5}
+	})${0};
+snippet redirect
+	redirect()->route("${0}")

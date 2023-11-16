@@ -9,8 +9,8 @@ vim.keymap.set("n", "<leader>w", ":w<CR>")
 -- vim.keymap.set("n", "<C-c>", "ZQ")
 vim.cmd("command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!")
 vim.cmd("nmap <leader>W :W<CR>")
-vim.keymap.set("n", "L", ":bnext<CR>")
-vim.keymap.set("n", "H", ":bprev<CR>")
+-- vim.keymap.set("n", "L", ":bnext<CR>")
+-- vim.keymap.set("n", "H", ":bprev<CR>")
 vim.keymap.set("n", "<leader>d", ":Bdelete!<CR>")
 vim.cmd[[ nnoremap <expr><silent> <leader>, &showtabline ? ":set showtabline=0\<cr>" : ":set showtabline=2\<cr>" ]]
 
@@ -82,6 +82,14 @@ vim.keymap.set("n", "g;", "A;<esc>")
 vim.keymap.set("n", "cG", "ggcG")
 vim.keymap.set("n", "yG", "ggVGy<c-o>")
 -- vim.keymap.set("n", "<leader>F", "gg=G<C-o>")
+
+-- vim.keymap.set("n", ")", "0")
+-- vim.keymap.set("n", "0", "^")
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+
+vim.keymap.set("i", "<C-h>", "<C-o>^")
+vim.keymap.set("i", "<C-l>", "<C-o>$")
 
 -- Tabs
 -- vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
