@@ -22,7 +22,7 @@ snippet ?foreach
 	<?php foreach ($${1:array} as $${2:$value}) : ?>
 		${0:${VISUAL}}
 	<?php endforeach ?>
-snippet ?foreachkv
+snippet ?fforeach
 	<?php foreach ($${1:array} as $${2:key} => $${3:value}) : ?>
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
@@ -44,7 +44,7 @@ snippet ?ifelseif
 	<?php else : ?>
 		${0:${VISUAL}}
 	<?php endif; ?>
-snippet ns
+snippet name
 	namespace ${1};
 snippet cl
 	class ${1}
@@ -55,7 +55,7 @@ snippet clan
 	new class(${1}) {
 		${0}
 	}
-snippet th
+snippet t
 	\$this->
 snippet fun
 	${1}function ${2}(${3})${4}
@@ -104,7 +104,7 @@ snippet else
 	else {
 		${0:${VISUAL}}
 	}
-snippet if-turnary
+snippet iif
 	${1} ? ${2} : ${0};
 snippet switch
 	switch ($${1:variable}) {
@@ -118,7 +118,7 @@ snippet switch
 	}
 snippet case
 	case ${0};
-snippet casee
+snippet ccase
 	case "${1:value}":
 		${0:${VISUAL}}
 		break;
@@ -138,7 +138,7 @@ snippet foreach
 	foreach ($${1:var} as $${2:value}) {
 		${0:${VISUAL}}
 	}
-snippet foreach-keyvalue
+snippet fforeach
 	foreach ($${1:var} as $${2:key} => $${3:value}) {
 		${0:${VISUAL}}
 	}
@@ -157,7 +157,7 @@ snippet trycatch
 	} catch (${2:\Throwable} \$e) {
 		${0}
 	}
-snippet thr
+snippet throw
 	throw new ${2:\Exception}(${0});
 snippet vd
 	var_dump(${0});
@@ -175,11 +175,11 @@ snippet extends
 	extends ${1}
 snippet imp
 	implements ${1}
-snippet pubp
+snippet pub
 	public ${1} $${0};
-snippet prop
+snippet pro
 	protected ${1} $${0};
-snippet privp
+snippet priv
 	private ${1} $${0};
 snippet self
 	self::${1};
@@ -273,7 +273,7 @@ snippet return
 	return ${0};
 snippet use
 	use ($0)
-snippet usee
+snippet uuse
 	use ${0};
 snippet enum
 	<?php
@@ -286,7 +286,7 @@ snippet enum
 	{
 		${0}
 	}
-snippet clabs
+snippet clfa
 	<?php
 
 	declare(strict_types=1);
@@ -334,13 +334,18 @@ snippet redirect
 	redirect()->route("${0}")
 snippet route
 	route("${1}"${0})
-snippet routee
+snippet rroute
 	route("${1}", [
 		${0}
 	])
 snippet view
 	view("${1}"${0})
-snippet vieww
+snippet vview
 	view("${1}", [
 		${0}
 	])
+snippet db
+	DB::table("${1}")
+	->${0};
+snippet tab
+	\$table->${1}(${2})${0};

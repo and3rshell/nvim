@@ -14,7 +14,7 @@ snippet foreach
 	@foreach($${1:array} as $${2:$value})
 		${0}
 	@endforeach
-snippet foreachkv
+snippet fforeach
 	@foreach($${1:array} as $${2:key} => $${3:$value})
 		${0}
 	@endforeach
@@ -24,7 +24,7 @@ snippet forelse
 	@empty
 		${0}
 	@endforelse
-snippet forelsekv
+snippet fforelse
 	@forelse($${1:array} as $${2:key} => $${3:$value})
 		${4}
 	@empty
@@ -34,7 +34,7 @@ snippet .
 	{{ ${0} }}
 snippet route
 	{{ route("${1}") }}
-snippet routee
+snippet rroute
 	{{ route("${1}", ["${2}" => $${3}]) }}
 snippet dump
 	@dump(${0})
@@ -44,6 +44,8 @@ snippet section
 	@section("${1}")
 		${0}
 	@endsection
+snippet ssection
+	@section("${1}", ${0})
 snippet extends
 	@extends("${0}")
 snippet yield
