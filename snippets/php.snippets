@@ -4,38 +4,49 @@ snippet ?php
 	<?php
 
 	declare(strict_types = 1);
+
 snippet dst
 	declare(strict_types = 1);
+
 snippet echo
 	echo ${0};
+
 snippet ?e
 	<?php echo ${0} ?>
+
 snippet ?=
 	<?= ${0} ?>
+
 snippet ?
 	<?php ${0} ?>
+
 snippet ??
 	<?php
 	${0}
 	?>
+
 snippet ?foreach
 	<?php foreach ($${1:array} as $${2:$value}) : ?>
 		${0:${VISUAL}}
 	<?php endforeach ?>
+
 snippet ?fforeach
 	<?php foreach ($${1:array} as $${2:key} => $${3:value}) : ?>
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
+
 snippet ?if
 	<?php if ($${1:var}) : ?>
 		${0:${VISUAL}}
 	<?php endif ?>
+
 snippet ?ifelse
 	<?php if (${1}) : ?>
 		${2}
 	<?php else : ?>
 		${0:${VISUAL}}
 	<?php endif; ?>
+
 snippet ?ifelseif
 	<?php if (${1}) : ?>
 		${2}
@@ -44,68 +55,84 @@ snippet ?ifelseif
 	<?php else : ?>
 		${0:${VISUAL}}
 	<?php endif; ?>
+
 snippet name
 	namespace ${1};
+
 snippet cl
 	class ${1}
 	{
 		${0:${VISUAL}}
 	}
+
 snippet clan
 	new class(${1}) {
 		${0}
 	}
+
 snippet t
 	\$this->
+
 snippet fun
 	${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
+
 snippet pubf
 	public ${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
+
 snippet privf
 	private ${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
+
 snippet prof
 	protected ${1}function ${2}(${3})${4}
 	{
 		${0}
 	}
+
 snippet funan
 	function (${1}) {
 		${0}
 	}
+
 snippet con
 	${1:public} function __construct(${2})
 	{
 		${0}
 	}
+
 snippet if
 	if (${1}) {
 		${0}
 	}
+
 snippet ifelse
 	if (${1}) {
 		${2}
 	} else {
 		${0:${VISUAL}}
 	}
+
 snippet elseif
 	else if (${1}) {
 		${0}
 	}
+
 snippet else
 	else {
 		${0:${VISUAL}}
 	}
+
 snippet iif
 	${1} ? ${2} : ${0};
+
 snippet switch
 	switch ($${1:variable}) {
 		case "${2:value}":
@@ -116,96 +143,129 @@ snippet switch
 			${4}
 			break;
 	}
+
 snippet case
 	case ${0};
+
 snippet ccase
 	case "${1:value}":
 		${0:${VISUAL}}
 		break;
+
 snippet for
 	for ($${1:index} = 0; $$2 < ${2:count}; $$2${3:++}) {
 		${0:${VISUAL}}
 	}
+
 snippet while
 	while ($${1:var}) {
 		${0:${VISUAL}}
 	}
+
 snippet do
 	do {
 		${0:${VISUAL}}
 	} while ($${1:var})
+
 snippet foreach
 	foreach ($${1:var} as $${2:value}) {
 		${0:${VISUAL}}
 	}
+
 snippet fforeach
 	foreach ($${1:var} as $${2:key} => $${3:value}) {
 		${0:${VISUAL}}
 	}
+
 snippet try
 	try {
 		${0}
 	}
 
+
 snippet catch
 	catch (${1:\Throwable} \$e) {
 		${0}
 	}
+
 snippet trycatch
 	try {
 		${1}
 	} catch (${2:\Throwable} \$e) {
 		${0}
 	}
+
 snippet throw
 	throw new ${2:\Exception}(${0});
+
 snippet vd
 	var_dump(${0});
+
 snippet vdd
 	var_dump(${1});
 	die(${0:});
+
 snippet match
 	match (${1}) {
 		${2} => ${3},
 		${4} => ${5},
 	};
+
 snippet const
 	const ${1} = ${2};
+
 snippet extends
 	extends ${1}
+
 snippet imp
 	implements ${1}
+
 snippet pub
 	public ${1} $${0};
+
 snippet pro
 	protected ${1} $${0};
+
 snippet priv
 	private ${1} $${0};
+
 snippet self
 	self::${1};
+
 snippet parent
 	parent::${1}
+
 snippet printr
 	print_r(${1});
+
 snippet printrd
 	print_r(${1});
 	die(${0:});
+
 snippet require
 	require ${1};
+
 snippet require_once
 	require_once ${1};
+
 snippet include
 	include "${1}";
+
 snippet include_once
 	include_once "${1}";
+
 snippet dump
 	dump(${1});
+
 snippet dd
 	dd(${1});
+
 snippet die
 	die(${0});
+
 snippet exit
 	exit(${0});
+
 snippet clf
 	<?php
 
@@ -217,26 +277,44 @@ snippet clf
 	{
 		${0}
 	}
+
 snippet headloc
 	header("Location: /${1}");
 	exit();
+
 snippet arr
 	[${0}];
+
 snippet empty
 	empty(${0})
+
 snippet isset
 	isset(${0})
+
 snippet SERVER
 	\$_SERVER["${1}"]
+
 snippet SESSION
 	\$_SESSION["${1}"]
+
 snippet POST
 	\$_POST["${1}"]
+
 snippet GET
 	\$_GET["${1}"]
+
 snippet fn
 	fn (${1}) => ${0}
+
 snippet /*
+	/** ${0} */
+
+snippet /**
+	/**
+  * ${0}
+  */
+
+snippet /***
 	/**
   * ${1:Description}
   *
@@ -244,17 +322,18 @@ snippet /*
   *
   * ${0:@return}
   */
-snippet /
-	/** ${0} */
+
 snippet test
 	/**
 	* @test 
 	*/
+
 snippet __call
 	public function __call($name, $arguments)
 	{
 		${0}
 	}
+
 snippet setUp
 	protected function setUp(): void
 	{
@@ -262,6 +341,7 @@ snippet setUp
 
 		${0}
 	}
+
 snippet __get
 	protected function __get(): void
 	{
@@ -269,12 +349,16 @@ snippet __get
 
 		${0}
 	}
+
 snippet return
 	return ${0};
+
 snippet use
 	use ($0)
+
 snippet uuse
 	use ${0};
+
 snippet enum
 	<?php
 
@@ -286,6 +370,7 @@ snippet enum
 	{
 		${0}
 	}
+
 snippet clfa
 	<?php
 
@@ -297,6 +382,7 @@ snippet clfa
 	{
 		${0}
 	}
+
 snippet interface
 	<?php
 
@@ -308,44 +394,58 @@ snippet interface
 	{
 		${0}
 	}
+
 snippet getter
 	public ${1}function get${2}(): ${3}
 	{
 		return \$this->${0};
 	}
+
 snippet setter
 	public ${1}function set${2}(${3:$value})${4}
 	{
 		\$this->${5} = ${0:$value};
 	}
+
 snippet Route
 	Route::${1:get}("/${2}", [${3}::class, "${4}"])${0};
+
 snippet Rget
 	Route::get("/${1}", [${2}::class, "${3}"])${0};
+
 snippet Rpost
 	Route::post("/${1}", [${2}::class, "${3}"])${0};
+
 snippet Rmatch
 	Route::match("/${1}", [${2}::class, "${3}"])${0};
+
 snippet Rfun
 	Route::${1:get}("/${2}", function (${3})${4} {
 		${5}
 	})${0};
+
 snippet redirect
 	redirect()->route("${0}")
+
 snippet route
 	route("${1}"${0})
+
 snippet rroute
 	route("${1}", [
 		${0}
 	])
+
 snippet view
 	view("${1}"${0})
+
 snippet vview
 	view("${1}", [
 		${0}
 	])
+
 snippet db
 	DB::table("${1}")
 	->${0};
+
 snippet tab
 	\$table->${1}(${2})${0};

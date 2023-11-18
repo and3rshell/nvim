@@ -140,10 +140,13 @@ mason_lspconfig.setup({
         "vuels",
         "lemminx", -- xml
         -- "denols",
-        "tsserver"
+        "tsserver",
     },
     automatic_installation = true,
 })
+
+-- also install:
+-- - tlint
 
 -- Define the server capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()

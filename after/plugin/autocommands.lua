@@ -37,6 +37,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 		if vim.bo[event.buf].filetype == "help" then
 			vim.api.nvim_buf_set_option(0, "buflisted", true)
 			vim.cmd("wincmd L")
+            vim.opt.relativenumber = true
 			-- vim.keymap.set("n", "q", ":close<CR>")
 		end
 	end,

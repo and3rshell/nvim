@@ -93,7 +93,6 @@ vim.keymap.set("i", "<C-l>", "<C-o>$")
 vim.keymap.set('i', ';', '<Esc>A;')
 vim.keymap.set('i', '<M-;>', ';') -- ctrl won't work
 
-
 -- Tabs
 -- vim.keymap.set("n", "<leader>tn", ":tabnew<CR>")
 vim.keymap.set("n", "<leader>>", ":tabmove +<CR>")
