@@ -22,8 +22,8 @@ local plugins = {
 	{ "folke/zen-mode.nvim" },
 	{ "mrjones2014/smart-splits.nvim" },
 	-- { "SmiteshP/nvim-navic" },
-    { "nvim-pack/nvim-spectre" },
-    { "rcarriga/nvim-notify" },
+	{ "nvim-pack/nvim-spectre" },
+	{ "rcarriga/nvim-notify" },
 
 	-- Terminal
 	{ "akinsho/toggleterm.nvim" },
@@ -31,7 +31,7 @@ local plugins = {
 	-- File manager
 	-- Fix error while opening directory in lir
 	-- { "tpope/vim-vinegar" },
-    { 'stevearc/oil.nvim' },
+	{ "stevearc/oil.nvim" },
 
 	-- Treesitter & related
 	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
@@ -47,7 +47,8 @@ local plugins = {
 
 	-- Colors
 	{ "lunarvim/darkplus.nvim" },
-	{ "kyazdani42/nvim-web-devicons" },
+	-- { "kyazdani42/nvim-web-devicons" },
+	{ "nvim-tree/nvim-web-devicons" },
 	{
 		"rose-pine/neovim",
 		as = "rose-pine",
@@ -66,7 +67,7 @@ local plugins = {
 
 	-- Git
 	{ "tpope/vim-fugitive" },
-    { "kdheepak/lazygit.nvim" },
+	{ "kdheepak/lazygit.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
 
 	-- LSP & linting & formatting
@@ -83,7 +84,7 @@ local plugins = {
 	-- use { "mfussenegger/nvim-lint" }
 	-- use { "mhartington/formatter.nvim" }
 	{ "stevearc/conform.nvim" },
-    { "overleaf/vim-env-syntax" },
+	{ "overleaf/vim-env-syntax" },
 
 	-- CMP
 	{ "hrsh7th/nvim-cmp" },

@@ -10,11 +10,15 @@ oil.setup({
 	-- Id is automatically added at the beginning, and name at the end
 	-- See :help oil-columns
 	columns = {
-		"icon",
+		-- "icon", -- icons in this extension is a disaster
 		-- "permissions",
 		-- "size",
 		-- "mtime",
 	},
+    icon = {
+        default_file = "it doesnt work at all",
+        add_padding = false
+    },
 	-- Buffer-local options to use for oil buffers
 	buf_options = {
 		buflisted = false,
@@ -67,6 +71,7 @@ oil.setup({
 		["gx"] = "actions.open_external",
 		["."] = "actions.toggle_hidden",
 		["zh"] = "actions.toggle_hidden",
+		["t"] = "actions.open_terminal",
 	},
 	-- Set to false to disable all of the above keymaps
 	use_default_keymaps = true,
