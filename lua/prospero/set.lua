@@ -32,6 +32,7 @@ vim.opt.laststatus = 3 -- the value of this option influences when the last wind
 vim.opt.numberwidth = 4 -- default is 4
 vim.opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.guifont = "monospace:h11" -- the font used in graphical neovim applications
+vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.showtabline = 0 -- the value of this option specifies when the line with tab page labels will be displayed
 vim.opt.pumheight = 10 -- maximum number of items to show in the popup menu

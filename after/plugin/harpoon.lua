@@ -15,3 +15,11 @@ vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end)
 vim.keymap.set("n", "<leader>8", function() ui.nav_file(8) end)
 vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end)
 vim.keymap.set("n", "<leader>0", function() ui.nav_file(10) end)
+
+vim.keymap.set({ 't', 'n' }, '<leader>m', function()
+    ui.toggle_quick_menu()
+    -- wait for the menu to open
+    vim.defer_fn(function()
+        vim.fn.feedkeys('/')
+    end, 50)
+end, { noremap = true })

@@ -73,3 +73,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		vim.diagnostic.disable(args.buf)
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "php" },
+	callback = function()
+		vim.opt_local.autoindent = true
+	end,
+})

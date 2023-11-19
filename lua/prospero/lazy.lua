@@ -57,13 +57,14 @@ local plugins = {
         -- end
     },
 
-    -- Statusline & tabline
+    -- Statusline & tabline & buffers
     { "nvim-lualine/lualine.nvim" },
     { "akinsho/bufferline.nvim" },
     -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     { "tiagovla/scope.nvim" },
     { "moll/vim-bbye" },
     -- use { "jose-elias-alvarez/buftabline.nvim" }
+    { "j-morano/buffer_manager.nvim" },
 
     -- Git
     { "tpope/vim-fugitive" },
