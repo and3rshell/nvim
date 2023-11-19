@@ -1,4 +1,5 @@
 local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 
@@ -145,13 +146,10 @@ mason_lspconfig.setup({
     automatic_installation = true,
 })
 
--- also install:
--- - tlint
-
 -- Define the server capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- Define the common on_attach and capabilities settings
 local common_settings = {
@@ -206,61 +204,41 @@ mason_lspconfig.setup_handlers({
             init_options = {
                 globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
             },
-            stubs = {
-                "bcmath",
-                "bz2",
-                "Core",
-                "curl",
-                "date",
-                "dom",
-                "fileinfo",
-                "filter",
-                "gd",
-                "gettext",
-                "hash",
-                "iconv",
-                "imap",
-                "intl",
-                "json",
-                "libxml",
-                "mbstring",
-                "mcrypt",
-                "mysql",
-                "mysqli",
-                "password",
-                "pcntl",
-                "pcre",
-                "PDO",
-                "pdo_mysql",
-                "Phar",
-                "readline",
-                "regex",
-                "session",
-                "SimpleXML",
-                "sockets",
-                "sodium",
-                "standard",
-                "superglobals",
-                "tokenizer",
-                "xml",
-                "xdebug",
-                "xmlreader",
-                "xmlwriter",
-                "yaml",
-                "zip",
-                "zlib",
-                "wordpress-stubs",
-                "woocommerce-stubs",
-                "acf-pro-stubs",
-                "wordpress-globals",
-                "wp-cli-stubs",
-                "genesis-stubs",
-                "polylang-stubs",
-            },
             files = {
                 maxSize = 5000000,
             },
+            -- stubs = {
+            --     "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
+            --     "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
+            --     "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
+            --     "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
+            --     "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
+            --     "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
+            --     "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
+            --     "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
+            --     "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
+            -- },
         })
         lspconfig.intelephense.setup(intelephense_settings)
     end,
 })
+
+-- configs.blade = {
+--     default_config = {
+--         cmd = { "laravel-dev-tools", "lsp", "-vvv" },
+--         filetypes = { 'blade' },
+--         root_dir = function(pattern)
+--             local util = require("lspconfig.util")
+--             local cwd = vim.loop.cwd()
+--             local root = util.root_pattern("composer.json", ".git", ".phpactor.json", ".phpactor.yml")(pattern)
+
+--             -- prefer cwd if root is a descendant
+--             return util.path.is_descendant(cwd, root) and cwd or root
+--         end,
+--         settings = {},
+--     },
+-- }
+
+-- lspconfig.blade.setup(common_settings)
+
+
