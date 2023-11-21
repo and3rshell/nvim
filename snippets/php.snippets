@@ -291,16 +291,16 @@ snippet empty
 snippet isset
 	isset(${0})
 
-snippet SERVER
+snippet server
 	\$_SERVER["${1}"]
 
-snippet SESSION
+snippet session
 	\$_SESSION["${1}"]
 
-snippet POST
+snippet post
 	\$_POST["${1}"]
 
-snippet GET
+snippet get
 	\$_GET["${1}"]
 
 snippet fn
@@ -408,7 +408,7 @@ snippet setter
 	}
 
 snippet Route
-	Route::${1:get}("/${2}", [${3}::class, "${4}"])${0};
+	Route::${1}("/${2}", [${3}::class, "${4}"])${0};
 
 snippet Rget
 	Route::get("/${1}", [${2}::class, "${3}"])${0};
@@ -420,11 +420,11 @@ snippet Rmatch
 	Route::match("/${1}", [${2}::class, "${3}"])${0};
 
 snippet Rfun
-	Route::${1:get}("/${2}", function (${3})${4} {
+	Route::${1}("/${2}", function (${3})${4} {
 		${5}
 	})${0};
 
-snippet redirect
+snippet redir
 	redirect()->route("${0}")
 
 snippet route
@@ -445,7 +445,7 @@ snippet vview
 
 snippet db
 	DB::table("${1}")
-	->${0};
+		->${0};
 
 snippet tab
 	\$table->${1}(${2})${0};
