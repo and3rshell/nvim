@@ -1,5 +1,5 @@
 local lspconfig = require("lspconfig")
-local configs = require("lspconfig.configs")
+-- local configs = require("lspconfig.configs")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 

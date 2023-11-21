@@ -1,6 +1,8 @@
-vim.g.loaded_matchit = 1
--- vim.g.matchup_enabled = 0
-vim.g.matchup_matchparen_offscreen = { method = "popup" }
-vim.g.matchup_matchpref = { html = { nolists = 1 } }
+local g = vim.g
 
-vim.g.matchup_matchparen_enabled = 0
+g.loaded_matchit = 1
+-- vim.g.matchup_enabled = 0
+g.matchup_matchparen_offscreen = { method = "popup" }
+g.matchup_matchpref = { html = { nolists = 1 } }
+
+g.matchup_matchparen_enabled = 0

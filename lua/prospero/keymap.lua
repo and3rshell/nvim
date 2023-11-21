@@ -112,4 +112,4 @@ keymap("n", "<leader>J", "<c-w>=")
 keymap("n", "<C-b>", "i**<esc>ea**<esc>B")
 keymap("n", "da*", "xxwxxB")
 
-keymap("n", "<leader><leader>f", ":retab! 4")
+keymap("n", "<leader><leader>f", ":retab! 4<CR>")
