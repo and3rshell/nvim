@@ -65,3 +65,19 @@ snippet extends
 
 snippet yield
 	@yield("${0}")
+
+snippet error
+	@error("${0}")
+		<em>{{ $message }}</em>
+	@enderror
+
+snippet //
+	{{-- ${0} --}}
+snippet ///
+	<!-- ${0} -->
+
+snippet method
+	@method("${0}")
+
+snippet old
+	{{ old("${0}") }}

@@ -427,6 +427,11 @@ snippet Rfun
 snippet redir
 	redirect()->route("${0}")
 
+snippet rredir
+	redirect()->route("${1}", [
+		${0}
+	])
+
 snippet route
 	route("${1}"${0})
 

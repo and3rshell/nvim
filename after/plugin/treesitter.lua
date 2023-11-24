@@ -70,7 +70,7 @@ require("nvim-treesitter.configs").setup {
 
     indent = {
         enable = true,
-        disable = { "php", "lua" }
+        disable = { "php", "lua", "html", "blade" }
     },
 
     matchup = {
