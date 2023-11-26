@@ -175,7 +175,7 @@ mason_lspconfig.setup_handlers({
     end,
     ["emmet_ls"] = function()
         local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
-            -- Add any specific settings for emmet_ls if needed
+            filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
         })
         lspconfig.emmet_ls.setup(emmet_ls_settings)
     end,

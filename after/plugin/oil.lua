@@ -2,7 +2,8 @@ local oil = require("oil")
 local keymap = vim.keymap.set
 
 keymap("n", "-", "<CMD>Oil<CR>")
-keymap("n", "<leader>e", "<CMD>Oil --float<CR>")
+-- keymap("n", "<leader>e", "<CMD>Oil --float<CR>")
+keymap("n", "<leader>e", "<CMD>Oil<CR>")
 
 oil.setup({
     -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
@@ -16,10 +17,10 @@ oil.setup({
         -- "size",
         -- "mtime",
     },
-    icon = {
-        default_file = "it doesnt work at all",
-        add_padding = false
-    },
+    -- icon = {
+    --     default_file = "",
+    --     add_padding = false
+    -- },
     -- Buffer-local options to use for oil buffers
     buf_options = {
         buflisted = false,
