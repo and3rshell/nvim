@@ -173,12 +173,6 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.lua_ls.setup(lua_ls_settings)
     end,
-    ["emmet_ls"] = function()
-        local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
-            filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
-        })
-        lspconfig.emmet_ls.setup(emmet_ls_settings)
-    end,
     ["html"] = function()
         local html_settings = vim.tbl_extend("force", common_settings, {
             -- filetypes = { "html", "php" },
@@ -236,7 +230,13 @@ mason_lspconfig.setup_handlers({
             -- root_dir = root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.cjs', 'postcss.config.mjs', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
         })
         lspconfig.tailwindcss.setup(tailwindcss_settings)
-    end
+    end,
+    ["emmet_ls"] = function()
+        local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
+            filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
+        })
+        lspconfig.emmet_ls.setup(emmet_ls_settings)
+    end,
 })
 
 -- configs.blade = {

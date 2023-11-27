@@ -59,10 +59,11 @@ oil.setup({
     keymaps = {
         ["g?"] = "actions.show_help",
         ["<CR>"] = "actions.select",
-        ["<C-v>"] = "actions.select_vsplit",
-        ["<C-x>"] = "actions.select_split",
-        ["<C-t>"] = "actions.select_tab",
-        ["<C-p>"] = "actions.preview",
+        ["<leader>v"] = "actions.select_vsplit",
+        ["<leader>x"] = "actions.select_split",
+        ["<leader>t"] = "actions.select_tab",
+        ["<leader>p"] = "actions.preview",
+        ["<leader>q"] = "actions.close",
         ["<C-c>"] = "actions.close",
         ["q"] = "actions.close",
         ["r"] = "actions.refresh",
@@ -77,7 +78,7 @@ oil.setup({
         ["t"] = "actions.open_terminal",
     },
     -- Set to false to disable all of the above keymaps
-    use_default_keymaps = true,
+    use_default_keymaps = false,
     view_options = {
         -- Show files and directories that start with "."
         show_hidden = true,
