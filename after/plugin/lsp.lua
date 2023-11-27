@@ -221,6 +221,22 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.intelephense.setup(intelephense_settings)
     end,
+    ["tailwindcss"] = function()
+        local tailwindcss_settings = vim.tbl_extend("force", common_settings, {
+            filetypes = {
+                "aspnetcorerazor", "astro", "astro-markdown", "blade", "clojure",
+                "django-html", "htmldjango", "edge", "eelixir", "elixir", "ejs",
+                "erb", "eruby", "gohtml", "gohtmltmpl", "haml", "handlebars", "hbs",
+                "html", "html-eex", "heex", "jade", "leaf", "liquid", "markdown",
+                "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim",
+                "twig", "css", "less", "postcss", "sass", "scss", "stylus",
+                "sugarss", "javascript", "javascriptreact", "reason", "rescript",
+                "typescript", "typescriptreact", "vue", "svelte"
+            },
+            -- root_dir = root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.cjs', 'postcss.config.mjs', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
+        })
+        lspconfig.tailwindcss.setup(tailwindcss_settings)
+    end
 })
 
 -- configs.blade = {
