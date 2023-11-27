@@ -13,6 +13,13 @@ snippet if
 		${0}
 	@endif
 
+snippet ifelse
+	@if(${1})
+		${2}
+	@else
+		${0}
+	@endif
+
 snippet foreach
 	@foreach($${1:array} as $${2:$value})
 		${0}
@@ -81,3 +88,37 @@ snippet method
 
 snippet old
 	{{ old("${0}") }}
+
+snippet include
+	@include("${0}")
+
+snippet iinclude
+	@include("${1}", [${2} => ${0}])
+
+snippet isset
+	@isset(${1})
+		${0}
+	@endisset
+
+snippet issetelse
+	@isset(${1})
+		${2}
+	@else
+		${0}
+	@endisset
+
+snippet else
+	@else
+		${0}
+
+snippet csrf
+	@csrf
+
+snippet class
+	@class([${0}])
+
+snippet blade-formatter-disable
+	{{-- blade-formatter-disable --}}
+
+snippet blade-formatter-enable
+	{{-- blade-formatter-enable --}}

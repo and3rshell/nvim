@@ -55,7 +55,10 @@ local plugins = {
     { "stevearc/oil.nvim" },
 
     -- Treesitter & related
-    { "nvim-treesitter/nvim-treesitter",            run = ":TSUpdate" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
+    },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "andymass/vim-matchup" },
     { "numToStr/Comment.nvim" },
