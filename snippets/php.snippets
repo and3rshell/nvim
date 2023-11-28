@@ -306,15 +306,15 @@ snippet get
 snippet fn
 	fn (${1}) => ${0}
 
-snippet /*
+snippet /
 	/** ${0} */
 
-snippet /**
+snippet docblock
 	/**
   * ${0}
   */
 
-snippet /***
+snippet ddocblock
 	/**
   * ${1:Description}
   *
@@ -410,19 +410,19 @@ snippet setter
 snippet Route
 	Route::${1}("/${2}", [${3}::class, "${4}"])${0};
 
-snippet Route::get
+snippet RouteGet
 	Route::get("/${1}", [${2}::class, "${3}"])${0};
 
-snippet Route::delete
+snippet RouteDelete
 	Route::delete("/${1}", [${2}::class, "${3}"])${0};
 
-snippet Route::post
+snippet RoutePost
 	Route::post("/${1}", [${2}::class, "${3}"])${0};
 
-snippet Route::match
+snippet RouteMatch
 	Route::match("/${1}", [${2}::class, "${3}"])${0};
 
-snippet Routefun
+snippet RouteFunc
 	Route::${1}("/${2}", function (${3})${4} {
 		${5}
 	})${0};
