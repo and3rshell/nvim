@@ -65,9 +65,19 @@ local plugins = {
     { "JoosepAlviste/nvim-ts-context-commentstring" },
     { "gbprod/php-enhanced-treesitter.nvim" },
     { "derekstride/tree-sitter-sql" },
-    { "tpope/vim-surround" },
     { "lukas-reineke/indent-blankline.nvim" },
     { "windwp/nvim-autopairs" },
+    -- { "tpope/vim-surround" },
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
 
     -- Colors
     { "lunarvim/darkplus.nvim" },

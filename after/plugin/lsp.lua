@@ -50,7 +50,7 @@ local function lsp_settings()
         virtual_text = false,
         signs = true,
         update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
-        underline = true,
+        underline = false,
         severity_sort = true,
         float = {
             focusable = false,
@@ -132,7 +132,8 @@ mason_lspconfig.setup({
         "jsonls",
         "lua_ls",
         "marksman", -- markdown
-        "intelephense",
+        -- "intelephense",
+        "phpactor",
         "pyright",
         "rust_analyzer",
         "sqlls",
@@ -193,27 +194,45 @@ mason_lspconfig.setup_handlers({
     --     })
     --     lspconfig.tsserver.setup(tsserver_settings)
     -- end,
-    ["intelephense"] = function()
-        local intelephense_settings = vim.tbl_extend("force", common_settings, {
+    -- ["intelephense"] = function()
+    --     local intelephense_settings = vim.tbl_extend("force", common_settings, {
+    --         init_options = {
+    --             globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
+    --         },
+    --         files = {
+    --             maxSize = 5000000,
+    --         },
+    --         -- stubs = {
+    --         --     "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
+    --         --     "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
+    --         --     "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
+    --         --     "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
+    --         --     "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
+    --         --     "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
+    --         --     "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
+    --         --     "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
+    --         --     "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
+    --         -- },
+    --     })
+    --     lspconfig.intelephense.setup(intelephense_settings)
+    -- end,
+    ["phpactor"] = function()
+        local phpactor_settings = vim.tbl_extend("force", common_settings, {
+            filetypes = { "php", "blade" },
+            -- root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
             init_options = {
-                globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
+                -- ["language_server_worse_reflection.inlay_hints.enable"] = true,
+                -- ["language_server_worse_reflection.inlay_hints.params"] = true,
+                -- ["language_server_worse_reflection.inlay_hints.types"] = true,
+                -- ["language_server_configuration.auto_config"] = false,
+                -- ["code_transform.import_globals"] = true,
+                -- ["language_server_phpstan.enabled"] = true,
+                -- ["language_server_phpstan.level"] = 7,
+                -- ["language_server_phpstan.bin"] = "phpstan",
+                -- ["console.decorated"] = false,
             },
-            files = {
-                maxSize = 5000000,
-            },
-            -- stubs = {
-            --     "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
-            --     "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
-            --     "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
-            --     "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
-            --     "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
-            --     "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
-            --     "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
-            --     "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
-            --     "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
-            -- },
         })
-        lspconfig.intelephense.setup(intelephense_settings)
+        lspconfig.phpactor.setup(phpactor_settings)
     end,
     ["tailwindcss"] = function()
         local tailwindcss_settings = vim.tbl_extend("force", common_settings, {
@@ -257,5 +276,3 @@ mason_lspconfig.setup_handlers({
 -- }
 
 -- lspconfig.blade.setup(common_settings)
-
-
