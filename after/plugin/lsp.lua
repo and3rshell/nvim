@@ -132,8 +132,8 @@ mason_lspconfig.setup({
         "jsonls",
         "lua_ls",
         "marksman", -- markdown
-        -- "intelephense",
-        "phpactor",
+        "intelephense",
+        -- "phpactor",
         "pyright",
         "rust_analyzer",
         "sqlls",
@@ -194,28 +194,28 @@ mason_lspconfig.setup_handlers({
     --     })
     --     lspconfig.tsserver.setup(tsserver_settings)
     -- end,
-    -- ["intelephense"] = function()
-    --     local intelephense_settings = vim.tbl_extend("force", common_settings, {
-    --         init_options = {
-    --             globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
-    --         },
-    --         files = {
-    --             maxSize = 5000000,
-    --         },
-    --         -- stubs = {
-    --         --     "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
-    --         --     "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
-    --         --     "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
-    --         --     "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
-    --         --     "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
-    --         --     "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
-    --         --     "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
-    --         --     "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
-    --         --     "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
-    --         -- },
-    --     })
-    --     lspconfig.intelephense.setup(intelephense_settings)
-    -- end,
+    ["intelephense"] = function()
+        local intelephense_settings = vim.tbl_extend("force", common_settings, {
+            init_options = {
+                globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
+            },
+            files = {
+                maxSize = 5000000,
+            },
+            -- stubs = {
+            --     "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
+            --     "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
+            --     "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
+            --     "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
+            --     "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
+            --     "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
+            --     "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
+            --     "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
+            --     "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
+            -- },
+        })
+        lspconfig.intelephense.setup(intelephense_settings)
+    end,
     ["phpactor"] = function()
         local phpactor_settings = vim.tbl_extend("force", common_settings, {
             filetypes = { "php", "blade" },
