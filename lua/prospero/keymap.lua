@@ -72,9 +72,9 @@ keymap("n", "<leader>V", ':!vscodium $(pwd) "%"<CR><CR>')
 -- keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap("n", "<leader><leader>sw", ':set wrap<CR>:set linebreak<CR>')
 
-keymap("n", "<leader>fh", ":set filetype=html<CR>")
-keymap("n", "<leader>fp", ":set filetype=php<CR>")
-keymap("n", "<leader>fc", ":set filetype=c<CR>")
+keymap("n", "<leader><leader>fh", ":set filetype=html<CR>")
+keymap("n", "<leader><leader>fp", ":set filetype=php<CR>")
+keymap("n", "<leader><leader>fc", ":set filetype=c<CR>")
 
 -- keymap('n', '<leader>i', function()
 --     vim.api.nvim_feedkeys('ea', 'n', true)
@@ -106,8 +106,8 @@ keymap("n", "<leader><", ":tabmove -<CR>")
 
 keymap("n", "<leader>v", ":vsplit<CR>")
 keymap("n", "<leader>x", ":split<CR>")
-keymap("n", "<leader>K", "<c-w>_ | <c-w>|")
-keymap("n", "<leader>J", "<c-w>=")
+-- keymap("n", "<leader>K", "<c-w>_ | <c-w>|")
+-- keymap("n", "<leader>J", "<c-w>=")
 
 keymap("n", "<C-b>", "i**<esc>ea**<esc>B")
 keymap("n", "da*", "xxwxxB")

@@ -46,9 +46,6 @@ local plugins = {
         },
     },
 
-    -- Terminal
-    { "akinsho/toggleterm.nvim" },
-
     -- File manager
     -- Fix error while opening directory in lir
     -- { "tpope/vim-vinegar" },
@@ -100,8 +97,9 @@ local plugins = {
     -- use { "jose-elias-alvarez/buftabline.nvim" }
     { "j-morano/buffer_manager.nvim" },
 
-    -- Git
-    { "tpope/vim-fugitive" },
+    -- Terminal & Git
+    -- { "tpope/vim-fugitive" },
+    { "akinsho/toggleterm.nvim" },
     { "kdheepak/lazygit.nvim" },
     { "lewis6991/gitsigns.nvim" },
 

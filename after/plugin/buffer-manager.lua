@@ -38,10 +38,10 @@ for i = 1, #keys do
 end
 
 -- Just the menu
-vim.keymap.set("n", 'M', bmui.toggle_quick_menu, opts)
+vim.keymap.set("n", '<leader>b', bmui.toggle_quick_menu, opts)
 
 -- Open menu and search
-vim.keymap.set("n", '<leader>M', function()
+vim.keymap.set("n", '<leader>B', function()
     bmui.toggle_quick_menu()
     -- wait for the menu to open
     vim.defer_fn(function()

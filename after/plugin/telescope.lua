@@ -7,14 +7,14 @@ local putils = require("telescope.previewers.utils")
 local keymap_opts = { silent = true }
 
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
-vim.keymap.set(
-    "n",
-    "<leader>b",
-    ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>",
-    keymap_opts
-)
-vim.keymap.set("n", "<leader>H", ":Telescope help_tags<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", keymap_opts)
+-- vim.keymap.set(
+--     "n",
+--     "<leader>b",
+--     ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>",
+--     keymap_opts
+-- )
+vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", keymap_opts)
 -- vim.keymap.set('n', '<leader>G', function()
 --     builtin.grep_string({ search = vim.fn.input("Grep > ") })
