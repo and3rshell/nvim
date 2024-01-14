@@ -6,19 +6,35 @@ local putils = require("telescope.previewers.utils")
 
 local keymap_opts = { silent = true }
 
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
 -- vim.keymap.set(
 --     "n",
 --     "<leader>b",
 --     ":Telescope buffers previewer=false initial_mode=normal prompt_title=Buffers<CR>",
 --     keymap_opts
 -- )
+
+vim.keymap.set("n", "<C-p>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics<CR>", keymap_opts)
--- vim.keymap.set('n', '<leader>G', function()
---     builtin.grep_string({ search = vim.fn.input("Grep > ") })
--- end)
+
+vim.keymap.set("n", "<leader>gl", ":Telescope live_grep<CR>", keymap_opts)
+
+vim.keymap.set('n', '<leader>gg', function()
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
+
+vim.keymap.set("n", "<leader>gw", function()
+    -- ex. will search for "DO" when there is "DO.not"
+    local word = vim.fn.expand("<cword>")
+    builtin.grep_string({ search = word })
+end, keymap_opts)
+
+vim.keymap.set("n", "<leader>gW", function()
+    -- ex. will search for "DO.not"
+    local word = vim.fn.expand("<cWORD>")
+    builtin.grep_string({ search = word })
+end, keymap_opts)
 
 telescope.setup({
     defaults = {
