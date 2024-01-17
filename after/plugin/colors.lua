@@ -1,15 +1,10 @@
--- require('rose-pine').setup({
---     disable_background = true
--- })
-
 local highlight = vim.cmd.highlight
 local cmd = vim.cmd
 local opt = vim.opt
 local g = vim.g
 
 opt.background = "dark"
-cmd.colorscheme("retrobox")
--- cmd.colorscheme("habamax")
+cmd.colorscheme("habamax")
 
 highlight("FloatBorder ctermfg=236 ctermbg=234 guifg=#cccccc guibg=#000000")
 highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE guibg=NONE")
@@ -18,7 +13,7 @@ highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE 
 -- highlight("VertSplit guifg=#202020 guibg=#202020")
 
 -- if g.colors_name == "retrobox" then
-highlight("DiffAdd cterm=reverse ctermfg=142 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
+highlight("DiffAdd cterm=reverse blend=100 ctermfg=1 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
 highlight("DiffDelete cterm=reverse ctermfg=142 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
 highlight("DiffChange cterm=reverse ctermfg=107 ctermbg=NONE gui=NONE guifg=#8ec07c guibg=NONE")
 
@@ -31,7 +26,9 @@ highlight("DiagnosticError cterm=bold gui=bold guifg=#f33636")
 if g.colors_name == "habamax" then
     -- highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#fabd2f guibg=NONE")
     highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#007799 guibg=NONE")
-    highlight("Visual ctermfg=234 ctermbg=109 guifg=#1c1c1c guibg=#5d8c8c")
+    -- highlight("Visual ctermfg=234 ctermbg=109 guifg=#000000 guibg=#3d6c6c")
+    highlight("Visual ctermfg=234 ctermbg=109 guifg=#000000 guibg=#2c5b5b")
+    -- highlight("Visual ctermfg=234 ctermbg=109 guifg=#1c1c1c guibg=#5d8c8c")
     -- highlight("Visual ctermfg=234 ctermbg=109 guifg=#1c1c1c guibg=#83a598")
 end
 
