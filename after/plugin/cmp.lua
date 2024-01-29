@@ -69,9 +69,10 @@ cmp.setup {
         }
     },
     experimental = {
-        ghost_text = {
-            hl_group = 'SignColumn'
-        },
+        -- ghost_text = {
+        --     hl_group = 'Comment'
+        -- },
+        ghost_text = true
     },
     completion = {
         completeopt = 'menu,menuone,noinsert'

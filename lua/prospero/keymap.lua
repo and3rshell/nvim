@@ -67,8 +67,7 @@ keymap("n", "gch", "I<!-- <esc>A --><esc>0")
 keymap("n", "gcH", "0df $daw0")
 keymap("n", "gcp", "I// <esc>0")
 keymap("n", "gcP", "0df ")
-keymap("n", "<leader>B", ':!$BROWSER "%"<cr>')
-keymap("n", "<leader>V", ':!vscodium $(pwd) "%"<CR><CR>')
+-- keymap("n", "<leader>B", ':!$BROWSER "%"<cr>')
 -- keymap("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap("n", "<leader><leader>sw", ':set wrap<CR>:set linebreak<CR>')
 
@@ -104,8 +103,10 @@ keymap('i', '<M-;>', ';') -- ctrl won't work
 keymap("n", "<leader>>", ":tabmove +<CR>")
 keymap("n", "<leader><", ":tabmove -<CR>")
 
-keymap("n", "<leader>v", ":vsplit<CR>")
-keymap("n", "<leader>x", ":split<CR>")
+-- keymap("n", "<leader>v", ":vsplit<CR>")
+-- keymap("n", "<leader>x", ":split<CR>")
+keymap("n", "<leader>L", ":vsplit<CR>")
+keymap("n", "<leader>J", ":split<CR>")
 -- keymap("n", "<leader>K", "<c-w>_ | <c-w>|")
 -- keymap("n", "<leader>J", "<c-w>=")
 
