@@ -17,6 +17,8 @@ local plugins = {
     { "nvim-lua/popup.nvim" },
 
     { "nvim-telescope/telescope.nvim" },
+    { "princejoogie/dir-telescope.nvim" },
+
     { "ThePrimeagen/harpoon" },
     { "mbbill/undotree" },
     { "folke/zen-mode.nvim" },

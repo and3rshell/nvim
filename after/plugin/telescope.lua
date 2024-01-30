@@ -14,8 +14,9 @@ local keymap_opts = { silent = true }
 -- )
 
 vim.keymap.set("n", "<C-p>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>fg", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
+-- vim.keymap.set("n", "<leader>fg", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fa", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
+
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fH", ":Telescope highlights<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>.", ":Telescope diagnostics initial_mode=normal<CR>", keymap_opts)
@@ -39,6 +40,10 @@ vim.keymap.set("n", "<leader>gW", function()
     local word = vim.fn.expand("<cWORD>")
     builtin.grep_string({ search = word })
 end, keymap_opts)
+
+telescope.load_extension("dir")
+vim.keymap.set("n", "<leader>gd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
 
 telescope.setup({
     defaults = {
