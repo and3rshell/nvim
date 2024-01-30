@@ -45,6 +45,7 @@ local plugins = {
             },
         },
     },
+    { "kwkarlwang/bufjump.nvim" },
 
     -- File manager
     -- Fix error while opening directory in lir
