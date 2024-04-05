@@ -95,7 +95,7 @@ keymap("n", "L", "$")
 
 keymap("i", "<C-h>", "<C-o>^")
 keymap("i", "<C-l>", "<C-o>$")
-keymap("i", "<M-l>", "<C-o>f;")
+-- keymap("i", "<M-l>", "<C-o>f;")
 keymap('i', ';', '<Esc>A;')
 keymap('i', '<M-;>', ';') -- ctrl won't work
 
