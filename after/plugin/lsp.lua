@@ -3,9 +3,9 @@ local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 
-vim.keymap.set("n", "<leader>ld", ":LspStop<cr>")
-vim.keymap.set("n", "<leader>le", ":LspStart<cr>")
-vim.keymap.set("n", "<leader>lf", ":LspFormat<cr>")
+vim.keymap.set("n", "<leader>;d", ":LspStop<cr>")
+vim.keymap.set("n", "<leader>;e", ":LspStart<cr>")
+vim.keymap.set("n", "<leader>;f", ":LspFormat<cr>")
 
 local function lsp_keymaps(bufnr)
     local map = function(m, lhs, rhs)

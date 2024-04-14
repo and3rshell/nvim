@@ -50,5 +50,5 @@ vim.keymap.set("n", '<leader>B', function()
 end, opts)
 
 -- Next/Prev
-vim.keymap.set('n', '<leader>h', bmui.nav_prev, opts)
-vim.keymap.set('n', '<leader>l', bmui.nav_next, opts)
+-- vim.keymap.set('n', '<leader>h', bmui.nav_prev, opts)
+-- vim.keymap.set('n', '<leader>l', bmui.nav_next, opts)
