@@ -140,6 +140,8 @@ local plugins = {
     -- Snippets
     { "L3MON4D3/LuaSnip" },
     -- { "rafamadriz/friendly-snippets" },
+
+    { "ActivityWatch/aw-watcher-vim" }
 }
 
 require("lazy").setup(plugins)

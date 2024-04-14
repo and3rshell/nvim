@@ -1,6 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "be7be2ca7f55bb881a7ffc16b2efa5af034ab06b" },
+  "aw-watcher-vim": { "branch": "master", "commit": "4ba86d05a940574000c33f280fd7f6eccc284331" },
   "buffer_manager.nvim": { "branch": "main", "commit": "9cd0e34522d96d08817828f1e9fd3379f27efb73" },
   "bufferline.nvim": { "branch": "main", "commit": "64e2c5def50dfd6b6f14d96a45fa3d815a4a1eef" },
   "bufjump.nvim": { "branch": "master", "commit": "a020f81bb82f758da51594a07bfcb9635a6b0f73" },
