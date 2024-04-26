@@ -15,7 +15,7 @@ local keymap_opts = { silent = true }
 
 vim.keymap.set("n", "<C-p>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
 -- vim.keymap.set("n", "<leader>fg", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>fa", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
+vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
 
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fH", ":Telescope highlights<CR>", keymap_opts)
