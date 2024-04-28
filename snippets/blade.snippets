@@ -20,12 +20,12 @@ snippet ifelse
 		${0}
 	@endif
 
-snippet foreach
+snippet for
 	@foreach($${1:array} as $${2:$value})
 		${0}
 	@endforeach
 
-snippet fforeach
+snippet ffor
 	@foreach($${1:array} as $${2:key} => $${3:$value})
 		${0}
 	@endforeach
@@ -110,9 +110,6 @@ snippet issetelse
 snippet else
 	@else
 		${0}
-
-snippet csrf
-	@csrf
 
 snippet classblade
 	@class([${0}])
