@@ -18,7 +18,7 @@ opt.number = true
 opt.relativenumber = true
 opt.wrap = false
 opt.scrolloff = 8
-opt.sidescrolloff = 8
+-- opt.sidescrolloff = 8
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 opt.isfname:append("@-@")
 opt.hlsearch = false
