@@ -13,11 +13,12 @@ vim.keymap.set("n", "<leader>sf", ':w<CR><cmd>lua require("spectre").open_file_s
 
 require("spectre").setup({
     color_devicons = true,
-    open_cmd = "vnew",
+    open_cmd = "new",
     live_update = false, -- auto execute search again when you write to any file in vim
-    line_sep_start = "┌-----------------------------------------",
-    result_padding = "¦  ",
-    line_sep = "└-----------------------------------------",
+    lnum_for_results = true, -- show line number for search/replace results
+    line_sep_start = '┌-----------------------------------------',
+    result_padding = '¦  ',
+    line_sep       = '└-----------------------------------------',
     highlight = {
         ui = "String",
         search = "DiffChange",
@@ -35,12 +36,12 @@ require("spectre").setup({
             desc = "open file",
         },
         ["send_to_qf"] = {
-            map = "<leader>q",
+            map = "<leader>Q",
             cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
             desc = "send all items to quickfix",
         },
         ["replace_cmd"] = {
-            map = "<leader>c",
+            map = "<leader>C",
             cmd = "<cmd>lua require('spectre.actions').replace_cmd()<CR>",
             desc = "input replace command",
         },
@@ -55,7 +56,7 @@ require("spectre").setup({
             desc = "replace current line",
         },
         ["run_replace"] = {
-            map = "<leader>R",
+            map = "<leader>c",
             cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
             desc = "replace all",
         },
