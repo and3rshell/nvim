@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=t
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fH", ":Telescope highlights<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics initial_mode=normal<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>fr", ":Telescope registers<CR>", keymap_opts)
+-- vim.keymap.set("n", "<leader>fr", ":Telescope registers<CR>", keymap_opts)
 -- git commits, git status, highlights, search history, vim_options
 
 vim.keymap.set("n", "<leader>gl", ":Telescope live_grep<CR>", keymap_opts)
