@@ -112,7 +112,7 @@ local plugins = {
     { "williamboman/mason-lspconfig.nvim" },
     { "ray-x/lsp_signature.nvim" },
     { "j-hui/fidget.nvim", tag = "legacy" },
-    { "simrat39/symbols-outline.nvim" },
+    -- { "simrat39/symbols-outline.nvim" },
     -- use { "nvim-lua/lsp-status.nvim" }
     -- use { "neoclide/coc.nvim", tag = "release" }
     { "othree/html5.vim" },
