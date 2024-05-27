@@ -33,22 +33,38 @@ local function lsp_keymaps(bufnr)
 end
 
 local function lsp_settings()
-    local sign = function(opts)
-        vim.fn.sign_define(opts.name, {
-            texthl = opts.name,
-            text = opts.text,
-            numhl = "",
-        })
-    end
+    -- local sign = function(opts)
+    --     vim.fn.sign_define(opts.name, {
+    --         texthl = opts.name,
+    --         text = opts.text,
+    --         numhl = "",
+    --     })
+    -- end
 
-    sign({ name = "DiagnosticSignError", text = "e" })
-    sign({ name = "DiagnosticSignWarn", text = "w" })
-    sign({ name = "DiagnosticSignHint", text = "h" })
-    sign({ name = "DiagnosticSignInfo", text = "i" })
+    -- sign({ linehl = "DiagnosticSignError", text = "e" })
+    -- sign({ linehl = "DiagnosticSignWarn", text = "w" })
+    -- sign({ linehl = "DiagnosticSignHint", text = "h" })
+    -- sign({ linehl = "DiagnosticSignInfo", text = "i" })
 
     vim.diagnostic.config({
         virtual_text = false,
-        signs = true,
+        signs = {
+            text = {
+                [vim.diagnostic.severity.ERROR] = 'e',
+                [vim.diagnostic.severity.WARN] = 'w',
+                [vim.diagnostic.severity.HINT] = 'h',
+                [vim.diagnostic.severity.INFO] = 'i',
+            },
+            linehl = {
+                [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+                -- [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+                -- [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+                -- [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+            },
+            numhl = {
+                [vim.diagnostic.severity.WARN] = 'WarningMsg',
+            },
+        },
         update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
         underline = false,
         severity_sort = true,
