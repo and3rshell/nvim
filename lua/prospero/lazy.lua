@@ -105,6 +105,7 @@ local plugins = {
     { "akinsho/toggleterm.nvim" },
     { "kdheepak/lazygit.nvim" },
     { "lewis6991/gitsigns.nvim" },
+    { "tpope/vim-fugitive" },
 
     -- LSP & linting & formatting
     { "neovim/nvim-lspconfig" },
@@ -142,7 +143,7 @@ local plugins = {
     -- { "rafamadriz/friendly-snippets" },
 
     -- { "ActivityWatch/aw-watcher-vim" },
-    { "nyngwang/NeoZoom.lua" }
+    -- { "nyngwang/NeoZoom.lua" }
 }
 
 require("lazy").setup(plugins)
