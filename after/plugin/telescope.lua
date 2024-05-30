@@ -6,6 +6,9 @@ local putils = require("telescope.previewers.utils")
 
 local keymap_opts = { silent = true }
 
+telescope.load_extension("git_worktree")
+telescope.load_extension("dir")
+
 -- vim.keymap.set(
 --     "n",
 --     "<leader>b",
@@ -29,19 +32,18 @@ vim.keymap.set('n', '<leader>gg', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
-vim.keymap.set("n", "<leader>gw", function()
-    -- ex. will search for "DO" when there is "DO.not"
-    local word = vim.fn.expand("<cword>")
-    builtin.grep_string({ search = word })
-end, keymap_opts)
+-- vim.keymap.set("n", "<leader>gw", function()
+--     -- ex. will search for "DO" when there is "DO.not"
+--     local word = vim.fn.expand("<cword>")
+--     builtin.grep_string({ search = word })
+-- end, keymap_opts)
 
-vim.keymap.set("n", "<leader>gW", function()
-    -- ex. will search for "DO.not"
-    local word = vim.fn.expand("<cWORD>")
-    builtin.grep_string({ search = word })
-end, keymap_opts)
+-- vim.keymap.set("n", "<leader>gW", function()
+--     -- ex. will search for "DO.not"
+--     local word = vim.fn.expand("<cWORD>")
+--     builtin.grep_string({ search = word })
+-- end, keymap_opts)
 
-telescope.load_extension("dir")
 vim.keymap.set("n", "<leader>gd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
 

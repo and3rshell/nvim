@@ -18,6 +18,7 @@ local plugins = {
 
     { "nvim-telescope/telescope.nvim" },
     { "princejoogie/dir-telescope.nvim" },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
     { "ThePrimeagen/harpoon" },
     { "mbbill/undotree" },
@@ -106,6 +107,7 @@ local plugins = {
     { "kdheepak/lazygit.nvim" },
     { "lewis6991/gitsigns.nvim" },
     { "tpope/vim-fugitive" },
+    { "ThePrimeagen/git-worktree.nvim" },
 
     -- LSP & linting & formatting
     { "neovim/nvim-lspconfig" },
