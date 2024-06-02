@@ -1,11 +1,16 @@
+local zenmode = require("zen-mode")
+
+zenmode.setup {
+    window = {
+        width = 150,
+        height = 55,
+        options = {}
+    },
+}
+
 vim.keymap.set("n", "<leader>z", function()
-    require("zen-mode").setup {
-        window = {
-            width = 120,
-            options = {}
-        },
-    }
-    require("zen-mode").toggle()
+    zenmode.toggle()
+
     vim.wo.wrap = false
     vim.wo.number = true
     vim.wo.rnu = true
