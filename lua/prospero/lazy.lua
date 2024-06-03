@@ -67,7 +67,7 @@ local plugins = {
     { "gbprod/php-enhanced-treesitter.nvim" },
     { "derekstride/tree-sitter-sql" },
     { "lukas-reineke/indent-blankline.nvim" },
-    { "windwp/nvim-autopairs" },
+    -- { "windwp/nvim-autopairs" },
     -- { "tpope/vim-surround" },
     {
         "kylechui/nvim-surround",
