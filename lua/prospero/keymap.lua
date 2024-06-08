@@ -98,8 +98,8 @@ keymap("v", "L", "$h")
 
 keymap("i", "<C-h>", "<C-o>^")
 keymap("i", "<C-l>", "<C-o>$")
-keymap('i', ';', '<Esc>A;')
-keymap('i', '<M-;>', ';') -- ctrl won't work
+-- keymap('i', ';', '<Esc>A;')
+-- keymap('i', '<M-;>', ';') -- ctrl won't work
 
 -- keymap("n", "<leader>tn", ":tabnew<CR>")
 keymap("n", "<leader>>", ":tabmove +<CR>")
