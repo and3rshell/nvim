@@ -49,6 +49,7 @@ local plugins = {
         },
     },
     { "kwkarlwang/bufjump.nvim" },
+    { "nosduco/remote-sshfs.nvim" },
 
     -- File manager
     -- Fix error while opening directory in lir
@@ -114,7 +115,7 @@ local plugins = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "ray-x/lsp_signature.nvim" },
-    { "j-hui/fidget.nvim", tag = "legacy" },
+    { "j-hui/fidget.nvim",                tag = "legacy" },
     -- { "simrat39/symbols-outline.nvim" },
     -- use { "nvim-lua/lsp-status.nvim" }
     -- use { "neoclide/coc.nvim", tag = "release" }
