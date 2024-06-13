@@ -45,6 +45,9 @@ opt.fillchars = { eob = '~' }
 opt.mouse = 'nv'
 opt.mousemodel = 'extend'
 
+-- opt.exrc = true
+-- opt.secure = true
+
 cmd("set modifiable")
 -- opt.shortmess:append("c") -- vim default "filnxtToOF"
 -- opt.iskeyword:append("-")
