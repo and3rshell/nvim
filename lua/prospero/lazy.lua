@@ -26,7 +26,7 @@ local plugins = {
     { "mrjones2014/smart-splits.nvim" },
     -- { "SmiteshP/nvim-navic" },
     { "nvim-pack/nvim-spectre" },
-    { "rcarriga/nvim-notify" },
+    -- { "rcarriga/nvim-notify" },
     {
         "smoka7/multicursors.nvim",
         event = "VeryLazy",

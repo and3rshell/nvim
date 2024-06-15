@@ -212,6 +212,13 @@ mason_lspconfig.setup_handlers({
     -- end,
     ["intelephense"] = function()
         local intelephense_settings = vim.tbl_extend("force", common_settings, {
+            root_dir = function(filename, ...)
+                if vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") then
+                    return nil
+                end
+
+                return require("lspconfig.server_configurations.intelephense").default_config.root_dir(filename, ...)
+            end,
             init_options = {
                 globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
             },
@@ -292,3 +299,13 @@ mason_lspconfig.setup_handlers({
 -- }
 
 -- lspconfig.blade.setup(common_settings)
+
+-- lspconfig.intelephense.setup({
+--   root_dir = function(filename, ...)
+--     if vim.startswith(filename, "/home/prospero/.local/git/oldapp") then
+--       return nil
+--     end
+
+--     return require("lspconfig.server_configurations.intelephense").default_config.root_dir(filename, ...)
+--   end,
+-- })
