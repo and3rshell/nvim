@@ -217,7 +217,7 @@ mason_lspconfig.setup_handlers({
                     return nil
                 elseif vim.startswith(filename, "/srv/http/lic") then
                     return nil
-                elseif vim.startswith(filename, os.getenv("HOME") .. "/.local/src/lic") then
+                elseif vim.startswith(filename, os.getenv("HOME") .. "/.local/git/lic") then
                     return nil
                 end
 
