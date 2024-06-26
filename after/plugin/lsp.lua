@@ -219,6 +219,8 @@ mason_lspconfig.setup_handlers({
                     return nil
                 elseif vim.startswith(filename, os.getenv("HOME") .. "/.local/git/lic") then
                     return nil
+                elseif vim.startswith(filename, os.getenv("HOME") .. "/.local/git/odo") then
+                    return nil
                 end
 
                 return require("lspconfig.server_configurations.intelephense").default_config.root_dir(filename, ...)
