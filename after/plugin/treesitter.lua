@@ -56,7 +56,7 @@ require("nvim-treesitter.configs").setup {
                 return true
             end
 
-            -- idk if works
+            -- havent tested if it works
             local filetypes = { "html" }
             if vim.tbl_contains(filetypes, lang) then
                 return true
@@ -64,13 +64,8 @@ require("nvim-treesitter.configs").setup {
 
             local file_path = vim.api.nvim_buf_get_name(buf)
             local excluded_dir = os.getenv("HOME") .. "/.local/git/iso"
-            local excluded_dir2 = os.getenv("HOME") .. "/.local/git/oso"
 
             if vim.startswith(file_path, excluded_dir) then
-                return true
-            end
-
-            if vim.startswith(file_path, excluded_dir2) then
                 return true
             end
         end,
