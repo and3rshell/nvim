@@ -213,13 +213,7 @@ mason_lspconfig.setup_handlers({
     ["intelephense"] = function()
         local intelephense_settings = vim.tbl_extend("force", common_settings, {
             root_dir = function(filename, ...)
-                if vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") then
-                    return nil
-                elseif vim.startswith(filename, "/srv/http/lic") then
-                    return nil
-                elseif vim.startswith(filename, os.getenv("HOME") .. "/.local/git/lic") then
-                    return nil
-                elseif vim.startswith(filename, os.getenv("HOME") .. "/.local/git/odo") then
+                if vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") or vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") then
                     return nil
                 end
 
