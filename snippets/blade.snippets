@@ -28,9 +28,7 @@ snippet for
 snippet ffor
 	@foreach($${1:array} as $${2:key} => $${3:$value})
 		${0}
-	@endforeach
-
-snippet forelse
+	@endforeach snippet forelse
 	@forelse($${1:array} as $${2:$value})
 		${3}
 	@empty
@@ -122,3 +120,14 @@ snippet blade-formatter-enable
 
 snippet {{
 	{{ ${0} }}
+
+snippet ?=
+	<?= ${0} ?>
+
+snippet ?
+	<?php ${0} ?>
+
+snippet ??
+	<?php
+	${0}
+	?>
