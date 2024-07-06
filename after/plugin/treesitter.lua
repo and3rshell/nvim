@@ -93,6 +93,16 @@ require("nvim-treesitter.configs").setup {
         -- disable = { "javascript" }, -- optional, list of language that will be disabled
         -- options
     },
+
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "<leader>ss", -- set to `false` to disable one of the mappings
+            node_incremental = "<leader>si",
+            scope_incremental = "<leader>sc",
+            node_decremental = "<leader>sd",
+        }
+    }
 }
 
 require 'treesitter-context'.setup {
