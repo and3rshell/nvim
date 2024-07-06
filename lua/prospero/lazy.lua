@@ -24,9 +24,7 @@ local plugins = {
     { "mbbill/undotree" },
     { "folke/zen-mode.nvim" },
     { "mrjones2014/smart-splits.nvim" },
-    -- { "SmiteshP/nvim-navic" },
     { "nvim-pack/nvim-spectre" },
-    -- { "rcarriga/nvim-notify" },
     {
         "smoka7/multicursors.nvim",
         event = "VeryLazy",
@@ -84,7 +82,7 @@ local plugins = {
     -- Colors
     { "lunarvim/darkplus.nvim" },
     -- { "kyazdani42/nvim-web-devicons" },
-    { "nvim-tree/nvim-web-devicons" },
+    -- { "nvim-tree/nvim-web-devicons" },
     {
         "rose-pine/neovim",
         as = "rose-pine",
@@ -104,7 +102,6 @@ local plugins = {
 
     -- Terminal & Git
     -- { "tpope/vim-fugitive" },
-    { "akinsho/toggleterm.nvim" },
     { "kdheepak/lazygit.nvim" },
     { "lewis6991/gitsigns.nvim" },
     { "tpope/vim-fugitive" },
@@ -116,7 +113,14 @@ local plugins = {
     { "williamboman/mason-lspconfig.nvim" },
     { "ray-x/lsp_signature.nvim" },
     { "j-hui/fidget.nvim",                tag = "legacy" },
-    -- { "simrat39/symbols-outline.nvim" },
+    {
+        "hedyhli/outline.nvim",
+        config = function()
+            -- Example mapping to toggle outline
+            vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>")
+            require("outline").setup { }
+        end,
+    },
     -- use { "nvim-lua/lsp-status.nvim" }
     -- use { "neoclide/coc.nvim", tag = "release" }
     { "othree/html5.vim" },

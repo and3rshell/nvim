@@ -56,7 +56,7 @@ local function lsp_settings()
                 [vim.diagnostic.severity.INFO] = 'i',
             },
             linehl = {
-                [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+                -- [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
                 -- [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
                 -- [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
                 -- [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
@@ -178,6 +178,7 @@ mason_lspconfig.setup_handlers({
     function(server_name)
         lspconfig[server_name].setup(common_settings)
     end,
+
     ["lua_ls"] = function()
         local lua_ls_settings = vim.tbl_extend("force", common_settings, {
             settings = {
@@ -190,6 +191,7 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.lua_ls.setup(lua_ls_settings)
     end,
+
     ["html"] = function()
         local html_settings = vim.tbl_extend("force", common_settings, {
             -- filetypes = { "html", "php" },
@@ -205,20 +207,22 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.html.setup(html_settings)
     end,
+
     -- ["tsserver"] = function()
     --     local tsserver_settings = vim.tbl_extend("force", common_settings, {
     --     })
     --     lspconfig.tsserver.setup(tsserver_settings)
     -- end,
+
     ["intelephense"] = function()
         local intelephense_settings = vim.tbl_extend("force", common_settings, {
-            root_dir = function(filename, ...)
-                if vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") or vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") then
-                    return nil
-                end
+            -- root_dir = function(filename, ...)
+            --     if vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") or vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") then
+            --         return nil
+            --     end
 
-                return require("lspconfig.server_configurations.intelephense").default_config.root_dir(filename, ...)
-            end,
+            --     return require("lspconfig.server_configurations.intelephense").default_config.root_dir(filename, ...)
+            -- end,
             init_options = {
                 globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
             },
@@ -239,6 +243,7 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.intelephense.setup(intelephense_settings)
     end,
+
     ["phpactor"] = function()
         local phpactor_settings = vim.tbl_extend("force", common_settings, {
             filetypes = { "php", "blade" },
@@ -257,6 +262,7 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.phpactor.setup(phpactor_settings)
     end,
+
     ["tailwindcss"] = function()
         local tailwindcss_settings = vim.tbl_extend("force", common_settings, {
             -- markdown deleted
@@ -274,6 +280,7 @@ mason_lspconfig.setup_handlers({
         })
         lspconfig.tailwindcss.setup(tailwindcss_settings)
     end,
+
     ["emmet_ls"] = function()
         local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
             filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }

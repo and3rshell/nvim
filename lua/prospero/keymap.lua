@@ -11,8 +11,8 @@ keymap("n", "<leader>q", "ZQ")
 keymap("n", "<leader>Q", ":w<CR>:qall<CR>")
 keymap("n", "<leader>w", ":w<CR>")
 -- keymap("n", "<C-c>", "ZQ")
-cmd("command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!")
-cmd("nmap <leader>W :W<CR>")
+cmd("command! SaveAsRoot :execute ':silent w !sudo tee % > /dev/null' | :edit!")
+cmd("nmap <leader>W :SaveAsRoot<CR>")
 -- keymap("n", "L", ":bnext<CR>")
 -- keymap("n", "H", ":bprev<CR>")
 keymap("n", "<leader>D", ":Bdelete!<CR>")
@@ -117,3 +117,13 @@ keymap("n", "gC", "ggcG")
 keymap("n", "gy", "ggVGy<c-o>")
 keymap("n", "<leader>E", ":edit<CR>")
 keymap("n", "<leader><leader>E", ":edit!<CR>")
+
+vim.cmd([[
+    " command! FuncSearch execute "/\\%(protected\\|public\\|private\\)\\zs.*function.*"
+    command! FuncSearch execute "/\\%(protected\\|public\\|private\\)\.*function.*"
+]])
+
+keymap('n', '<leader>/f', ':FuncSearch<CR>')
+keymap('n', '<leader>/c', '/case\\|default.*:$<CR>')
+keymap("n", "<leader>Zi", ":set foldmethod=indent<CR>")
+keymap("n", "<leader>Ze", ":set foldmethod=expr<CR>")
