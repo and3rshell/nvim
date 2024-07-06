@@ -19,6 +19,14 @@ local plugins = {
     { "nvim-telescope/telescope.nvim" },
     { "princejoogie/dir-telescope.nvim" },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    { "rebelot/kanagawa.nvim" },
+    { "kepano/flexoki-neovim" },
 
     { "ThePrimeagen/harpoon" },
     { "mbbill/undotree" },
@@ -118,7 +126,7 @@ local plugins = {
         config = function()
             -- Example mapping to toggle outline
             vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>")
-            require("outline").setup { }
+            require("outline").setup {}
         end,
     },
     -- use { "nvim-lua/lsp-status.nvim" }
