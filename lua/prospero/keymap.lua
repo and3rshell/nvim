@@ -125,7 +125,8 @@ vim.cmd([[
     command! FuncSearch execute "/\\%(protected\\|public\\|private\\)\.*function.*"
 ]])
 
-keymap('n', '<leader>/f', ':FuncSearch<CR>')
+keymap('n', '<leader>/F', ':FuncSearch<CR>')
+keymap('n', '<leader>/f', '/fun.*')
 keymap('n', '<leader>/c', '/case\\|default.*:$<CR>')
 keymap("n", "<leader>Zi", ":set foldmethod=indent<CR>")
 keymap("n", "<leader>Ze", ":set foldmethod=expr<CR>")
