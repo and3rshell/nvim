@@ -21,6 +21,8 @@ require("buffer_manager").setup({
     short_file_names = false,
     short_term_names = true,
     loop_nav = false,
+    width = 80,
+    height = 15
 })
 
 local bmui = require("buffer_manager.ui")
