@@ -2,9 +2,18 @@ local zenmode = require("zen-mode")
 
 zenmode.setup {
     window = {
-        width = 250,
-        height = 55,
-        options = {}
+        width = 265,
+        height = 60,
+        options = {
+            -- signcolumn = "no",
+            number = true,
+            relativenumber = true,
+            -- cursorline = true,
+            -- cursorcolumn = true,
+            -- foldcolumn = "0",
+            list = true,
+        },
+        backdrop = 0.95,
     },
 }
 

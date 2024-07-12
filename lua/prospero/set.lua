@@ -38,7 +38,7 @@ opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in mill
 opt.guifont = "monospace:h11" -- the font used in graphical neovim applications
 opt.autoindent = true
 opt.smartindent = true
-opt.showtabline = 0 -- the value of this option specifies when the line with tab page labels will be displayed
+opt.showtabline = 1 -- the value of this option specifies when the line with tab page labels will be displayed
 opt.pumheight = 10 -- maximum number of items to show in the popup menu
 -- opt.conceallevel = 1 -- example: make `` visible in markdown files
 opt.fillchars = { eob = '~' }
