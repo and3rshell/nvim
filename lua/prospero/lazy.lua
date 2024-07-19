@@ -19,41 +19,33 @@ local plugins = {
     { "nvim-telescope/telescope.nvim" },
     { "princejoogie/dir-telescope.nvim" },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
-    { "rebelot/kanagawa.nvim" },
-    { "kepano/flexoki-neovim" },
 
     { "ThePrimeagen/harpoon" },
     { "mbbill/undotree" },
     { "folke/zen-mode.nvim" },
     { "mrjones2014/smart-splits.nvim" },
     { "nvim-pack/nvim-spectre" },
-    {
-        "smoka7/multicursors.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            'smoka7/hydra.nvim',
-        },
-        opts = {},
-        cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
-        keys = {
-            {
-                mode = { 'v', 'n' },
-                '<leader>n',
-                '<cmd>MCstart<cr>'
-            },
-            {
-                mode = { 'v', 'n' },
-                '<leader>N',
-                '<cmd>MCpattern<cr>'
-            },
-        },
-    },
+    -- {
+    --     "smoka7/multicursors.nvim",
+    --     event = "VeryLazy",
+    --     dependencies = {
+    --         'smoka7/hydra.nvim',
+    --     },
+    --     opts = {},
+    --     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    --     keys = {
+    --         {
+    --             mode = { 'v', 'n' },
+    --             '<leader>n',
+    --             '<cmd>MCstart<cr>'
+    --         },
+    --         {
+    --             mode = { 'v', 'n' },
+    --             '<leader>N',
+    --             '<cmd>MCpattern<cr>'
+    --         },
+    --     },
+    -- },
     { "kwkarlwang/bufjump.nvim" },
     { "nosduco/remote-sshfs.nvim" },
 
@@ -107,6 +99,7 @@ local plugins = {
     { "moll/vim-bbye" },
     -- use { "jose-elias-alvarez/buftabline.nvim" }
     { "j-morano/buffer_manager.nvim" },
+    { "nanozuki/tabby.nvim" },
 
     -- Terminal & Git
     -- { "tpope/vim-fugitive" },
@@ -120,7 +113,7 @@ local plugins = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "ray-x/lsp_signature.nvim" },
-    { "j-hui/fidget.nvim",                tag = "legacy" },
+    { "j-hui/fidget.nvim", tag = "legacy" },
     {
         "hedyhli/outline.nvim",
         config = function()
