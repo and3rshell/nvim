@@ -19,6 +19,7 @@ local plugins = {
     { "nvim-telescope/telescope.nvim" },
     { "princejoogie/dir-telescope.nvim" },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    { 'nvim-telescope/telescope-ui-select.nvim' },
 
     { "ThePrimeagen/harpoon" },
     { "mbbill/undotree" },

@@ -9,6 +9,13 @@ local types = require("cmp.types")
 --     if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then return true end
 -- end
 
+-- require("luasnip").filetype_extend("php", {"html"})
+-- require("luasnip").filetype_extend("php", {"phpdoc"})
+-- require("luasnip").filetype_extend("php", {"blade"})
+-- require("luasnip").filetype_extend("php", {"html"})
+-- require("luasnip").filetype_extend("vue", {"html"})
+-- require("luasnip").filetype_extend("blade", {"html"})
+
 cmp.setup {
     mapping = {
         ['<C-f>'] = cmp.mapping.scroll_docs(4),

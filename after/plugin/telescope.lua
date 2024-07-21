@@ -8,6 +8,7 @@ local keymap_opts = { silent = true }
 
 telescope.load_extension("git_worktree")
 telescope.load_extension("dir")
+telescope.load_extension("ui-select")
 
 -- vim.keymap.set(
 --     "n",
@@ -153,10 +154,8 @@ telescope.setup({
         },
     },
     extensions = {
-        -- Your extension configuration goes here:
-        -- extension_name = {
-        --   extension_config_key = value,
-        -- }
-        -- please take a look at the readme of the extension you want to configure
-    },
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {}
+        }
+    }
 })

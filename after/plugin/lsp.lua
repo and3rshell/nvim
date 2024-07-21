@@ -22,7 +22,7 @@ local function lsp_keymaps(bufnr)
     map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
     map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
     map("n", "<F1>", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
-    map("n", "<F2>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+    map("n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<cr>")
     map("x", "<F2>", "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
 
     -- Diagnostics
@@ -141,7 +141,6 @@ mason_lspconfig.setup({
         "cssmodules_ls",
         "dockerls",
         "eslint",
-        "emmet_ls",
         "gopls",
         "graphql",
         "html",
@@ -155,10 +154,10 @@ mason_lspconfig.setup({
         "sqlls",
         "tailwindcss",
         "vimls",
-        "vuels",
+        "volar",
         "lemminx", -- xml
         -- "denols",
-        "tsserver",
+        -- "tsserver",
     },
     automatic_installation = true,
 })
@@ -281,12 +280,16 @@ mason_lspconfig.setup_handlers({
         lspconfig.tailwindcss.setup(tailwindcss_settings)
     end,
 
-    ["emmet_ls"] = function()
-        local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
-            filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
-        })
-        lspconfig.emmet_ls.setup(emmet_ls_settings)
+     ["volar"] = function()
+        lspconfig.volar.setup(common_settings)
     end,
+
+   -- ["emmet_ls"] = function()
+    --     local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
+    --         filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
+    --     })
+    --     lspconfig.emmet_ls.setup(emmet_ls_settings)
+    -- end,
 })
 
 -- configs.blade = {
