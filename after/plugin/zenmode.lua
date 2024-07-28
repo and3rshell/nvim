@@ -13,7 +13,7 @@ zenmode.setup {
             -- foldcolumn = "0",
             list = true,
         },
-        backdrop = 0.95,
+        backdrop = 0.95
     },
 }
 
