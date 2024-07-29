@@ -4,7 +4,7 @@ local g = vim.g
 -- keymap("n", "<leader>gg", ":LazyGit<CR>")
 keymap("n", "<C-g>", ":LazyGit<CR>")
 -- keymap("n", "<leader>gf", ":LazyGitFilter<CR>")
--- keymap("n", "<leader>gc", ":LazyGitFilterCurrentFile<CR>")
+keymap("n", "<leader>gc", ":LazyGitFilterCurrentFile<CR>")
 
 g.lazygit_floating_window_winblend = 0 -- transparency of floating window
 g.lazygit_floating_window_scaling_factor = 0.85 -- scaling factor for floating window
