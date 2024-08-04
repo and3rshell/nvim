@@ -26,29 +26,30 @@ local plugins = {
     { "folke/zen-mode.nvim" },
     { "mrjones2014/smart-splits.nvim" },
     { "nvim-pack/nvim-spectre" },
-    -- {
-    --     "smoka7/multicursors.nvim",
-    --     event = "VeryLazy",
-    --     dependencies = {
-    --         'smoka7/hydra.nvim',
-    --     },
-    --     opts = {},
-    --     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
-    --     keys = {
-    --         {
-    --             mode = { 'v', 'n' },
-    --             '<leader>n',
-    --             '<cmd>MCstart<cr>'
-    --         },
-    --         {
-    --             mode = { 'v', 'n' },
-    --             '<leader>N',
-    --             '<cmd>MCpattern<cr>'
-    --         },
-    --     },
-    -- },
+    {
+        "smoka7/multicursors.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            'smoka7/hydra.nvim',
+        },
+        opts = {},
+        cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+        keys = {
+            {
+                mode = { 'v', 'n' },
+                '<leader>m',
+                '<cmd>MCstart<cr>'
+            },
+            {
+                mode = { 'v', 'n' },
+                '<leader>M',
+                '<cmd>MCpattern<cr>'
+            },
+        },
+    },
     { "kwkarlwang/bufjump.nvim" },
     { "nosduco/remote-sshfs.nvim" },
+    { "tpope/vim-obsession" },
 
     -- File manager
     -- Fix error while opening directory in lir

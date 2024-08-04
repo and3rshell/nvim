@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>0", function() ui.nav_file(10) end)
 
 -- vim.keymap.set("n", "", function() ui.nav_file(11) end)
 
-vim.keymap.set("n", '<leader>m', function()
+vim.keymap.set("n", 'M', function()
     ui.toggle_quick_menu()
     -- wait for the menu to open
     vim.defer_fn(function()
