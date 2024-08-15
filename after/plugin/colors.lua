@@ -4,7 +4,7 @@ local opt = vim.opt
 local g = vim.g
 
 opt.background = "dark"
-cmd.colorscheme("habamax")
+cmd.colorscheme("retrobox")
 
 highlight("FloatBorder ctermfg=236 ctermbg=234 guifg=#cccccc guibg=#000000")
 highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE guibg=NONE")
