@@ -71,7 +71,7 @@ require("nvim-treesitter.configs").setup {
             local file_path = vim.api.nvim_buf_get_name(buf)
             local excluded_dir = os.getenv("HOME") .. "/.local/git/iso"
 
-            if vim.startswith(file_path, excluded_dir or os.getenv("HOME") .. "/.local/git/trash-app") then
+            if vim.startswith(file_path, excluded_dir) then
                 return true
             end
         end,

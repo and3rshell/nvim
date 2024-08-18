@@ -13,6 +13,11 @@ highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE 
 -- highlight("VertSplit guifg=#808080 guibg=#1e1e1e")
 -- highlight("VertSplit guifg=#202020 guibg=#202020")
 
+vim.cmd [[
+    hi link @keyword.return.php Macro
+    hi link @keyword.modifier.php Structure
+]]
+
 if g.colors_name == "kanagawa" or "kanagawa-dragon" then
     -- git diff signs
     highlight("DiffAdd cterm=reverse blend=100 ctermfg=1 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
