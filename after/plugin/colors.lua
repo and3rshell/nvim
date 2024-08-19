@@ -16,6 +16,8 @@ highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE 
 vim.cmd [[
     hi link @keyword.return.php Macro
     hi link @keyword.modifier.php Structure
+    hi link htmlTag Comment
+    hi link htmlEndTag Comment
 ]]
 
 if g.colors_name == "kanagawa" or "kanagawa-dragon" then
