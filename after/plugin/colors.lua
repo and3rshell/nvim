@@ -18,6 +18,7 @@ vim.cmd [[
     hi link @keyword.modifier.php Structure
     hi link htmlTag Comment
     hi link htmlEndTag Comment
+    hi link @tag.vue @none.vue
 ]]
 
 if g.colors_name == "kanagawa" or "kanagawa-dragon" then
