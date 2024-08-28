@@ -85,13 +85,6 @@ local plugins = {
     { "lunarvim/darkplus.nvim" },
     -- { "kyazdani42/nvim-web-devicons" },
     -- { "nvim-tree/nvim-web-devicons" },
-    {
-        "rose-pine/neovim",
-        as = "rose-pine",
-        -- config = function(
-        --     vim.cmd('colorscheme rose-pine'
-        -- end
-    },
 
     -- Statusline & tabline & buffers
     { "nvim-lualine/lualine.nvim" },
@@ -99,7 +92,6 @@ local plugins = {
     -- This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
     { "tiagovla/scope.nvim" },
     { "moll/vim-bbye" },
-    -- use { "jose-elias-alvarez/buftabline.nvim" }
     { "j-morano/buffer_manager.nvim" },
     { "nanozuki/tabby.nvim" },
 
@@ -125,15 +117,12 @@ local plugins = {
         end,
     },
     -- use { "nvim-lua/lsp-status.nvim" }
-    -- use { "neoclide/coc.nvim", tag = "release" }
     { "othree/html5.vim" },
     { "jwalton512/vim-blade" },
     -- use { "mfussenegger/nvim-lint" }
     -- use { "mhartington/formatter.nvim" }
     { "stevearc/conform.nvim" },
     { "overleaf/vim-env-syntax" },
-    -- { "haringsrob/laravel-dev-tools" }, -- blade lsp, doesn't work with nvim
-    -- { "neoclide/coc.nvim", branch = "release" },
 
     -- CMP
     { "hrsh7th/nvim-cmp" },
@@ -150,7 +139,7 @@ local plugins = {
 
     -- Snippets
     { "L3MON4D3/LuaSnip" },
-    -- { "rafamadriz/friendly-snippets" },
+    { "rafamadriz/friendly-snippets" },
 
     -- { "ActivityWatch/aw-watcher-vim" },
     -- { "nyngwang/NeoZoom.lua" }
