@@ -24,19 +24,6 @@ vim.cmd [[
     hi @tag.delimiter.vue guifg=#808080
 ]]
 
-if g.colors_name == "kanagawa" or "kanagawa-dragon" then
-    -- git diff signs
-    highlight("DiffAdd cterm=reverse blend=100 ctermfg=1 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
-    highlight("DiffDelete cterm=reverse ctermfg=142 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
-    highlight("DiffChange cterm=reverse ctermfg=107 ctermbg=NONE gui=NONE guifg=#8ec07c guibg=NONE")
-
-    highlight("TelescopeSelection ctermfg=234 ctermbg=109 guifg=#ffffff guibg=#002233")
-    highlight("TelescopeMatching ctermfg=208 guifg=#00eaff")
-
-    -- line column on the left
-    highlight("LineNr guibg=NONE guifg=#999999")
-end
-
 if g.colors_name == "retrobox" then
     -- git diff signs
     highlight("DiffAdd cterm=reverse blend=100 ctermfg=1 ctermbg=NONE gui=NONE guifg=#b8bb26 guibg=NONE")
@@ -55,10 +42,8 @@ if g.colors_name == "habamax" then
     highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#007799 guibg=NONE")
 
     -- visual line selection
-    -- highlight("Visual ctermfg=234 ctermbg=109 guifg=#000000 guibg=#3d6c6c")
-    highlight("Visual ctermfg=234 ctermbg=109 guifg=#000000 guibg=#2c5b5b")
-    -- highlight("Visual ctermfg=234 ctermbg=109 guifg=#1c1c1c guibg=#5d8c8c")
-    -- highlight("Visual ctermfg=234 ctermbg=109 guifg=#1c1c1c guibg=#83a598")
+    -- highlight("Visual ctermfg=109 ctermbg=234 guifg=#2c5b5b guibg=#000000")
+    highlight("Visual cterm=reverse ctermfg=109 ctermbg=234 gui=reverse guifg=#497373 guibg=#cccccc")
 
     highlight("TelescopeSelection ctermfg=234 ctermbg=109 guifg=#ffffff guibg=#002233")
     highlight("TelescopeMatching ctermfg=208 guifg=#00eaff")

@@ -94,7 +94,7 @@ cmp.setup {
             cmp.config.window.bordered(),
             {
                 max_height = 25,
-                max_width = 70,
+                max_width = 40,
             }
         )
     },
