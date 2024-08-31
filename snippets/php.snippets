@@ -464,3 +464,82 @@ snippet tablefk
 		->references("${2}")
 		->on("${3}")
 		->onDelete("${0}");
+
+snippet hasOne
+	/**
+	 * Get the ${1:related} associated with the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
+	public function ${3:related}(): HasOne
+	{
+		return $this->hasOne(${0:RelatedModel::class});
+	}
+
+snippet hasMany
+	/**
+	 * Get the ${1:related} for the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function ${3:related}(): HasMany
+	{
+		return $this->hasMany(${0:RelatedModel::class});
+	}
+
+snippet belongsToMany
+	/**
+	 * The ${1:related} that belong to the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function ${3:related}(): BelongsToMany
+	{
+		return $this->belongsToMany(${0:RelatedModel::class});
+	}
+
+
+snippet hasManyThrough
+	/**
+	 * Get all of the ${1:related} for the ${2:model} through ${3:IntermediateModel}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+	 */
+	public function ${4:related}(): HasManyThrough
+	{
+		return $this->hasManyThrough(${5:RelatedModel::class}, ${0:IntermediateModel::class});
+	}
+
+
+snippet morphMany
+	/**
+	 * Get all of the ${1:related} for the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+	 */
+	public function ${3:related}(): MorphMany
+	{
+		return $this->morphMany(${4:RelatedModel::class}, '${0:morphName}');
+	}
+
+snippet morphToMany
+	/**
+	 * Get all of the ${1:related} for the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+	 */
+	public function ${3:related}(): MorphToMany
+	{
+		return $this->morphToMany(${4:RelatedModel::class}, '${0:morphName}');
+	}
+
+snippet belongsTo
+	/**
+	 * Get the parent ${1:related} of the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function ${3:parent}(): BelongsTo
+	{
+		return $this->belongsTo(${4:Model::class}, '${0:parent_id}');
+	}
