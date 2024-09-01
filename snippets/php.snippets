@@ -473,7 +473,7 @@ snippet hasOne
 	 */
 	public function ${3:related}(): HasOne
 	{
-		return $this->hasOne(${0:RelatedModel::class});
+		return \$this->hasOne(${0:RelatedModel::class});
 	}
 
 snippet hasMany
@@ -484,7 +484,7 @@ snippet hasMany
 	 */
 	public function ${3:related}(): HasMany
 	{
-		return $this->hasMany(${0:RelatedModel::class});
+		return \$this->hasMany(${0:RelatedModel::class});
 	}
 
 snippet belongsToMany
@@ -495,7 +495,7 @@ snippet belongsToMany
 	 */
 	public function ${3:related}(): BelongsToMany
 	{
-		return $this->belongsToMany(${0:RelatedModel::class});
+		return \$this->belongsToMany(${0:RelatedModel::class});
 	}
 
 
@@ -507,30 +507,41 @@ snippet hasManyThrough
 	 */
 	public function ${4:related}(): HasManyThrough
 	{
-		return $this->hasManyThrough(${5:RelatedModel::class}, ${0:IntermediateModel::class});
+		return \$this->hasManyThrough(${5:RelatedModel::class}, ${0:IntermediateModel::class});
 	}
 
 
 snippet morphMany
 	/**
-	 * Get all of the ${1:related} for the ${2:model}.
+	 * Get all of the ${1:related} models that are assigned to this ${2:model}.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
 	 */
 	public function ${3:related}(): MorphMany
 	{
-		return $this->morphMany(${4:RelatedModel::class}, '${0:morphName}');
+		return \$this->morphMany(${4:RelatedModel::class}, '${0:morphName}');
 	}
 
 snippet morphToMany
 	/**
-	 * Get all of the ${1:related} for the ${2:model}.
+	 * Get all of the ${1:related} models that are associated with this ${2:model}.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
 	 */
-	public function ${3:related}(): MorphToMany
+	public function ${3:watchable}(): MorphToMany
 	{
-		return $this->morphToMany(${4:RelatedModel::class}, '${0:morphName}');
+		return \$this->morphToMany(${4:RelatedModel::class}, '${0:morphName}');
+	}
+
+snippet morphTo
+	/**
+	 * Get the parent model related to this model by a polymorphic relationship.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+	 */
+	public function ${1:watchable}(): MorphTo
+	{
+		return \$this->morphTo(${0});
 	}
 
 snippet belongsTo
@@ -541,5 +552,5 @@ snippet belongsTo
 	 */
 	public function ${3:parent}(): BelongsTo
 	{
-		return $this->belongsTo(${4:Model::class}, '${0:parent_id}');
+		return \$this->belongsTo(${4:Model::class}, '${0:parent_id}');
 	}
