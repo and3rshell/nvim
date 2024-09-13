@@ -22,6 +22,7 @@ vim.cmd [[
     " hi link @tag.delimiter.vue @none.vue
     hi link @markup.heading.1.vue @variable.member.vue
     hi @tag.delimiter.vue guifg=#808080
+    " hi htmlString guifg=#808080
 ]]
 
 if g.colors_name == "retrobox" then
