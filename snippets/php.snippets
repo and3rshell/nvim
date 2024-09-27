@@ -546,3 +546,8 @@ snippet belongsTo
 	{
 		return \$this->belongsTo(${4}, '${0:parent_id}');
 	}
+
+snippet ret
+	return response()->json([
+		'data' => ${0}
+	]);
