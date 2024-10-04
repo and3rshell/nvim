@@ -17,10 +17,10 @@ oil.setup({
         -- "size",
         -- "mtime",
     },
-    -- icon = {
-    --     default_file = "",
-    --     add_padding = false
-    -- },
+    icon = {
+        default_file = "",
+        add_padding = false
+    },
     -- Buffer-local options to use for oil buffers
     buf_options = {
         buflisted = false,
