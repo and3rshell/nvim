@@ -70,6 +70,7 @@ keymap("x", "K", ":move '<-2<CR>gv-gv")
 
 keymap("n", "gch", "I<!-- <esc>A --><esc>0")
 keymap("n", "gcj", "I// <esc>")
+keymap("v", "gcj", "^<C-v>I// <esc>")
 keymap("n", "gcH", "0df $daw0")
 keymap("n", "gcp", "I// <esc>0")
 keymap("n", "gcP", "0df ")
