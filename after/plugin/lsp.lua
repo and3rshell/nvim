@@ -215,30 +215,23 @@ mason_lspconfig.setup_handlers({
 
     ["intelephense"] = function()
         local intelephense_settings = vim.tbl_extend("force", common_settings, {
-            -- root_dir = function(filename, ...)
-            --     if vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") or vim.startswith(filename, os.getenv("HOME") .. "/.local/git/iso") then
-            --         return nil
-            --     end
-
-            --     return require("lspconfig.server_configurations.intelephense").default_config.root_dir(filename, ...)
-            -- end,
             init_options = {
                 globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
             },
             files = {
                 maxSize = 5000000,
             },
-            -- stubs = {
-            --     "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
-            --     "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
-            --     "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
-            --     "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
-            --     "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
-            --     "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
-            --     "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
-            --     "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
-            --     "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
-            -- },
+            stubs = {
+                "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
+                "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
+                "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
+                "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
+                "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
+                "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
+                "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
+                "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
+                "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
+            },
         })
         lspconfig.intelephense.setup(intelephense_settings)
     end,
