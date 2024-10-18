@@ -18,7 +18,7 @@ telescope.load_extension("ui-select")
 -- )
 
 vim.keymap.set("n", "<C-p>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
-vim.keymap.set("n", "<M-f>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
+-- vim.keymap.set("n", "<M-f>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
 -- vim.keymap.set("n", "<leader>fg", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
 -- vim.keymap.set("n", "<M-f>", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
