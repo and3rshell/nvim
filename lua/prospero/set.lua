@@ -44,6 +44,7 @@ opt.pumheight = 10 -- maximum number of items to show in the popup menu
 opt.fillchars = { eob = '~' }
 opt.mouse = 'nv'
 opt.mousemodel = 'extend'
+opt.mousescroll = 'ver:10'
 
 -- opt.exrc = true
 -- opt.secure = true
