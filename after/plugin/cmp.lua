@@ -31,12 +31,12 @@ cmp.setup {
         ['<C-c>'] = cmp.mapping(function() cmp.close() end)
     },
     sources = {
-        { name = 'luasnip' },
-        { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
+        -- { name = 'luasnip' },
+        -- { name = 'nvim_lsp' },
+        -- { name = 'nvim_lua' },
         { name = 'path' },
         { name = 'buffer' },
-        { name = 'bootstrap' },
+        -- { name = 'bootstrap' },
     },
     snippet = {
         expand = function(args)

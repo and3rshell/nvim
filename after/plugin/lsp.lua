@@ -50,10 +50,10 @@ local function lsp_settings()
         virtual_text = false,
         signs = {
             text = {
-                [vim.diagnostic.severity.ERROR] = 'e',
-                [vim.diagnostic.severity.WARN] = 'w',
-                [vim.diagnostic.severity.HINT] = 'h',
-                [vim.diagnostic.severity.INFO] = 'i',
+                [vim.diagnostic.severity.ERROR] = 'E',
+                [vim.diagnostic.severity.WARN] = 'W',
+                [vim.diagnostic.severity.HINT] = 'H',
+                [vim.diagnostic.severity.INFO] = 'I',
             },
             linehl = {
                 -- [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
@@ -66,8 +66,8 @@ local function lsp_settings()
             },
         },
         update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
-        underline = false,
-        severity_sort = true,
+        underline = true,
+        severity_sort = false,
         float = {
             focusable = false,
             style = "default",
@@ -122,45 +122,45 @@ local function lsp_attach(client, bufnr)
     end, { desc = "Format buffer with language server" })
 end
 
-mason.setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗",
-        },
-    },
-})
+-- mason.setup({
+--     ui = {
+--         icons = {
+--             package_installed = "✓",
+--             package_pending = "➜",
+--             package_uninstalled = "✗",
+--         },
+--     },
+-- })
 
-mason_lspconfig.setup({
-    ensure_installed = {
-        "bashls",
-        "clangd", -- c, c++
-        "cmake",
-        "cssls",
-        "cssmodules_ls",
-        "dockerls",
-        "eslint",
-        "gopls",
-        "graphql",
-        "html",
-        "jsonls",
-        "lua_ls",
-        "marksman", -- markdown
-        "intelephense",
-        -- "phpactor",
-        "pyright",
-        "rust_analyzer",
-        "sqlls",
-        "tailwindcss",
-        "vimls",
-        "volar",
-        "lemminx", -- xml
-        -- "denols",
-        -- "tsserver",
-    },
-    automatic_installation = true,
-})
+-- mason_lspconfig.setup({
+--     ensure_installed = {
+--         "bashls",
+--         "clangd", -- c, c++
+--         "cmake",
+--         "cssls",
+--         "cssmodules_ls",
+--         "dockerls",
+--         "eslint",
+--         "gopls",
+--         "graphql",
+--         "html",
+--         "jsonls",
+--         "lua_ls",
+--         "marksman", -- markdown
+--         "intelephense",
+--         -- "phpactor",
+--         "pyright",
+--         "rust_analyzer",
+--         "sqlls",
+--         "tailwindcss",
+--         "vimls",
+--         "volar",
+--         "lemminx", -- xml
+--         -- "denols",
+--         -- "tsserver",
+--     },
+--     automatic_installation = true,
+-- })
 
 -- Define the server capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -173,117 +173,117 @@ local common_settings = {
     capabilities = capabilities,
 }
 
-mason_lspconfig.setup_handlers({
-    function(server_name)
-        lspconfig[server_name].setup(common_settings)
-    end,
+-- mason_lspconfig.setup_handlers({
+--     function(server_name)
+--         lspconfig[server_name].setup(common_settings)
+--     end,
 
-    ["lua_ls"] = function()
-        local lua_ls_settings = vim.tbl_extend("force", common_settings, {
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = { "vim" },
-                    },
-                },
-            },
-        })
-        lspconfig.lua_ls.setup(lua_ls_settings)
-    end,
+--     ["lua_ls"] = function()
+--         local lua_ls_settings = vim.tbl_extend("force", common_settings, {
+--             settings = {
+--                 Lua = {
+--                     diagnostics = {
+--                         globals = { "vim" },
+--                     },
+--                 },
+--             },
+--         })
+--         lspconfig.lua_ls.setup(lua_ls_settings)
+--     end,
 
-    ["html"] = function()
-        local html_settings = vim.tbl_extend("force", common_settings, {
-            -- filetypes = { "html", "php" },
-            filetypes = { "html", "blade" },
-            init_options = {
-                configurationSection = { "html", "css", "javascript" },
-                embeddedLanguages = {
-                    css = true,
-                    javascript = true,
-                },
-                provideFormatter = true,
-            },
-        })
-        lspconfig.html.setup(html_settings)
-    end,
+--     ["html"] = function()
+--         local html_settings = vim.tbl_extend("force", common_settings, {
+--             -- filetypes = { "html", "php" },
+--             filetypes = { "html", "blade" },
+--             init_options = {
+--                 configurationSection = { "html", "css", "javascript" },
+--                 embeddedLanguages = {
+--                     css = true,
+--                     javascript = true,
+--                 },
+--                 provideFormatter = true,
+--             },
+--         })
+--         lspconfig.html.setup(html_settings)
+--     end,
 
-    -- ["tsserver"] = function()
-    --     local tsserver_settings = vim.tbl_extend("force", common_settings, {
-    --     })
-    --     lspconfig.tsserver.setup(tsserver_settings)
-    -- end,
+--     -- ["tsserver"] = function()
+--     --     local tsserver_settings = vim.tbl_extend("force", common_settings, {
+--     --     })
+--     --     lspconfig.tsserver.setup(tsserver_settings)
+--     -- end,
 
-    ["intelephense"] = function()
-        local intelephense_settings = vim.tbl_extend("force", common_settings, {
-            init_options = {
-                globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
-            },
-            files = {
-                maxSize = 5000000,
-            },
-            stubs = {
-                "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
-                "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
-                "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
-                "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
-                "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
-                "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
-                "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
-                "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
-                "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
-            },
-        })
-        lspconfig.intelephense.setup(intelephense_settings)
-    end,
+--     ["intelephense"] = function()
+--         local intelephense_settings = vim.tbl_extend("force", common_settings, {
+--             init_options = {
+--                 globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
+--             },
+--             files = {
+--                 maxSize = 5000000,
+--             },
+--             stubs = {
+--                 "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo",
+--                 "filter", "gd", "gettext", "hash", "iconv", "imap", "intl",
+--                 "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli",
+--                 "password", "pcntl", "pcre", "PDO", "pdo_mysql", "Phar",
+--                 "readline", "regex", "session", "SimpleXML", "sockets", "sodium",
+--                 "standard", "superglobals", "tokenizer", "xml", "xdebug", "xmlreader",
+--                 "xmlwriter", "yaml", "zip", "zlib", "wordpress-stubs",
+--                 "woocommerce-stubs", "acf-pro-stubs", "wordpress-globals",
+--                 "wp-cli-stubs", "genesis-stubs", "polylang-stubs",
+--             },
+--         })
+--         lspconfig.intelephense.setup(intelephense_settings)
+--     end,
 
-    ["phpactor"] = function()
-        local phpactor_settings = vim.tbl_extend("force", common_settings, {
-            filetypes = { "php", "blade" },
-            -- root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
-            init_options = {
-                -- ["language_server_worse_reflection.inlay_hints.enable"] = true,
-                -- ["language_server_worse_reflection.inlay_hints.params"] = true,
-                -- ["language_server_worse_reflection.inlay_hints.types"] = true,
-                -- ["language_server_configuration.auto_config"] = false,
-                -- ["code_transform.import_globals"] = true,
-                -- ["language_server_phpstan.enabled"] = true,
-                -- ["language_server_phpstan.level"] = 7,
-                -- ["language_server_phpstan.bin"] = "phpstan",
-                -- ["console.decorated"] = false,
-            },
-        })
-        lspconfig.phpactor.setup(phpactor_settings)
-    end,
+--     ["phpactor"] = function()
+--         local phpactor_settings = vim.tbl_extend("force", common_settings, {
+--             filetypes = { "php", "blade" },
+--             -- root_dir = lspconfig.util.root_pattern("composer.json", ".git"),
+--             init_options = {
+--                 -- ["language_server_worse_reflection.inlay_hints.enable"] = true,
+--                 -- ["language_server_worse_reflection.inlay_hints.params"] = true,
+--                 -- ["language_server_worse_reflection.inlay_hints.types"] = true,
+--                 -- ["language_server_configuration.auto_config"] = false,
+--                 -- ["code_transform.import_globals"] = true,
+--                 -- ["language_server_phpstan.enabled"] = true,
+--                 -- ["language_server_phpstan.level"] = 7,
+--                 -- ["language_server_phpstan.bin"] = "phpstan",
+--                 -- ["console.decorated"] = false,
+--             },
+--         })
+--         lspconfig.phpactor.setup(phpactor_settings)
+--     end,
 
-    ["tailwindcss"] = function()
-        local tailwindcss_settings = vim.tbl_extend("force", common_settings, {
-            -- markdown deleted
-            filetypes = {
-                "aspnetcorerazor", "astro", "astro-markdown", "blade", "clojure",
-                "django-html", "htmldjango", "edge", "eelixir", "elixir", "ejs",
-                "erb", "eruby", "gohtml", "gohtmltmpl", "haml", "handlebars", "hbs",
-                "html", "html-eex", "heex", "jade", "leaf", "liquid",
-                "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim",
-                "twig", "css", "less", "postcss", "sass", "scss", "stylus",
-                "sugarss", "javascript", "javascriptreact", "reason", "rescript",
-                "typescript", "typescriptreact", "vue", "svelte"
-            },
-            -- root_dir = root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.cjs', 'postcss.config.mjs', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
-        })
-        lspconfig.tailwindcss.setup(tailwindcss_settings)
-    end,
+--     ["tailwindcss"] = function()
+--         local tailwindcss_settings = vim.tbl_extend("force", common_settings, {
+--             -- markdown deleted
+--             filetypes = {
+--                 "aspnetcorerazor", "astro", "astro-markdown", "blade", "clojure",
+--                 "django-html", "htmldjango", "edge", "eelixir", "elixir", "ejs",
+--                 "erb", "eruby", "gohtml", "gohtmltmpl", "haml", "handlebars", "hbs",
+--                 "html", "html-eex", "heex", "jade", "leaf", "liquid",
+--                 "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim",
+--                 "twig", "css", "less", "postcss", "sass", "scss", "stylus",
+--                 "sugarss", "javascript", "javascriptreact", "reason", "rescript",
+--                 "typescript", "typescriptreact", "vue", "svelte"
+--             },
+--             -- root_dir = root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'tailwind.config.mjs', 'tailwind.config.ts', 'postcss.config.js', 'postcss.config.cjs', 'postcss.config.mjs', 'postcss.config.ts', 'package.json', 'node_modules', '.git')
+--         })
+--         lspconfig.tailwindcss.setup(tailwindcss_settings)
+--     end,
 
-     ["volar"] = function()
-        lspconfig.volar.setup(common_settings)
-    end,
+--      ["volar"] = function()
+--         lspconfig.volar.setup(common_settings)
+--     end,
 
-   -- ["emmet_ls"] = function()
-    --     local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
-    --         filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
-    --     })
-    --     lspconfig.emmet_ls.setup(emmet_ls_settings)
-    -- end,
-})
+--    -- ["emmet_ls"] = function()
+--     --     local emmet_ls_settings = vim.tbl_extend("force", common_settings, {
+--     --         filetypes = { "blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
+--     --     })
+--     --     lspconfig.emmet_ls.setup(emmet_ls_settings)
+--     -- end,
+-- })
 
 -- configs.blade = {
 --     default_config = {
