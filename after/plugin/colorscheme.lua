@@ -6,12 +6,12 @@ local g = vim.g
 opt.background = "dark"
 cmd.colorscheme("habamax")
 
--- highlight("FloatBorder ctermfg=236 ctermbg=234 guifg=#cccccc guibg=#000000")
--- highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE guibg=NONE")
+highlight("FloatBorder ctermfg=236 ctermbg=234 guifg=#cccccc guibg=#000000")
+highlight("Error cterm=bold,reverse ctermfg=203 ctermbg=234 gui=NONE guifg=NONE guibg=NONE")
 
 -- colors for splits
--- highlight("VertSplit guifg=#808080 guibg=#1e1e1e")
--- highlight("VertSplit guifg=#202020 guibg=#202020")
+highlight("VertSplit guifg=#808080 guibg=#1e1e1e")
+highlight("VertSplit guifg=#202020 guibg=#202020")
 
 -- vim.cmd [[
 --     hi link @keyword.return.php Macro
@@ -37,18 +37,18 @@ if g.colors_name == "retrobox" then
     highlight("DiagnosticError cterm=bold gui=bold guifg=#f33636")
 end
 
--- if g.colors_name == "habamax" then
---     -- command area color
---     -- highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#fabd2f guibg=NONE")
---     highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#007799 guibg=NONE")
---
---     -- visual line selection
---     -- highlight("Visual ctermfg=109 ctermbg=234 guifg=#2c5b5b guibg=#000000")
---     highlight("Visual cterm=reverse ctermfg=109 ctermbg=234 gui=reverse guifg=#497373 guibg=#cccccc")
---
---     highlight("TelescopeSelection ctermfg=234 ctermbg=109 guifg=#ffffff guibg=#002233")
---     highlight("TelescopeMatching ctermfg=208 guifg=#00eaff")
--- end
+if g.colors_name == "habamax" then
+    -- command area color
+    -- highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#fabd2f guibg=NONE")
+    highlight("ModeMsg cterm=bold ctermfg=214 gui=bold guifg=#007799 guibg=NONE")
+
+    -- visual line selection
+    -- highlight("Visual ctermfg=109 ctermbg=234 guifg=#2c5b5b guibg=#000000")
+    highlight("Visual cterm=reverse ctermfg=109 ctermbg=234 gui=reverse guifg=#497373 guibg=#cccccc")
+
+    highlight("TelescopeSelection ctermfg=234 ctermbg=109 guifg=#ffffff guibg=#002233")
+    highlight("TelescopeMatching ctermfg=208 guifg=#00eaff")
+end
 
 g.transparent_background = true
 g.italic_comments = true
@@ -63,6 +63,6 @@ vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#040404" })
 vim.api.nvim_set_hl(0, "FloatermBorder", { bg = "none" })
 
 highlight("EndOfBuffer guibg=NONE ctermbg=NONE")
--- highlight("StatusLine guibg=NONE ctermbg=NONE")
+highlight("StatusLine guibg=NONE ctermbg=NONE")
 highlight("SignColumn guibg=NONE ctermbg=NONE")
 highlight("MsgArea guibg=NONE ctermbg=NONE")
