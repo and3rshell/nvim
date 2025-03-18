@@ -2,6 +2,7 @@ local opt = vim.opt
 local g = vim.g
 local cmd = vim.cmd
 
+cmd("set modifiable")
 opt.backup = false -- creates a backup file
 opt.swapfile = false -- creates a swapfile
 opt.undofile = true -- persistent undo
@@ -51,7 +52,6 @@ opt.inccommand = "split"
 -- opt.exrc = true
 -- opt.secure = true
 
--- cmd("set modifiable")
 -- opt.shortmess:append("c") -- vim default "filnxtToOF"
 -- opt.iskeyword:append("-")
 
