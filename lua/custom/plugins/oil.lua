@@ -26,6 +26,8 @@ return {
                 ["gs"] = { "actions.change_sort", mode = "n" },
                 ["gx"] = "actions.open_external",
                 ["zh"] = { "actions.toggle_hidden", mode = "n" },
+                ["<C-p>"] = false,
+                ["<C-n>"] = false,
                 ["g\\"] = { "actions.toggle_trash", mode = "n" },
             },
             use_default_keymaps = true,
