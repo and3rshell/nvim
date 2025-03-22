@@ -19,14 +19,14 @@ opt.number = true
 opt.relativenumber = true
 opt.wrap = false
 opt.scrolloff = 8
--- opt.sidescrolloff = 8
+opt.sidescrolloff = 8
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 opt.isfname:append("@-@")
 opt.hlsearch = false
 opt.incsearch = true
 opt.ignorecase = true -- ignore case in search patterns
 opt.smartcase = true -- override the 'ignorecase' option if the search pattern contains upper case characters
-opt.updatetime = 50 -- faster completion (4000ms default)
+opt.updatetime = 100 -- faster completion (4000ms default)
 opt.cmdheight = 1 -- command line messages statusline
 opt.clipboard = "unnamedplus"
 opt.fileencoding = "utf-8"
@@ -40,7 +40,7 @@ opt.guifont = "monospace:h11" -- the font used in graphical neovim applications
 opt.autoindent = true
 opt.smartindent = true
 opt.showtabline = 1 -- the value of this option specifies when the line with tab page labels will be displayed
-opt.pumheight = 10 -- maximum number of items to show in the popup menu
+-- opt.pumheight = 10 -- maximum number of items to show in the popup menu
 -- opt.conceallevel = 1 -- example: make `` visible in markdown files
 opt.fillchars = { eob = '~' }
 opt.mouse = 'nv'
@@ -55,5 +55,5 @@ opt.inccommand = "split"
 -- opt.shortmess:append("c") -- vim default "filnxtToOF"
 -- opt.iskeyword:append("-")
 
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
+-- g.loaded_netrw = 1
+-- g.loaded_netrwPlugin = 1

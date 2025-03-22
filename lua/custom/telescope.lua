@@ -1,6 +1,7 @@
 local data = assert(vim.fn.stdpath "data") --[[@as string]]
 local actions = require("telescope.actions")
 local actions_layout = require("telescope.actions.layout")
+local set = vim.keymap.set
 
 require("telescope").setup {
     defaults = {
@@ -100,12 +101,12 @@ pcall(require("telescope").load_extension, "ui-select")
 local builtin = require "telescope.builtin"
 
 -- TODO use builtin
-vim.keymap.set("n", "<C-p>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>fh", builtin.help_tags)
-vim.keymap.set("n", "<leader>fH", ":Telescope highlights<CR>", keymap_opts)
---vim.keymap.set("n", "<leader>fd", ":Telescope diagnostics initial_mode=normal<CR>", keymap_opts)
-vim.keymap.set("n", "<leader>gl", ":Telescope live_grep<CR>", keymap_opts)
-vim.keymap.set('n', '<leader>gg', function()
+set("n", "<C-p>", ":Telescope git_files hidden=true no_ignore=true<CR>", keymap_opts)
+set("n", "<leader>ff", ":Telescope find_files hidden=true no_ignore=true<CR>", keymap_opts)
+set("n", "<leader>fh", builtin.help_tags)
+set("n", "<leader>fH", ":Telescope highlights<CR>", keymap_opts)
+--set("n", "<leader>fd", ":Telescope diagnostics initial_mode=normal<CR>", keymap_opts)
+set("n", "<leader>gl", ":Telescope live_grep<CR>", keymap_opts)
+set('n', '<leader>gg', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)

@@ -1,3 +1,5 @@
+local set = vim.keymap.set
+
 return {
     "j-morano/buffer_manager.nvim",
     dependencies = "nvim-lua/plenary.nvim",
@@ -35,7 +37,7 @@ return {
 
         for i = 1, #keys do
             local key = keys:sub(i, i)
-            vim.keymap.set(
+            set(
                 'n',
                 string.format('<leader>%s', key),
                 function() bmui.nav_file(i) end,
@@ -44,10 +46,10 @@ return {
         end
 
         -- Just the menu
-        vim.keymap.set("n", '<leader>b', bmui.toggle_quick_menu, opts)
+        set("n", '<leader>b', bmui.toggle_quick_menu, opts)
 
         -- Open menu and search
-        vim.keymap.set("n", '<leader>B', function()
+        set("n", '<leader>B', function()
             bmui.toggle_quick_menu()
             -- wait for the menu to open
             vim.defer_fn(function()
@@ -56,7 +58,7 @@ return {
         end, opts)
 
         -- Next/Prev
-        -- vim.keymap.set('n', '<leader>h', bmui.nav_prev, opts)
-        -- vim.keymap.set('n', '<leader>l', bmui.nav_next, opts)
+        -- set('n', '<leader>h', bmui.nav_prev, opts)
+        -- set('n', '<leader>l', bmui.nav_next, opts)
     end,
 }
