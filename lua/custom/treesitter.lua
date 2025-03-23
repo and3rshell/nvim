@@ -54,9 +54,19 @@ require("nvim-treesitter.configs").setup {
         enable = true, -- false will disable the whole extension
 
         disable = function(lang, buf)
-            local max_filesize = 30 * 1024 -- 30 KB
+            if lang == "html" then
+                print("disabled")
+                return true
+            end
+
+            local max_filesize = 100 * 1024
             local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
             if ok and stats and stats.size > max_filesize then
+                vim.notify(
+                    "File larger than 100KB treesitter disabled for performance",
+                    vim.log.levels.WARN,
+                    {title = "Treesitter"}
+                )
                 return true
             end
         end,
@@ -66,7 +76,7 @@ require("nvim-treesitter.configs").setup {
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
         -- additional_vim_regex_highlighting = false,
-        additional_vim_regex_highlighting = { "php" },
+        additional_vim_regex_highlighting = { "php", "markdown" },
     },
 
     autopairs = {
@@ -75,18 +85,18 @@ require("nvim-treesitter.configs").setup {
 
     indent = {
         enable = false,
-        disable = { "php", "lua", "html", "blade" }
+        -- disable = { "php", "lua", "html", "blade" }
     },
 
     matchup = {
-        enable = true, -- mandatory, false will disable the whole extension
+        enable = false, -- mandatory, false will disable the whole extension
         disable = {},  -- optional, list of language that will be disabled
         -- disable = { "javascript" }, -- optional, list of language that will be disabled
         -- options
     },
 
     incremental_selection = {
-        enable = true,
+        enable = false,
         keymaps = {
             init_selection = "<leader>ss", -- set to `false` to disable one of the mappings
             node_incremental = "<leader>si",
