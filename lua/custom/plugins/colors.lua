@@ -1,0 +1,43 @@
+return {
+    "ellisonleao/gruvbox.nvim",
+    enabled = true,
+    name = "gruvbox",
+    config = function()
+        require("gruvbox").setup({
+            terminal_colors = true, -- add neovim terminal colors
+            undercurl = true,
+            underline = false,
+            bold = true,
+            italic = {
+                strings = true,
+                emphasis = true,
+                comments = true,
+                operators = false,
+                folds = true,
+            },
+            strikethrough = true,
+            invert_selection = false,
+            invert_signs = false,
+            invert_tabline = false,
+            invert_intend_guides = false,
+            inverse = true, -- invert background for search, diffs, statuslines and errors
+            contrast = "", -- can be "hard", "soft" or empty string
+            palette_overrides = {},
+            overrides = {},
+            dim_inactive = false,
+            transparent_mode = true,
+        })
+
+        vim.cmd.colorscheme("gruvbox")
+
+        -- local g = vim.g
+        -- g.transparent_background = true
+        -- g.italic_comments = true
+        -- g.italic_keywords = true
+        -- g.italic_functions = true
+        -- g.italic_variables = true
+        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        vim.cmd.highlight("StatusLine guifg=#010101 guibg=white ctermbg=NONE")
+    end,
+}

@@ -5,7 +5,7 @@ return {
     opts = {
         menu = {
             width = 80,
-            height = 15
+            height = 15,
         },
         settings = {
             save_on_toggle = true,
@@ -14,7 +14,7 @@ return {
     config = function()
         local harpoon = require "harpoon"
         local extensions = require("harpoon.extensions");
-        harpoon:setup()
+        harpoon:setup(opts)
 
         harpoon:extend(extensions.builtins.highlight_current_file())
         harpoon:extend(extensions.builtins.navigate_with_number());

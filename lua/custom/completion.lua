@@ -45,6 +45,7 @@ cmp.setup {
         },
         { "i", "c" }
         ),
+        ['<c-space>'] = cmp.mapping.complete(),
         ['<C-c>'] = cmp.mapping(function() cmp.close() end)
     },
 
