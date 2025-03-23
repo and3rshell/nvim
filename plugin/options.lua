@@ -46,14 +46,11 @@ opt.fillchars = { eob = '~' }
 opt.mouse = 'nv'
 opt.mousemodel = 'extend'
 opt.mousescroll = 'ver:3'
-
 opt.inccommand = "split"
-
 -- opt.exrc = true
 -- opt.secure = true
-
--- opt.shortmess:append("c") -- vim default "filnxtToOF"
--- opt.iskeyword:append("-")
+-- opt.shortmess:append("c")
+opt.iskeyword:append("-")
 
 -- g.loaded_netrw = 1
 -- g.loaded_netrwPlugin = 1
