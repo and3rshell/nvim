@@ -89,13 +89,13 @@ set("n", "vv", "^v$h")
 set("n", "gC", "ggcG")
 set("n", "gy", "ggVGy<c-o>")
 
-vim.cmd([[
-    " command! FuncSearch execute "/\\%(protected\\|public\\|private\\)\\zs.*function.*"
-    command! FuncSearch execute "/\\%(protected\\|public\\|private\\)\.*function.*"
-]])
-set('n', '<leader>/F', ':FuncSearch<CR>')
-set('n', '<leader>/f', '/fun.*')
-set('n', '<leader>/c', '/case\\|default.*:$<CR>')
+-- vim.cmd([[
+--     " command! FuncSearch execute "/\\%(protected\\|public\\|private\\)\\zs.*function.*"
+--     command! FuncSearch execute "/\\%(protected\\|public\\|private\\)\.*function.*"
+-- ]])
+-- set('n', '<leader>/F', ':FuncSearch<CR>')
+-- set('n', '<leader>/f', '/fun.*')
+-- set('n', '<leader>/c', '/case\\|default.*:$<CR>')
 -- set("n", "<leader>Zi", ":set foldmethod=indent<CR>")
 -- set("n", "<leader>Ze", ":set foldmethod=expr<CR>")
 

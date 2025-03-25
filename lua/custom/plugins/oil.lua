@@ -3,8 +3,8 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         vim.keymap.set("n", "-", "<CMD>Oil<CR>")
-        -- vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>")
-        vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>")
+        vim.keymap.set("n", "<space>e", "<CMD>Oil<CR>")
+        -- vim.keymap.set("n", "<space>e", "<CMD>Oil --float<CR>")
 
         require("oil").setup({
             columns = { },

@@ -19,7 +19,7 @@ return {
         harpoon:extend(extensions.builtins.highlight_current_file())
         harpoon:extend(extensions.builtins.navigate_with_number());
 
-        vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+        vim.keymap.set("n", "<space>a", function() harpoon:list():add() end)
         vim.keymap.set("n", "m", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
         for _, idx in ipairs { 1, 2, 3, 4, 5 } do
