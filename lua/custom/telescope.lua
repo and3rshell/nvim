@@ -10,8 +10,8 @@ require("telescope").setup {
         initial_mode = "insert",
         layout_config = {
             horizontal = {
-                width = 0.5,
-                height = 0.8
+                width = 0.7,
+                height = 0.9
             }
         },
         file_ignore_patterns = { ".git/", "node_modules" },
@@ -28,6 +28,8 @@ require("telescope").setup {
                 ["<C-l>"] = actions_layout.toggle_preview,
                 ["<C-u>"] = actions.results_scrolling_up,
                 ["<C-d>"] = actions.results_scrolling_down,
+                ["<C-b>"] = actions.preview_scrolling_up,
+                ["<C-f>"] = actions.preview_scrolling_down,
             },
             n = {
                 ["<esc>"] = actions.close,
@@ -40,8 +42,8 @@ require("telescope").setup {
                 ["gg"] = actions.move_to_top,
                 ["G"] = actions.move_to_bottom,
                 ["<C-l>"] = actions_layout.toggle_preview,
-                ["<C-f>"] = actions.preview_scrolling_up,
-                ["<C-b>"] = actions.preview_scrolling_down,
+                ["<C-b>"] = actions.preview_scrolling_up,
+                ["<C-f>"] = actions.preview_scrolling_down,
                 ["<C-u>"] = actions.results_scrolling_up,
                 ["<C-d>"] = actions.results_scrolling_down,
             },
@@ -76,9 +78,7 @@ pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "ui-select")
 
 vim.keymap.set('n', '<space>f', builtin.find_files)
-vim.keymap.set("n", "<C-p>", function()
-  return builtin.git_files { cwd = vim.fn.expand "%:h" }
-end)
+vim.keymap.set("n", "<C-p>", builtin.git_files)
 vim.keymap.set('n', '<space>gs', builtin.grep_string)
 vim.keymap.set('n', '<space>gg', builtin.live_grep)
 vim.keymap.set('n', '<space>G', function()
