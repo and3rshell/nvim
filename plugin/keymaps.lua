@@ -99,7 +99,7 @@ set("n", "gy", "ggVGy<c-o>")
 -- set("n", "<leader>Zi", ":set foldmethod=indent<CR>")
 -- set("n", "<leader>Ze", ":set foldmethod=expr<CR>")
 
-set("n", "<leader>tn", ":tabnew<CR>")
+set("n", "<leader>n", ":tabnew<CR>")
 set("n", "<leader>>", ":tabmove +<CR>")
 set("n", "<leader><", ":tabmove -<CR>")
 set("n", "=G", "gg=G")
