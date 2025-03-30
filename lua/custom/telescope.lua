@@ -77,7 +77,14 @@ require("telescope").setup {
 pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "ui-select")
 
-vim.keymap.set('n', '<space>f', builtin.find_files)
+vim.keymap.set('n', '<space>f', function()
+    builtin.find_files({
+        hidden = true,
+        layout_config = {
+            prompt_position = "top"
+        }
+    })
+end)
 vim.keymap.set("n", "<C-p>", builtin.git_files)
 vim.keymap.set('n', '<space>gs', builtin.grep_string)
 vim.keymap.set('n', '<space>gg', builtin.live_grep)
