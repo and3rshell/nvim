@@ -8,7 +8,6 @@ return {
 			"stevearc/conform.nvim",
 			"b0o/SchemaStore.nvim",
 		},
-        enabled = false,
 		config = function()
 			local extend = function(name, key, values)
 				local mod = require(string.format("lspconfig.configs.%s", name))
@@ -184,6 +183,10 @@ return {
 					vim.keymap.set("n", "<space>c", vim.lsp.buf.code_action, { buffer = 0 })
 					-- vim.keymap.set("n", "<space>wd", builtin.lsp_document_symbols, { buffer = 0 })
 
+                    vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
+                    vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
+                    vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+
 					local filetype = vim.bo[bufnr].filetype
 					if disable_semantic_tokens[filetype] then
 						client.server_capabilities.semanticTokensProvider = nil
@@ -203,7 +206,39 @@ return {
 				end,
 			})
 
-			require("custom.autoformat").setup()
-		end,
-	},
+            vim.diagnostic.config({
+                virtual_text = false,
+                update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
+                underline = true,
+                severity_sort = false,
+                float = {
+                    focusable = false,
+                    style = "default",
+                    border = "rounded",
+                    source = "if_many",
+                    header = "Diagnostics",
+                    prefix = "• ",
+                },
+            })
+
+            -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+            --     vim.lsp.handlers.hover, {
+            --         border = "rounded",
+            --         max_height = 25,
+            --         max_width = 100,
+            --         focusable = true,
+            --         silent = true
+            --         -- title = "",
+            --     }
+            -- )
+            --
+            -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+            --     vim.lsp.handlers.signature_help, {
+            --         border = "rounded",
+            --     }
+            -- )
+
+            require("custom.autoformat").setup()
+        end,
+    },
 }
