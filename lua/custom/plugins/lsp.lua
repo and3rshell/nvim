@@ -55,6 +55,57 @@ return {
 					files = {
 						maxSize = 5000000,
 					},
+					stubs = {
+						"bcmath",
+						"bz2",
+						"Core",
+						"curl",
+						"date",
+						"dom",
+						"fileinfo",
+						"filter",
+						"gd",
+						"gettext",
+						"hash",
+						"iconv",
+						"imap",
+						"intl",
+						"json",
+						"libxml",
+						"mbstring",
+						"mcrypt",
+						"mysql",
+						"mysqli",
+						"password",
+						"pcntl",
+						"pcre",
+						"PDO",
+						"pdo_mysql",
+						"Phar",
+						"readline",
+						"regex",
+						"session",
+						"SimpleXML",
+						"sockets",
+						"sodium",
+						"standard",
+						"superglobals",
+						"tokenizer",
+						"xml",
+						"xdebug",
+						"xmlreader",
+						"xmlwriter",
+						"yaml",
+						"zip",
+						"zlib",
+						"wordpress-stubs",
+						"woocommerce-stubs",
+						"acf-pro-stubs",
+						"wordpress-globals",
+						"wp-cli-stubs",
+						"genesis-stubs",
+						"polylang-stubs",
+					},
 				},
 
 				pyright = true,
@@ -183,9 +234,9 @@ return {
 					vim.keymap.set("n", "<space>c", vim.lsp.buf.code_action, { buffer = 0 })
 					-- vim.keymap.set("n", "<space>wd", builtin.lsp_document_symbols, { buffer = 0 })
 
-                    vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
-                    vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
-                    vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+					vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
+					vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
+					vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 
 					local filetype = vim.bo[bufnr].filetype
 					if disable_semantic_tokens[filetype] then
@@ -206,39 +257,39 @@ return {
 				end,
 			})
 
-            vim.diagnostic.config({
-                virtual_text = false,
-                update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
-                underline = true,
-                severity_sort = false,
-                float = {
-                    focusable = false,
-                    style = "default",
-                    border = "rounded",
-                    source = "if_many",
-                    header = "Diagnostics",
-                    prefix = "• ",
-                },
-            })
+			vim.diagnostic.config({
+				virtual_text = false,
+				update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
+				underline = true,
+				severity_sort = false,
+				float = {
+					focusable = false,
+					style = "default",
+					border = "rounded",
+					source = "if_many",
+					header = "Diagnostics",
+					prefix = "• ",
+				},
+			})
 
-            -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-            --     vim.lsp.handlers.hover, {
-            --         border = "rounded",
-            --         max_height = 25,
-            --         max_width = 100,
-            --         focusable = true,
-            --         silent = true
-            --         -- title = "",
-            --     }
-            -- )
-            --
-            -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-            --     vim.lsp.handlers.signature_help, {
-            --         border = "rounded",
-            --     }
-            -- )
+			-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+			--     vim.lsp.handlers.hover, {
+			--         border = "rounded",
+			--         max_height = 25,
+			--         max_width = 100,
+			--         focusable = true,
+			--         silent = true
+			--         -- title = "",
+			--     }
+			-- )
+			--
+			-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+			--     vim.lsp.handlers.signature_help, {
+			--         border = "rounded",
+			--     }
+			-- )
 
-            require("custom.autoformat").setup()
-        end,
-    },
+			require("custom.autoformat").setup()
+		end,
+	},
 }
