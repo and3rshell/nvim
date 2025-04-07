@@ -6,7 +6,7 @@ cmd("set modifiable")
 opt.backup = false -- creates a backup file
 opt.swapfile = false -- creates a swapfile
 opt.undofile = true -- persistent undo
-opt.undodir = os.getenv("XDG_DATA_HOME") .. '/nvim/undodir'
+opt.undodir = os.getenv("XDG_DATA_HOME") .. "/nvim/undodir"
 opt.writebackup = true -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 opt.splitbelow = true -- force all horizontal splits to go below current window
 opt.splitright = true -- force all vertical splits to go to the right of current window
@@ -42,10 +42,10 @@ opt.smartindent = true
 opt.showtabline = 1 -- the value of this option specifies when the line with tab page labels will be displayed
 -- opt.pumheight = 10 -- maximum number of items to show in the popup menu
 -- opt.conceallevel = 1 -- example: make `` visible in markdown files
-opt.fillchars = { eob = '~' }
-opt.mouse = 'nv'
-opt.mousemodel = 'extend'
-opt.mousescroll = 'ver:3'
+opt.fillchars = { eob = "~" }
+opt.mouse = "nv"
+opt.mousemodel = "extend"
+opt.mousescroll = "ver:8"
 opt.inccommand = "split"
 -- opt.exrc = true
 -- opt.secure = true

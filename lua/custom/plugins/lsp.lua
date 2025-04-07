@@ -47,6 +47,13 @@ return {
 					server_capabilities = {
 						semanticTokensProvider = vim.NIL,
 					},
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+							},
+						},
+					},
 				},
 				intelephense = {
 					init_options = {
@@ -151,14 +158,7 @@ return {
 				},
 
 				tailwindcss = {
-					init_options = {
-						userLanguages = {
-							elixir = "phoenix-heex",
-							eruby = "erb",
-							heex = "phoenix-heex",
-						},
-					},
-					filetypes = extend("tailwindcss", "filetypes", { "ocaml.mlx" }),
+					filetypes = extend("tailwindcss", "filetypes", { "vue" }),
 					settings = {
 						tailwindCSS = {
 							experimental = {
@@ -167,9 +167,9 @@ return {
 									[[className="([^"]*)]],
 								},
 							},
-							includeLanguages = extend("tailwindcss", "settings.tailwindCSS.includeLanguages", {
-								["ocaml.mlx"] = "html",
-							}),
+							-- includeLanguages = extend("tailwindcss", "settings.tailwindCSS.includeLanguages", {
+							-- 	["ocaml.mlx"] = "html",
+							-- }),
 						},
 					},
 				},
@@ -191,6 +191,7 @@ return {
 				"delve",
 				"intelephense",
 				"pyright",
+				"bashls",
 			}
 
 			vim.list_extend(ensure_installed, servers_to_install)
@@ -224,7 +225,8 @@ return {
 					local builtin = require("telescope.builtin")
 
 					vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-					vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
+					-- vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
+					vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
 					vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
 					vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
@@ -260,7 +262,7 @@ return {
 			vim.diagnostic.config({
 				virtual_text = false,
 				update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
-				underline = true,
+				underline = false,
 				severity_sort = false,
 				float = {
 					focusable = false,
