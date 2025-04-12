@@ -1,4 +1,4 @@
--- require "custom.snippets"
+require("custom.snippets")
 
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.shortmess:append("c")
@@ -26,6 +26,7 @@ local cmp = require("cmp")
 
 cmp.setup({
 	sources = {
+		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "buffer" },
@@ -33,6 +34,8 @@ cmp.setup({
 	mapping = {
 		["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 		["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<CR>"] = cmp.mapping(
 			cmp.mapping.confirm({
 				behavior = cmp.ConfirmBehavior.Insert,
@@ -83,12 +86,22 @@ cmp.setup({
 			cmp.config.compare.order,
 		},
 	},
+	-- window = {
+	-- 	-- TODO: I don't like this at all for completion window, it takes up way too much space.
+	-- 	--  However, I think the docs one could be OK, but I need to fix the highlights for it
+	-- 	--
+	-- 	-- completion = cmp.config.window.bordered(),
+	-- 	-- documentation = cmp.config.window.bordered(),
+	-- },
 	window = {
-		-- TODO: I don't like this at all for completion window, it takes up way too much space.
-		--  However, I think the docs one could be OK, but I need to fix the highlights for it
-		--
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+		completion = {
+			winhighlight = "Normal:NormalFloat,FloatBorder:Pmenu,Search:None",
+			-- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+		},
+		documentation = vim.tbl_deep_extend("force", cmp.config.window.bordered(), {
+			max_height = 30,
+			max_width = 60,
+		}),
 	},
 })
 

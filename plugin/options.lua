@@ -1,5 +1,4 @@
 local opt = vim.opt
-local g = vim.g
 local cmd = vim.cmd
 
 cmd("set modifiable")
@@ -40,7 +39,7 @@ opt.guifont = "monospace:h11" -- the font used in graphical neovim applications
 opt.autoindent = true
 opt.smartindent = true
 opt.showtabline = 1 -- the value of this option specifies when the line with tab page labels will be displayed
--- opt.pumheight = 10 -- maximum number of items to show in the popup menu
+opt.pumheight = 10 -- maximum number of items to show in the popup menu
 -- opt.conceallevel = 1 -- example: make `` visible in markdown files
 opt.fillchars = { eob = "~" }
 opt.mouse = "nv"
@@ -51,6 +50,3 @@ opt.inccommand = "split"
 -- opt.secure = true
 -- opt.shortmess:append("c")
 opt.iskeyword:append("-")
-
--- g.loaded_netrw = 1
--- g.loaded_netrwPlugin = 1
