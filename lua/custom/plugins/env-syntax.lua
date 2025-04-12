@@ -1,3 +1,3 @@
 return {
-    "overleaf/vim-env-syntax",
+  "overleaf/vim-env-syntax",
 }

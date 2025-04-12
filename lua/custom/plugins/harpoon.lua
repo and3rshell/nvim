@@ -12,8 +12,8 @@ return {
     },
   },
   config = function()
-    local harpoon = require "harpoon"
-    local extensions = require "harpoon.extensions"
+    local harpoon = require("harpoon")
+    local extensions = require("harpoon.extensions")
     harpoon:setup(opts)
 
     harpoon:extend(extensions.builtins.highlight_current_file())
@@ -33,7 +33,7 @@ return {
       })
     end)
 
-    for _, idx in ipairs { 1, 2, 3, 4, 5 } do
+    for _, idx in ipairs({ 1, 2, 3, 4, 5 }) do
       vim.keymap.set("n", string.format("<space>%d", idx), function()
         harpoon:list():select(idx)
       end)

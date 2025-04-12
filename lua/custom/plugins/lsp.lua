@@ -39,7 +39,7 @@ return {
         capabilities = require("cmp_nvim_lsp").default_capabilities()
       end
 
-      local lspconfig = require "lspconfig"
+      local lspconfig = require("lspconfig")
 
       local servers = {
         bashls = true,
@@ -57,7 +57,7 @@ return {
         },
         intelephense = {
           init_options = {
-            globalStoragePath = os.getenv "HOME" .. "/.local/share/intelephense",
+            globalStoragePath = os.getenv("HOME") .. "/.local/share/intelephense",
           },
           files = {
             maxSize = 5000000,
@@ -220,7 +220,7 @@ return {
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
-      require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+      require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
       for name, config in pairs(servers) do
         if config == true then
@@ -247,7 +247,7 @@ return {
             settings = {}
           end
 
-          local builtin = require "telescope.builtin"
+          local builtin = require("telescope.builtin")
 
           vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
           -- vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
@@ -284,7 +284,7 @@ return {
         end,
       })
 
-      vim.diagnostic.config {
+      vim.diagnostic.config({
         virtual_text = false,
         update_in_insert = false, -- if false, diagnostics are updated on InsertLeave
         underline = false,
@@ -297,7 +297,7 @@ return {
           header = "Diagnostics",
           prefix = "• ",
         },
-      }
+      })
 
       -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
       --     vim.lsp.handlers.hover, {

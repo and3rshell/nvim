@@ -1,11 +1,11 @@
 local opt = vim.opt
 local cmd = vim.cmd
 
-cmd "set modifiable"
+cmd("set modifiable")
 opt.backup = false -- creates a backup file
 opt.swapfile = false -- creates a swapfile
 opt.undofile = true -- persistent undo
-opt.undodir = os.getenv "XDG_DATA_HOME" .. "/nvim/undodir"
+opt.undodir = os.getenv("XDG_DATA_HOME") .. "/nvim/undodir"
 opt.writebackup = true -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 opt.splitbelow = true -- force all horizontal splits to go below current window
 opt.splitright = true -- force all vertical splits to go to the right of current window
@@ -20,7 +20,7 @@ opt.wrap = false
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-opt.isfname:append "@-@"
+opt.isfname:append("@-@")
 opt.hlsearch = false
 opt.incsearch = true
 opt.ignorecase = true -- ignore case in search patterns
@@ -49,6 +49,4 @@ opt.inccommand = "split"
 -- opt.exrc = true
 -- opt.secure = true
 -- opt.shortmess:append("c")
-opt.iskeyword:append "-"
-
-opt.selectmode = "mouse"
+opt.iskeyword:append("-")

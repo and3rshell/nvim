@@ -57,7 +57,7 @@ set("x", "K", ":move '<-2<CR>gv-gv")
 -- set("n", "gcp", "I// <esc>0")
 -- set("n", "gcP", "0df ")
 
-set("n", "<leader><leader>sw", ':set wrap<CR>:set linebreak<CR>')
+set("n", "<leader><leader>sw", ":set wrap<CR>:set linebreak<CR>")
 set("n", "<leader><leader>fh", ":set filetype=html<CR>")
 set("n", "<leader><leader>fp", ":set filetype=php<CR>")
 set("n", "<leader><leader>fc", ":set filetype=c<CR>")
