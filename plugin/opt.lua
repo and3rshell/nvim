@@ -42,7 +42,7 @@ opt.showtabline = 1 -- the value of this option specifies when the line with tab
 opt.pumheight = 10 -- maximum number of items to show in the popup menu
 -- opt.conceallevel = 1 -- example: make `` visible in markdown files
 opt.fillchars = { eob = "~" }
-opt.mouse = "nv"
+opt.mouse = "a"
 opt.mousemodel = "extend"
 opt.mousescroll = "ver:8"
 opt.inccommand = "split"
@@ -50,3 +50,5 @@ opt.inccommand = "split"
 -- opt.secure = true
 -- opt.shortmess:append("c")
 opt.iskeyword:append "-"
+
+opt.selectmode = "mouse"

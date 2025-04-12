@@ -1,0 +1,553 @@
+snippet ?php
+	<?php
+
+	declare(strict_types=1);
+
+snippet dst
+	declare(strict_types=1);
+
+snippet echo
+	echo ${0};
+
+snippet ?e
+	<?php echo ${0} ?>
+
+snippet ?=
+	<?= ${0} ?>
+
+snippet ?
+	<?php ${0} ?>
+
+snippet ??
+	<?php
+	${0}
+	?>
+
+snippet ?foreach
+	<?php foreach ($${1:array} as $${2:$value}) : ?>
+		${0:${VISUAL}}
+	<?php endforeach ?>
+
+snippet ?fforeach
+	<?php foreach ($${1:array} as $${2:key} => $${3:value}) : ?>
+		${0:<!-- html... -->}
+	<?php endforeach; ?>
+
+snippet ?if
+	<?php if ($${1:var}) : ?>
+		${0:${VISUAL}}
+	<?php endif ?>
+
+snippet ?ifelse
+	<?php if (${1}) : ?>
+		${2}
+	<?php else : ?>
+		${0:${VISUAL}}
+	<?php endif; ?>
+
+snippet ?ifelseif
+	<?php if (${1}) : ?>
+		${2}
+	<?php else if (${3}) : ?>
+		${4}
+	<?php else : ?>
+		${0:${VISUAL}}
+	<?php endif; ?>
+
+snippet name
+	namespace ${1};
+
+snippet cl
+	class ${1}
+	{
+		${0:${VISUAL}}
+	}
+
+snippet clan
+	new class(${1}) {
+		${0}
+	}
+
+snippet t
+	\$this->
+
+snippet f
+	${1}function ${2}(${3})${4}
+	{
+		${0}
+	}
+
+snippet pub
+	public ${1}function ${2}(${3})${4}
+	{
+		${0}
+	}
+
+snippet priv
+	private ${1}function ${2}(${3})${4}
+	{
+		${0}
+	}
+
+snippet pro
+	protected ${1}function ${2}(${3})${4}
+	{
+		${0}
+	}
+
+snippet fa
+	function (${1}) {
+		${0}
+	}
+
+snippet con
+	${1:public} function __construct(${2})
+	{
+		${0}
+	}
+
+snippet if
+	if (${1}) {
+		${0}
+	}
+
+snippet ifelse
+	if (${1}) {
+		${2}
+	} else {
+		${0:${VISUAL}}
+	}
+
+snippet elseif
+	else if (${1}) {
+		${0}
+	}
+
+snippet else
+	else {
+		${0:${VISUAL}}
+	}
+
+snippet iif
+	${1} ? ${2} : ${0};
+
+snippet switch
+	switch ($${1:variable}) {
+		case '${2:value}':
+			${3}
+			break;
+		${0}
+		default:
+			${4}
+			break;
+	}
+
+snippet case
+	case ${0};
+
+snippet ccase
+	case '${1:value}':
+		${0:${VISUAL}}
+		break;
+
+snippet for
+	for ($${1:index} = 0; $$2 < ${2:count}; $$2${3:++}) {
+		${0:${VISUAL}}
+	}
+
+snippet while
+	while ($${1:var}) {
+		${0:${VISUAL}}
+	}
+
+snippet do
+	do {
+		${0:${VISUAL}}
+	} while ($${1:var})
+
+snippet foreach
+	foreach ($${1:var} as $${2:value}) {
+		${0:${VISUAL}}
+	}
+
+snippet fforeach
+	foreach ($${1:var} as $${2:key} => $${3:value}) {
+		${0:${VISUAL}}
+	}
+
+snippet try
+	try {
+		${0}
+	}
+
+
+snippet catch
+	catch (${1:\Throwable} \$e) {
+		${0}
+	}
+
+snippet trycatch
+	try {
+		${1}
+	} catch (${2:\Throwable} \$e) {
+		${0}
+	}
+
+snippet throw
+	throw new ${2:\Exception}(${0});
+
+snippet vd
+	var_dump(${0});
+
+snippet vdd
+	var_dump(${1});
+	die(${0:});
+
+snippet match
+	match (${1}) {
+		${2} => ${3},
+		${4} => ${5},
+	};
+
+snippet const
+	const ${1} = ${2};
+
+snippet ext
+	extends ${1}
+
+snippet imp
+	implements ${1}
+
+snippet pubp
+	public${1} $${0};
+
+snippet protp
+	protected${1} $${0};
+
+snippet privp
+	private${1} $${0};
+
+snippet self
+	self::${1};
+
+snippet parent
+	parent::${1}
+
+snippet pr
+	print_r(${1});
+
+snippet prd
+	print_r(${1});
+	die(${0:});
+
+snippet require
+	require ${1};
+
+snippet require_once
+	require_once ${1};
+
+snippet include
+	include '${1}';
+
+snippet include_once
+	include_once '${1}';
+
+snippet dump
+	dump(${1});
+
+snippet dd
+	dd(${1});
+
+snippet die
+	die(${0});
+
+snippet exit
+	exit(${0});
+
+snippet clf
+	<?php
+
+	declare(strict_types=1);
+
+	namespace ${1};
+
+	class ${2}
+	{
+		${0}
+	}
+
+snippet headloc
+	header('Location: /${1}');
+	exit();
+
+snippet arr
+	[${0}];
+
+snippet empty
+	empty(${0})
+
+snippet isset
+	isset(${0})
+
+snippet SERVER
+	\$_SERVER['${1}']
+
+snippet SESSION
+	\$_SESSION['${1}']
+
+snippet POST
+	\$_POST['${1}']
+
+snippet GET
+	\$_GET['${1}']
+
+snippet fn
+	fn (${1}) => ${0}
+
+snippet /
+	/** ${0} */
+
+snippet docblock
+	/**
+  * ${0}
+  */
+
+snippet ddocblock
+	/**
+  * ${1:Description}
+  *
+  * ${2:@param}
+  *
+  * ${0:@return}
+  */
+
+snippet test
+	/**
+	* @test 
+	*/
+
+snippet __call
+	public function __call($name, $arguments)
+	{
+		${0}
+	}
+
+snippet setUp
+	protected function setUp(): void
+	{
+		parent::setUp();
+
+		${0}
+	}
+
+snippet __get
+	protected function __get(): void
+	{
+		parent::setUp();
+
+		${0}
+	}
+
+snippet return
+	return ${0};
+
+snippet use
+	use ($0)
+
+snippet uuse
+	use ${0};
+
+snippet enum
+	<?php
+
+	declare(strict_types=1);
+
+	namespace ${1};
+
+	enum ${2}
+	{
+		${0}
+	}
+
+snippet clfa
+	<?php
+
+	declare(strict_types=1);
+
+	namespace ${1};
+
+	abstract class ${2}
+	{
+		${0}
+	}
+
+snippet interface
+	<?php
+
+	declare(strict_types=1);
+
+	namespace ${1};
+
+	interface ${2}
+	{
+		${0}
+	}
+
+snippet getter
+	public ${1}function get${2}(): ${3}
+	{
+		return \$this->${0};
+	}
+
+snippet setter
+	public ${1}function set${2}(${3:$value})${4}
+	{
+		\$this->${5} = ${0:$value};
+	}
+
+snippet Route
+	Route::${1}('/${2}', [${3}::class, '${4}'])${0};
+
+snippet RouteGet
+	Route::get('/${1}', [${2}::class, '${3}'])${0};
+
+snippet RouteDelete
+	Route::delete('/${1}', [${2}::class, '${3}'])${0};
+
+snippet RoutePost
+	Route::post('/${1}', [${2}::class, '${3}'])${0};
+
+snippet RouteMatch
+	Route::match('/${1}', [${2}::class, '${3}'])${0};
+
+snippet RouteFunc
+	Route::${1}('/${2}', function (${3})${4} {
+		${5}
+	})${0};
+
+snippet redir
+	redirect()->route('${1}')${0}
+
+snippet rredir
+	redirect()->route('${1}', [
+		${2}
+	])${0}
+
+snippet redirback
+	redirect()->back()${0}
+
+snippet route
+	route('${1}'${0})
+
+snippet rroute
+	route('${1}', [
+		${0}
+	])
+
+snippet view
+	view('${1}'${0})
+
+snippet vview
+	view('${1}', [
+		${0}
+	])
+
+snippet db
+	DB::table('${1}')
+		->${0};
+
+snippet table
+	\$table->${1}('${2}')${0};
+
+snippet tablefk
+	\$table->foreign('${1}')
+		->references('${2}')
+		->on('${3}')
+		->onDelete('${0}');
+
+snippet hasOne
+	/**
+	 * Get the ${1:related} associated with the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
+	public function ${3:related}(): HasOne
+	{
+		return \$this->hasOne(${0});
+	}
+
+snippet hasMany
+	/**
+	 * Get the ${1:related} for the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function ${3:related}(): HasMany
+	{
+		return \$this->hasMany(${0});
+	}
+
+snippet belongsToMany
+	/**
+	 * The ${1:related} that belong to the ${2:model}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function ${3:related}(): BelongsToMany
+	{
+		return \$this->belongsToMany(${0});
+	}
+
+
+snippet hasManyThrough
+	/**
+	 * Get all of the ${1:related} for the ${2:model} through ${3:IntermediateModel}.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+	 */
+	public function ${4:related}(): HasManyThrough
+	{
+		return \$this->hasManyThrough(${5}, ${0});
+	}
+
+
+snippet morphMany
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+	 */
+	public function ${3:related}(): MorphMany
+	{
+		return \$this->morphMany(${4}, '${0:watchable}');
+	}
+
+snippet morphToMany
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+	 */
+	public function ${3:watchable}(): MorphToMany
+	{
+		return \$this->morphToMany(${4}, '${0:watchable}');
+	}
+
+snippet morphTo
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+	 */
+	public function ${1:watchable}(): MorphTo
+	{
+		return \$this->morphTo(${0});
+	}
+
+snippet belongsTo
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function ${3:parent}(): BelongsTo
+	{
+		return \$this->belongsTo(${4}, '${0:parent_id}');
+	}
+
+snippet ret
+	return response()->json([
+		'data' => ${0}
+	]);
