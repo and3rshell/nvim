@@ -1,13 +1,18 @@
-snippet temp
-	<template>
-		${1}
-	</template>
+snippet template
+    <template>
+      ${1}
+    </template>
 
-	<script>${2}
-	export default {
-		${0}
-	}
-	</script
-
+    <script setup>
+    ${0}
+    </script>
 snippet {{
 	{{ ${0} }}
+snippet script
+    <script>
+    ${0}
+    </script>
+snippet setup
+    <script setup>
+    ${0}
+    </script>

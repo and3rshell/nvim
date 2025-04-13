@@ -31,13 +31,13 @@ vim.keymap.set({ "i", "s" }, "<c-j>", function()
   if luasnip.jumpable(1) then
     luasnip.jump(1)
   end
-end, { silent = true, buffer = true })
+end, { silent = true })
 
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
   if luasnip.jumpable(-1) then
     luasnip.jump(-1)
   end
-end, { silent = true, buffer = true })
+end, { silent = true })
 
 -- selecting within a list of options
 -- useful for choice nodes

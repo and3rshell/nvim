@@ -7,7 +7,7 @@ vim.keymap.set("n", "<space>sw", '<cmd>lua require("spectre").open_visual({selec
 vim.keymap.set("v", "<space>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', {
   desc = "Search current word",
 })
-vim.keymap.set("n", "<space>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+vim.keymap.set("n", "<space>sf", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
   desc = "Search on current file",
 })
 
@@ -23,11 +23,6 @@ require("spectre").setup({
       map = "<space>C",
       cmd = "<cmd>lua require('spectre.actions').replace_cmd()<CR>",
       desc = "input replace command",
-    },
-    ["run_replace"] = {
-      map = "<space>c",
-      cmd = "<cmd>lua require('spectre.actions').run_replace()<CR>",
-      desc = "replace all",
     },
     ["run_replace"] = {
       map = "<space>c",
