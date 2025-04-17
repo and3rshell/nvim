@@ -26,7 +26,7 @@ local setup = function()
           bufnr = args.buf,
           lsp_fallback = false,
           quiet = true,
-          async = true,
+          -- async = true,
         })
 
         return
