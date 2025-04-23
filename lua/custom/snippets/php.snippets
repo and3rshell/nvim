@@ -166,12 +166,7 @@ snippet do
 	} while ($${1:var})
 
 snippet foreach
-	foreach ($${1:var} as $${2:value}) {
-		${0:${VISUAL}}
-	}
-
-snippet fforeach
-	foreach ($${1:var} as $${2:key} => $${3:value}) {
+	foreach ($${1} as $${2}) {
 		${0:${VISUAL}}
 	}
 
