@@ -29,7 +29,6 @@ opt.updatetime = 100 -- faster completion (4000ms default)
 opt.cmdheight = 1 -- command line messages statusline
 opt.clipboard = "unnamedplus"
 opt.fileencoding = "utf-8"
-opt.mouse = "a"
 opt.showmode = true -- things like -- INSERT --
 opt.showcmd = true -- https://vi.stackexchange.com/questions/742/showing-command-history-with-showcmd
 opt.laststatus = 3 -- the value of this option influences when the last window will have a statusline
