@@ -465,33 +465,33 @@ snippet tablefk
 
 snippet hasOne
 	/**
-	 * Get the ${1:related} associated with the ${2:model}.
+	 * Get the ${1} associated with the ${2}.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
 	 */
-	public function ${3:related}(): HasOne
+	public function ${3}(): HasOne
 	{
 		return \$this->hasOne(${0});
 	}
 
 snippet hasMany
 	/**
-	 * Get the ${1:related} for the ${2:model}.
+	 * Get the ${1} for the ${2}.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
-	public function ${3:related}(): HasMany
+	public function ${3}(): HasMany
 	{
 		return \$this->hasMany(${0});
 	}
 
 snippet belongsToMany
 	/**
-	 * The ${1:related} that belong to the ${2:model}.
+	 * The ${1} that belong to the ${2}.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
 	 */
-	public function ${3:related}(): BelongsToMany
+	public function ${3}(): BelongsToMany
 	{
 		return \$this->belongsToMany(${0});
 	}
@@ -499,11 +499,11 @@ snippet belongsToMany
 
 snippet hasManyThrough
 	/**
-	 * Get all of the ${1:related} for the ${2:model} through ${3:IntermediateModel}.
+	 * Get all of the related${1} for the model${2} through IntermediateModel${3}.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
 	 */
-	public function ${4:related}(): HasManyThrough
+	public function ${4}(): HasManyThrough
 	{
 		return \$this->hasManyThrough(${5}, ${0});
 	}
@@ -513,25 +513,25 @@ snippet morphMany
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
 	 */
-	public function ${3:related}(): MorphMany
+	public function ${1}(): MorphMany
 	{
-		return \$this->morphMany(${4}, "${0:watchable}");
+		return \$this->morphMany(${2}, "watchable${0}");
 	}
 
 snippet morphToMany
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
 	 */
-	public function ${3:watchable}(): MorphToMany
+	public function watchable:${1}(): MorphToMany
 	{
-		return \$this->morphToMany(${4}, "${0:watchable}");
+		return \$this->morphToMany(${2}, "watchable${0}");
 	}
 
 snippet morphTo
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\MorphTo
 	 */
-	public function ${1:watchable}(): MorphTo
+	public function watchable${1}(): MorphTo
 	{
 		return \$this->morphTo(${0});
 	}
@@ -540,9 +540,9 @@ snippet belongsTo
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
-	public function ${3:parent}(): BelongsTo
+	public function project${1}(): BelongsTo
 	{
-		return \$this->belongsTo(${4}, "${0:parent_id}");
+		return \$this->belongsTo(Project::class${2}, "project_id${3}", "id${0}");
 	}
 
 snippet retjson
