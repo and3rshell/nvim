@@ -80,13 +80,22 @@ pcall(require("telescope").load_extension, "ui-select")
 vim.keymap.set("n", "<space>f", function()
   builtin.find_files({
     hidden = true,
-    -- no_ignore = true,
+    no_ignore = true,
+    follow = false, -- don't follow symlinks
     layout_config = {
-      prompt_position = "top",
+      prompt_position = "bottom",
     },
   })
 end)
-vim.keymap.set("n", "<C-p>", builtin.git_files)
+vim.keymap.set("n", "<C-p>", function()
+  builtin.git_files({
+    use_git_root = true,
+    show_untracked = true,
+    layout_config = {
+      prompt_position = "bottom",
+    },
+  })
+end)
 vim.keymap.set("n", "<space>gs", builtin.grep_string)
 vim.keymap.set("n", "<space>gg", builtin.live_grep)
 vim.keymap.set("n", "<space>G", function()
