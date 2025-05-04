@@ -15,7 +15,7 @@ return {
         ["<space>x"] = { "actions.select", opts = { horizontal = true } },
         ["<space>t"] = { "actions.select", opts = { tab = true } },
         ["q"] = "actions.close",
-        ["r"] = "actions.refresh",
+        ["R"] = "actions.refresh",
         ["<C-c>"] = { "actions.close", mode = "n" },
         ["-"] = { "actions.parent", mode = "n" },
         ["_"] = { "actions.open_cwd", mode = "n" },

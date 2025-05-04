@@ -403,16 +403,16 @@ snippet setter
 snippet Route
 	Route::${1}("/${2}", [${3}::class, "${4}"])${0};
 
-snippet RouteGet
+snippet Route::get
 	Route::get("/${1}", [${2}::class, "${3}"])${0};
 
-snippet RouteDelete
+snippet Route::delete
 	Route::delete("/${1}", [${2}::class, "${3}"])${0};
 
-snippet RoutePost
+snippet Route::post
 	Route::post("/${1}", [${2}::class, "${3}"])${0};
 
-snippet RouteMatch
+snippet Route::match
 	Route::match("/${1}", [${2}::class, "${3}"])${0};
 
 snippet RouteFunc
@@ -465,84 +465,75 @@ snippet tablefk
 
 snippet hasOne
 	/**
-	 * Get the ${1} associated with the ${2}.
-	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
 	 */
-	public function ${3}(): HasOne
+	public function ${1:profile}(): HasOne
 	{
-		return \$this->hasOne(${0});
-	}
-
-snippet hasMany
-	/**
-	 * Get the ${1} for the ${2}.
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
-	 */
-	public function ${3}(): HasMany
-	{
-		return \$this->hasMany(${0});
-	}
-
-snippet belongsToMany
-	/**
-	 * The ${1} that belong to the ${2}.
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-	 */
-	public function ${3}(): BelongsToMany
-	{
-		return \$this->belongsToMany(${0});
-	}
-
-
-snippet hasManyThrough
-	/**
-	 * Get all of the related${1} for the model${2} through IntermediateModel${3}.
-	 *
-	 * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
-	 */
-	public function ${4}(): HasManyThrough
-	{
-		return \$this->hasManyThrough(${5}, ${0});
-	}
-
-
-snippet morphMany
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-	 */
-	public function ${1}(): MorphMany
-	{
-		return \$this->morphMany(${2}, "watchable${0}");
-	}
-
-snippet morphToMany
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
-	 */
-	public function watchable:${1}(): MorphToMany
-	{
-		return \$this->morphToMany(${2}, "watchable${0}");
-	}
-
-snippet morphTo
-	/**
-	 * @return \Illuminate\Database\Eloquent\Relations\MorphTo
-	 */
-	public function watchable${1}(): MorphTo
-	{
-		return \$this->morphTo(${0});
+		return \$this->hasOne(related: ${0:Profile}::class);
 	}
 
 snippet belongsTo
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
-	public function project${1}(): BelongsTo
+	public function ${1:user}(): BelongsTo
 	{
-		return \$this->belongsTo(Project::class${2}, "project_id${3}", "id${0}");
+		return \$this->belongsTo(related: ${2:User}::class, foreignKey: "${3:user_id}", ownerKey: "${0:id}");
+	}
+
+snippet hasMany
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function ${1:posts}(): HasMany
+	{
+		return \$this->hasMany(related: ${0:Post}::class);
+	}
+
+snippet belongsToMany
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+	 */
+	public function ${1:tags}(): BelongsToMany
+	{
+		return \$this->belongsToMany(related: ${2:Tag}::class, table: "${0:article_tag}");
+	}
+
+
+snippet hasManyThrough
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+	 */
+	public function ${1:posts}(): HasManyThrough
+	{
+		return \$this->hasManyThrough(related: ${2:Post}::class, through: ${0:User}::class);
+	}
+
+snippet morphTo
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+	 */
+	public function ${1:photoable}(): MorphTo
+	{
+		return \$this->morphTo(name: ${0:photoable});
+	}
+
+snippet morphMany
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+	 */
+	public function ${1:photos}(): MorphMany
+	{
+		return \$this->morphMany(related: ${2:Photo}::class, name: "${0:photoable}");
+	}
+
+snippet morphToMany
+	/**
+	 * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+	 */
+	public function ${1:tags}(): MorphToMany
+	{
+		return \$this->morphToMany(related: ${2:Tag}::class, name: "${3:taggable}", table: "${0:taggables}");
 	}
 
 snippet retjson
