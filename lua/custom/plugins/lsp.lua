@@ -138,6 +138,9 @@ return {
             "zlib",
             "redis",
           },
+          environment = {
+            includePaths = { "." },
+          },
         },
 
         pyright = true,
