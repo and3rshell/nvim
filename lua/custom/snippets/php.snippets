@@ -343,9 +343,6 @@ snippet __get
 		${0}
 	}
 
-snippet return
-	return ${0};
-
 snippet use
 	use ($0)
 
@@ -422,6 +419,14 @@ snippet RouteFunc
 
 snippet Route::resource
 	Route::resource("/${1}", ${2}::class)${0};
+
+snippet Route::apiResource
+	Route::apiResource("/${1}", ${2}::class)${0};
+
+snippet Route::middleware
+    Route::middleware(middleware: [${1}])->group(function () {
+        ${0}
+    });
 
 snippet redir
 	redirect()->route("${1}")${0}
@@ -536,7 +541,10 @@ snippet morphToMany
 		return \$this->morphToMany(related: ${2:Tag}::class, name: "${3:taggable}", table: "${0:taggables}");
 	}
 
+snippet ret
+	return ${0};
+
 snippet retjson
-	return response()->json([
-		"data" => ${0}
-	]);
+    return response()->json(data: [
+        ${1}
+    ], status: ${0});
