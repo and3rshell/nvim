@@ -319,6 +319,10 @@ return {
       --     }
       -- )
 
+      vim.keymap.set("n", "<space>lr", ":LspRestart<cr>")
+      vim.keymap.set("n", "<space>ld", ":LspStop<cr>")
+      vim.keymap.set("n", "<space>le", ":LspStart<cr>")
+
       require("custom.autoformat").setup()
     end,
   },
@@ -346,8 +350,8 @@ return {
 
       fix_pos = false, -- set to true, the floating window will not auto-close until finish all parameters
       hint_enable = true, -- virtual hint enable
-      hint_prefix = " ", -- icon, Panda for parameter
-      -- hint_prefix = "💡 ", -- icon, Panda for parameter
+      -- hint_prefix = " ", -- icon, Panda for parameter
+      hint_prefix = "💡 ", -- icon, Panda for parameter
       -- hint_scheme = "Comment",
       hint_scheme = "String",
       use_lspsaga = false, -- set to true if you want to use lspsaga popup
@@ -370,5 +374,50 @@ return {
       timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
       toggle_key = "<C-s>", -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
     },
+  },
+  {
+    "hedyhli/outline.nvim",
+    config = function()
+      vim.keymap.set("n", "<space>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+
+      require("outline").setup({
+        outline_window = {
+          position = "right",
+          split_command = nil,
+          width = 40,
+          relative_width = true,
+          auto_close = true,
+          auto_jump = true,
+          center_on_jump = true,
+          show_numbers = true,
+          show_relative_numbers = true,
+          wrap = false,
+          show_cursorline = true,
+          hide_cursor = false,
+          focus_on_open = true,
+          winhl = "",
+        },
+        keymaps = {
+          show_help = "?",
+          close = { "<Esc>", "q" },
+          goto_location = "<Cr>",
+          peek_location = "o",
+          goto_and_close = "<S-Cr>",
+          restore_location = "<C-g>",
+          toggle_preview = "K",
+          rename_symbol = "r",
+          code_actions = "a",
+          fold = "h",
+          unfold = "l",
+          fold_toggle = "<Tab>",
+          fold_toggle_all = "<S-Tab>",
+          fold_all = "W",
+          unfold_all = "E",
+          fold_reset = "R",
+          down_and_jump = "<C-j>",
+          up_and_jump = "<C-k>",
+        },
+      })
+    end,
   },
 }

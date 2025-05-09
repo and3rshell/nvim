@@ -546,5 +546,14 @@ snippet ret
 
 snippet retjson
     return response()->json(data: [
-        ${1}
+        "data" => ${1}
     ], status: ${0});
+
+snippet retres
+    return ${1}::${2:collection}(resource: ${3})
+        ->response(${4})
+        ->setStatusCode(code: ${5:200})
+        ->additional([${6}])${0};
+
+snippet inertia::render
+    return Inertia::render(component: "${1}", props: [${0}]);
