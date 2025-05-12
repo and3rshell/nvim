@@ -552,7 +552,7 @@ snippet retjson
 snippet retres
     return ${1}::${2:collection}(resource: ${3})
         ->response(${4})
-        ->setStatusCode(code: ${5:200})
+        ->setStatusCode(code: ${5:Response::HTTP_OK})
         ->additional([${6}])${0};
 
 snippet inertia::render
