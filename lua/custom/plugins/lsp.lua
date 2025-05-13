@@ -217,6 +217,7 @@ return {
         "stylua",
         "lua_ls",
         "delve",
+        "gopls",
         "intelephense",
         "pyright",
         "bashls",
