@@ -550,10 +550,10 @@ snippet retjson
     ], status: ${0});
 
 snippet retres
-    return ${1}::${2:collection}(resource: ${3})
-        ->response(${4})
-        ->setStatusCode(code: ${5:Response::HTTP_OK})
-        ->additional([${6}])${0};
+    return ${1}::${2}(${3})
+        ->aditional([${4}])
+        ->response(${5})
+        ->setStatusCode(code: ${6:Response::HTTP_OK})${0};
 
 snippet inertia::render
     return Inertia::render(component: "${1}", props: [${0}]);
