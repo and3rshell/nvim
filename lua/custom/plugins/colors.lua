@@ -39,7 +39,7 @@ return {
       -- g.italic_variables = true
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-      vim.cmd.highlight("StatusLine guifg=#010101 guibg=white ctermbg=NONE")
+      -- vim.cmd.highlight("StatusLine guifg=#010101 guibg=white ctermbg=NONE")
     end,
   },
   {
@@ -52,7 +52,7 @@ return {
       vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
       vim.cmd.highlight("TelescopeSelection guifg=#ffffff guibg=#111111")
       vim.cmd.highlight("TelescopeMatching guifg=#456789")
-      vim.cmd.highlight("StatusLine guifg=#white guibg=#010101 ctermbg=NONE")
+      vim.cmd.highlight("StatusLine guifg=#white guibg=NONE ctermbg=NONE")
     end,
   },
 }

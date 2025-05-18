@@ -32,6 +32,10 @@ local setup = function()
         return
       end
 
+      if ft == "c" then
+        return
+      end
+
       require("conform").format({
         bufnr = args.buf,
         lsp_fallback = true,
