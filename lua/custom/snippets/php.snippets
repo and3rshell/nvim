@@ -205,7 +205,7 @@ snippet match
 	};
 
 snippet const
-	const ${1} = ${2};
+	${1:public} const ${2:int} ${3:key} = ${0:value};
 
 snippet ext
 	extends ${1}
@@ -555,5 +555,5 @@ snippet retres
         ->response(${5})
         ->setStatusCode(code: ${6:Response::HTTP_OK})${0};
 
-snippet inertia::render
+snippet Inertia::render
     return Inertia::render(component: "${1}", props: [${0}]);
