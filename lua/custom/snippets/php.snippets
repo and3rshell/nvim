@@ -557,3 +557,16 @@ snippet retres
 
 snippet Inertia::render
     return Inertia::render(component: "${1}", props: [${0}]);
+
+snippet cast
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            "${1:is_admin}" => "${0:boolean}"
+        ];
+    }
