@@ -48,4 +48,4 @@ opt.inccommand = "split"
 -- opt.exrc = true
 -- opt.secure = true
 -- opt.shortmess:append("c")
--- opt.iskeyword:append("-")
+-- opt.iskeyword:append(".")
