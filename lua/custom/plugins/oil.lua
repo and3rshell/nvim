@@ -2,11 +2,16 @@ return {
   "stevearc/oil.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>")
-    vim.keymap.set("n", "<space>e", "<CMD>Oil<CR>")
-    -- vim.keymap.set("n", "<space>e", "<CMD>Oil --float<CR>")
+    local oil = require("oil")
 
-    require("oil").setup({
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>")
+    -- vim.keymap.set("n", "<space>e", "<CMD>Oil<CR>")
+    vim.keymap.set("n", "<space>e", "<CMD>Oil --float<CR>")
+    vim.keymap.set("n", "<space>E", function()
+      return oil.toggle_float(vim.loop.cwd())
+    end)
+
+    oil.setup({
       columns = {},
       keymaps = {
         ["g?"] = { "actions.show_help", mode = "n" },
