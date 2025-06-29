@@ -4,11 +4,11 @@ return {
   config = function()
     local oil = require("oil")
 
-    vim.keymap.set("n", "-", "<CMD>Oil<CR>")
-    vim.keymap.set("n", "<space>e", "<CMD>Oil<CR>")
-    -- vim.keymap.set("n", "<space>e", "<CMD>Oil --float<CR>")
+    vim.keymap.set("n", "<space>e", function()
+      return oil.open()
+    end)
     vim.keymap.set("n", "<space>E", function()
-      return oil.toggle_float(vim.loop.cwd())
+      return oil.open(vim.loop.cwd())
     end)
 
     oil.setup({
