@@ -53,6 +53,7 @@ return {
       vim.cmd.highlight("TelescopeSelection guifg=#ffffff guibg=#111111")
       vim.cmd.highlight("TelescopeMatching guifg=#456789")
       vim.cmd.highlight("StatusLine guifg=#white guibg=NONE ctermbg=NONE")
+      vim.api.nvim_set_hl(0, "SnippetTabstop", { bg = "none" })
     end,
   },
 }
