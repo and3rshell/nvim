@@ -36,6 +36,10 @@ local setup = function()
         return
       end
 
+      if ft == "php" then
+        return
+      end
+
       require("conform").format({
         bufnr = args.buf,
         lsp_fallback = true,
