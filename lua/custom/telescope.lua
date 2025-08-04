@@ -94,6 +94,7 @@ vim.keymap.set("n", "<C-p>", function()
     layout_config = {
       prompt_position = "bottom",
     },
+    recurse_submodules = true,
   })
 end)
 vim.keymap.set("n", "<space>gs", builtin.grep_string)
