@@ -94,6 +94,15 @@ vim.keymap.set("n", "<C-p>", function()
     layout_config = {
       prompt_position = "bottom",
     },
+  })
+end)
+vim.keymap.set("n", "<leader>fs", function()
+  builtin.git_files({
+    use_git_root = true,
+    show_untracked = false,
+    layout_config = {
+      prompt_position = "bottom",
+    },
     recurse_submodules = true,
   })
 end)
