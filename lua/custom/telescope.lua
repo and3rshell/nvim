@@ -77,31 +77,34 @@ require("telescope").setup({
 pcall(require("telescope").load_extension, "fzf")
 pcall(require("telescope").load_extension, "ui-select")
 
-vim.keymap.set("n", "<space>f", function()
+vim.keymap.set("n", "<C-a>", function()
   builtin.find_files({
+    prompt_title = "Find all files",
     hidden = true,
     no_ignore = true,
     follow = false, -- don't follow symlinks
     layout_config = {
-      prompt_position = "bottom",
+      prompt_position = "top",
     },
   })
 end)
 vim.keymap.set("n", "<C-p>", function()
   builtin.git_files({
+    prompt_title = "Git find (with untracked)",
     use_git_root = true,
     show_untracked = true,
     layout_config = {
-      prompt_position = "bottom",
+      prompt_position = "top",
     },
   })
 end)
-vim.keymap.set("n", "<leader>fs", function()
+vim.keymap.set("n", "<C-t>", function()
   builtin.git_files({
+    prompt_title = "Git find (with recurse submodules)",
     use_git_root = true,
     show_untracked = false,
     layout_config = {
-      prompt_position = "bottom",
+      prompt_position = "top",
     },
     recurse_submodules = true,
   })
