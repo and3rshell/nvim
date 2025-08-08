@@ -34,6 +34,8 @@ return {
         ["<C-k>"] = false,
         ["<C-l>"] = false,
         ["<C-p>"] = false,
+        ["<C-t>"] = false,
+        ["<C-a>"] = false,
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
       },
       use_default_keymaps = true,
