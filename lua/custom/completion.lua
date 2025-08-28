@@ -103,6 +103,9 @@ cmp.setup({
       max_width = 60,
     }),
   },
+  experimental = {
+    ghost_text = true,
+  },
 })
 
 -- Setup up vim-dadbod
