@@ -27,6 +27,7 @@ local cmp = require("cmp")
 cmp.setup({
   sources = {
     { name = "luasnip" },
+    { name = "avante" },
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "buffer" },

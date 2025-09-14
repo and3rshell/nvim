@@ -49,3 +49,4 @@ opt.inccommand = "split"
 -- opt.secure = true
 -- opt.shortmess:append("c")
 -- opt.iskeyword:append(".")
+opt.statusline = "%f %m%r [%{&filetype}] %{&fileencoding} %{&fileformat} %p%% %l:%c"
