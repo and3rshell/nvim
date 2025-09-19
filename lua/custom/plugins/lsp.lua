@@ -221,6 +221,7 @@ return {
         "intelephense",
         "pyright",
         "bashls",
+        "hadolint",
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
