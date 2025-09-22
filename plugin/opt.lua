@@ -37,7 +37,7 @@ opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in mill
 opt.guifont = "monospace:h11" -- the font used in graphical neovim applications
 opt.autoindent = true
 opt.smartindent = true
-opt.showtabline = 1 -- the value of this option specifies when the line with tab page labels will be displayed
+opt.showtabline = 2 -- always show tabline (needed for bufferline)
 opt.pumheight = 10 -- maximum number of items to show in the popup menu
 -- opt.conceallevel = 1 -- example: make `` visible in markdown files
 opt.fillchars = { eob = "~" }
@@ -49,4 +49,5 @@ opt.inccommand = "split"
 -- opt.secure = true
 -- opt.shortmess:append("c")
 -- opt.iskeyword:append(".")
-opt.statusline = "%f %m%r [%{&filetype}] %{&fileencoding} %{&fileformat} %p%% %l:%c"
+opt.statusline = "%f %m%r [%{&filetype}] %{&fileencoding} %{&fileformat} %p%% %l:%c [%{tabpagenr()}/%{tabpagenr('$')}]"
+-- opt.statusline = "%f %m%r [ft: %{&filetype}] [enc: %{&fileencoding}] [ff: %{&fileformat}] [loc: %p%% %l:%c]"

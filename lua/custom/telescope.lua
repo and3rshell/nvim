@@ -14,7 +14,7 @@ require("telescope").setup({
         height = 0.9,
       },
     },
-    file_ignore_patterns = { ".git/", "node_modules" },
+    file_ignore_patterns = { ".git/", "node_modules", "vendor" },
     preview = true,
     mappings = {
       i = {
@@ -82,6 +82,7 @@ vim.keymap.set("n", "<C-a>", function()
     prompt_title = "Find all files",
     hidden = true,
     no_ignore = true,
+    find_command = { "fd", "--type", "f", "--hidden", "--no-ignore", "--exclude", "node_modules", "--exclude", "vendor" },
     follow = false, -- don't follow symlinks
     layout_config = {
       prompt_position = "top",
@@ -89,24 +90,14 @@ vim.keymap.set("n", "<C-a>", function()
   })
 end)
 vim.keymap.set("n", "<C-p>", function()
-  builtin.git_files({
-    prompt_title = "Git find (with untracked)",
-    use_git_root = true,
-    show_untracked = true,
+  builtin.find_files({
+    prompt_title = "Find files (untracked + submodules)",
+    hidden = true,
+    no_ignore = false, -- respect .gitignore but include untracked
+    follow = false, -- don't follow symlinks
     layout_config = {
       prompt_position = "top",
     },
-  })
-end)
-vim.keymap.set("n", "<C-t>", function()
-  builtin.git_files({
-    prompt_title = "Git find (with recurse submodules)",
-    use_git_root = true,
-    show_untracked = false,
-    layout_config = {
-      prompt_position = "top",
-    },
-    recurse_submodules = true,
   })
 end)
 vim.keymap.set("n", "<space>gs", builtin.grep_string)
