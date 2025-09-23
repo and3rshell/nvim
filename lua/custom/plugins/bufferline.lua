@@ -34,8 +34,9 @@ return {
       },
     })
 
-    vim.keymap.set("n", "H", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
-    vim.keymap.set("n", "L", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-    vim.keymap.set("n", "<leader>d", "<cmd>BufferLineClose<cr>", { desc = "Close buffer" })
+    vim.keymap.set("n", "H", "<cmd>BufferLineCyclePrev<cr>")
+    vim.keymap.set("n", "L", "<cmd>BufferLineCycleNext<cr>")
+    vim.keymap.set("n", "<c-n>", "<cmd>BufferLineMovePrev<cr>")
+    vim.keymap.set("n", "<c-m>", "<cmd>BufferLineMoveNext<cr>")
   end,
 }
