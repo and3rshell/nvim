@@ -100,5 +100,5 @@ set("n", "yG", "ggyG")
 set("n", "<leader>'", ":%s/\"/'/g<CR>")
 set("n", '<leader>"', ":%s/'/\"/g<CR>")
 
-set("n", "{", "10k")
-set("n", "}", "10j")
+set("n", "{", "5k")
+set("n", "}", "5j")
