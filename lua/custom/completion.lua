@@ -32,6 +32,7 @@ cmp.setup({
     { name = "path" },
     { name = "buffer" },
   },
+  performance = { fetching_timeout = 2000 },
   mapping = {
     ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
