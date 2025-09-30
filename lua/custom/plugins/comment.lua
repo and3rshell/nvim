@@ -5,6 +5,11 @@ return {
     require("Comment").setup({
       ignore = "^$",
       pre_hook = function(ctx)
+        -- Skip ts-context-commentstring for SQL files to use proper -- comments
+        if vim.bo.filetype == "sql" then
+          return nil
+        end
+
         local U = require("Comment.utils")
 
         -- Determine whether to use linewise or blockwise commentstring

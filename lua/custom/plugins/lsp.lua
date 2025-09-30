@@ -201,6 +201,8 @@ return {
             },
           },
         },
+
+        sqlls = true,
       }
 
       local servers_to_install = vim.tbl_filter(function(key)
@@ -222,6 +224,7 @@ return {
         "pyright",
         "bashls",
         "hadolint",
+        "sqlls",
       }
 
       vim.list_extend(ensure_installed, servers_to_install)

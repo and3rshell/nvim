@@ -27,7 +27,7 @@ local cmp = require("cmp")
 cmp.setup({
   sources = {
     { name = "luasnip" },
-    { name = "avante" },
+    -- { name = "avante" },
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "buffer" },
@@ -114,6 +114,7 @@ cmp.setup({
 cmp.setup.filetype({ "sql" }, {
   sources = {
     { name = "vim-dadbod-completion" },
+    { name = "nvim_lsp" },
     { name = "buffer" },
   },
 })
