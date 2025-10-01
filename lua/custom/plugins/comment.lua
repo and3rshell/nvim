@@ -6,7 +6,7 @@ return {
       ignore = "^$",
       pre_hook = function(ctx)
         -- Skip ts-context-commentstring for SQL files to use proper -- comments
-        if vim.bo.filetype == "sql" then
+        if vim.bo.filetype == "mysql" or "sql" then
           return nil
         end
 
