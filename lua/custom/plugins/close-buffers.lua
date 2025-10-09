@@ -33,7 +33,7 @@ return {
     end, { silent = true })
 
     vim.keymap.set("n", "<space>do", function()
-      close_buffers.delete({ type = "others" })
+      close_buffers.delete({ type = "other" })
     end, { silent = true })
 
     vim.keymap.set("n", "<space>da", function()

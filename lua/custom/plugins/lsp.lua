@@ -223,6 +223,7 @@ return {
         "intelephense",
         "pyright",
         "bashls",
+        "shellcheck",
         "hadolint",
         "sqlls",
       }
