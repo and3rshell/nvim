@@ -21,3 +21,9 @@ require("lazy").setup({ import = "custom/plugins" }, {
     notify = false,
   },
 })
+
+vim.filetype.add({
+  filename = {
+    ["Dockerfile-optimized"] = "dockerfile",
+  },
+})
