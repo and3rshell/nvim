@@ -13,6 +13,7 @@ local kind_formatter = lspkind.cmp_format({
     nvim_lua = "[api]",
     path = "[path]",
     luasnip = "[snip]",
+    copilot = "[AI]",
     gh_issues = "[issues]",
   },
 })
@@ -23,9 +24,11 @@ require("tailwindcss-colorizer-cmp").setup({
 })
 
 local cmp = require("cmp")
+local copilot_cmp = require("copilot_cmp.comparators")
 
 cmp.setup({
   sources = {
+    { name = "copilot" },
     { name = "luasnip" },
     -- { name = "avante" },
     { name = "nvim_lsp" },
@@ -75,6 +78,8 @@ cmp.setup({
   sorting = {
     priority_weight = 2,
     comparators = {
+      copilot_cmp.prioritize,
+      copilot_cmp.score,
       -- Below is the default comparitor list and order for nvim-cmp
       cmp.config.compare.offset,
       -- cmp.config.compare.scopes, --this is commented in nvim-cmp too

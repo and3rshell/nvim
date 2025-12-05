@@ -10,12 +10,17 @@ return {
     },
     config = function()
       local extend = function(name, key, values)
-        local mod = require(string.format("lspconfig.configs.%s", name))
-        local default = mod.default_config
+        local default = vim.lsp.config[name]
+        if not default then
+          return values
+        end
         local keys = vim.split(key, ".", { plain = true })
-        while #keys > 0 do
-          local item = table.remove(keys, 1)
-          default = default[item]
+        for _, item in ipairs(keys) do
+          default = default and default[item]
+        end
+
+        if not default then
+          return values
         end
 
         if vim.islist(default) then
@@ -38,8 +43,6 @@ return {
         -- capabilities.textDocument.completion.completionItem.snippetSupport = true
         capabilities = require("cmp_nvim_lsp").default_capabilities()
       end
-
-      local lspconfig = require("lspconfig")
 
       local servers = {
         bashls = true,
@@ -239,7 +242,8 @@ return {
           capabilities = capabilities,
         }, config)
 
-        lspconfig[name].setup(config)
+        vim.lsp.config(name, config)
+        vim.lsp.enable(name)
       end
 
       local disable_semantic_tokens = {
