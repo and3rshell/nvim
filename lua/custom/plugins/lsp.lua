@@ -283,9 +283,46 @@ return {
 
           local builtin = require("telescope.builtin")
 
+          local goto_definition = function()
+            local params = vim.lsp.util.make_position_params()
+            vim.lsp.buf_request(bufnr, "textDocument/definition", params, function(err, result)
+              if err then
+                vim.notify(err.message, vim.log.levels.ERROR)
+                return
+              end
+              if not result or vim.tbl_isempty(result) then
+                vim.notify("No definitions found", vim.log.levels.INFO)
+                return
+              end
+
+              if not vim.islist(result) then
+                result = { result }
+              end
+
+              if #result == 1 then
+                vim.lsp.util.jump_to_location(result[1], "utf-8")
+                return
+              end
+
+              vim.ui.select(result, {
+                prompt = "Select definition",
+                format_item = function(loc)
+                  local uri = loc.uri or loc.targetUri
+                  local range = loc.range or loc.targetSelectionRange or loc.targetRange
+                  local filename = uri and vim.fs.basename(vim.uri_to_fname(uri)) or "[unknown]"
+                  local line = range and (range.start.line + 1) or 0
+                  return string.format("%s:%d", filename, line)
+                end,
+              }, function(choice)
+                if choice then
+                  vim.lsp.util.jump_to_location(choice, "utf-8")
+                end
+              end)
+            end)
+          end
+
           vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-          -- vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
-          vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+          vim.keymap.set("n", "gd", goto_definition, { buffer = bufnr })
           vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
           -- vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
