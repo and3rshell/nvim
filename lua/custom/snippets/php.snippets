@@ -549,6 +549,9 @@ snippet retjson
         "data" => ${1}
     ], status: ${0});
 
+snippet rj
+    return response()->json(${1});
+
 snippet retres
     return ${1}::${2}(${3})
         ->aditional([${4}])
@@ -573,3 +576,6 @@ snippet cast
 
 snippet retnewclass
     return new class extends Migration
+
+snippet log
+    logger(${0});
