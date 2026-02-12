@@ -4,7 +4,19 @@ vim.cmd([[
     set nofoldenable " Disable folding at startup.
 ]])
 
-require("nvim-treesitter.configs").setup({
+local ok_ts, ts_configs = pcall(require, "nvim-treesitter.configs")
+if not ok_ts then
+  vim.schedule(function()
+    vim.notify(
+      "nvim-treesitter is not available. Run :Lazy sync and restart Neovim.",
+      vim.log.levels.ERROR,
+      { title = "Treesitter" }
+    )
+  end)
+  return
+end
+
+ts_configs.setup({
   -- ensure_installed = "all",
   ensure_installed = {
     "php",
